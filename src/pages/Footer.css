@@ -1,49 +1,56 @@
 .footer {
-    background-color: #006747; /* Verde ESPE */
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    position: relative;
-    width: 100%;
-    margin-top: 30px; /* Para que el footer no esté pegado al contenido */
-  }
-  
-  .footer-content p {
-    margin: 0;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .social-links {
-    margin-top: 10px;
-  }
-  
-  .social-links a {
-    color: white;
-    margin: 0 10px;
-    transition: transform 0.3s ease;
-  }
-  
-  .social-links a:hover {
-    transform: scale(1.2); /* Animación en hover */
-  }
-  
-  .footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Hacer que el footer se mantenga en el fondo de la pantalla si el contenido no ocupa toda la altura */
-  body, html {
-    height: 100%;
-    margin: 0;
-  }
-  
-  .App {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  
+  background-color: #006747; /* Verde ESPE */
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  width: 100%;
+  margin-top: 30px; /* Para que el footer no esté pegado al contenido */
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.social-links {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center; /* Centra los iconos */
+}
+
+.social-links a {
+  color: white;
+  margin: 0 15px; /* Aumentado el espacio entre iconos */
+  transition: transform 0.3s ease, color 0.3s ease; /* Transición suave para el cambio de tamaño y color */
+  font-size: 25px; /* Tamaño adecuado para los iconos */
+}
+
+.social-links a:hover {
+  transform: scale(1.3); /* Efecto de agrandar el icono */
+  color:white; /* Color suave de hover */
+}
+
+.social-links a:active {
+  color: #ff6600; /* Color cuando se hace clic */
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hacer que el footer se mantenga en el fondo de la pantalla si el contenido no ocupa toda la altura */
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

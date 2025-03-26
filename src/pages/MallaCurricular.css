@@ -1,46 +1,83 @@
-.materia-verde {
-    background-color: #28a745;
-    color: white;
+/* MallaCurricular.css */
+
+.malla-container {
+    font-family: 'Arial', sans-serif;
   }
   
-  .materia-amarilla {
-    background-color: #ffc107;
-    color: white;
+  .malla-title {
+    color: #343a40;
+    margin-bottom: 1.5rem;
   }
   
-  .materia-bloqueada {
-    background-color: #dcdcdc;
-    color: #777;
-    position: relative;
+  .semestre-title {
+    color: #495057;
+    margin-bottom: 1rem;
   }
   
   .materia-card {
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    background-color: #fff; /* Blanco por defecto */
+    color: #495057;
   }
   
   .materia-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   }
   
-  /* Para las materias bloqueadas (grises) */
-  .materia-card[style="opacity: 0.5"] {
-    background-color: #dcdcdc;
-    cursor: not-allowed;
+  .materia-card .card-body {
+    padding: 1rem;
   }
+  
+  .materia-card .card-title {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+  
+  .materia-verde {
+    background-color: #28a745 !important;
+    color: white !important;
+  }
+  
+  .materia-verde .card-title {
+    color: white !important;
+  }
+  
+  .materia-bloqueada {
+    background-color: #e9ecef !important; /* Color gris claro para bloqueadas */
+    color: #6c757d !important;
+    cursor: not-allowed;
+    pointer-events: none; /* Elimina el hover */
+  }
+  
+  .materia-bloqueada .card-title {
+    color: #6c757d !important;
+  }
+  
+  .materia-bloqueada .lock-icon {
+    color: #6c757d !important;
+  }
+  
+  /* Elimina el hover en las materias bloqueadas */
+  .materia-bloqueada:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
   
   .lock-icon {
     position: absolute;
-    top: 5px;
-    right: 5px;
-    font-size: 16px;
-    color: #777;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1rem;
+    color: #495057;
   }
   
-  .materia-card:hover {
-    transform: none;
+  .alert-info {
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+    color: #1f618d;
   }
-  
-  .materia-aprobada {
-    opacity: 1 !important;
-  }
-  
