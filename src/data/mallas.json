@@ -1,7 +1,7 @@
 {
     "software": {
       "nombre": "Ingeniería en Software",
-      "logo": "/img/software.png",
+      "logo": "software",
       "semestres": [
         {
           "numero": 1,
@@ -92,7 +92,7 @@
     },
     "electronica-y-automatizacion": {
     "nombre": "Ingeniería en Electrónica y Automatización",
-    "logo": "/img/electronica-automatizacion.png",
+    "logo": "electronica-y-automatizacion",
     "semestres": [
       {
         "numero": 1,
