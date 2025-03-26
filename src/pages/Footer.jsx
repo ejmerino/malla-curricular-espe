@@ -6,16 +6,18 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <p>Desarrollado por Josué Merino Calderón | 2025</p>
+        <p className="footer-text">
+          &copy; 2025 Josué Merino Calderón. Todos los derechos reservados.
+        </p>
         <div className="social-links">
-          <a href="https://github.com/ejmerino" target="_blank" rel="noopener noreferrer">
-            <FaGithub size={30} />
+          <a href="https://github.com/ejmerino" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <FaGithub className="footer-icon" size={30} />
           </a>
-          <a href="https://www.linkedin.com/in/josue-merino-calderon-52639510a/" target="_blank" rel="noopener noreferrer">
-            <FaLinkedin size={30} />
+          <a href="https://www.linkedin.com/in/josue-merino-calderon-52639510a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <FaLinkedin className="footer-icon" size={30} />
           </a>
-          <a href="mailto:ejmerino@espe.edu.ec" target="_blank" rel="noopener noreferrer">
-            <FaEnvelope size={30} /> {/* Icono de correo */}
+          <a href="mailto:ejmerino@espe.edu.ec" target="_blank" rel="noopener noreferrer" aria-label="Email">
+            <FaEnvelope className="footer-icon" size={30} />
           </a>
         </div>
       </div>
