@@ -88,3 +88,24 @@
     border-color: #bee5eb;
     color: #1f618d;
   }
+
+  /* En MallaCurricular.css */
+  .selection-info {
+    background-color: #eaf4ff; /* Un tono de azul más suave y moderno */
+    color: #34495e; /* Azul oscuro para el texto, mejor contraste */
+    padding: 18px 25px; /* Aumenta el padding para más espacio */
+    border-radius: 12px; /* Bordes más redondeados para un look más moderno */
+    margin-bottom: 25px; /* Aumenta el margen inferior para más espacio */
+    text-align: center;
+    font-size: 1.2rem; /* Aumenta ligeramente el tamaño de la fuente */
+    font-weight: 600; /* Texto en negrita (más moderno que simplemente "bold") */
+    border: none; /* Elimina el borde anterior */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra sutil para dar profundidad */
+    transition: all 0.3s ease; /* Transición suave para el hover */
+    letter-spacing: 0.5px; /* Añade un ligero espaciado entre letras para mejorar la legibilidad */
+  }
+  
+  .selection-info:hover {
+      transform: translateY(-3px); /* Ligeramente eleva el elemento al hacer hover */
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); /* Sombra más intensa al hover */
+  }

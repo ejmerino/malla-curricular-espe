@@ -192,6 +192,10 @@ export default function MallaCurricular() {
         <strong>Materias que puedes tomar:</strong> {materiasTomables.join(', ') || 'Ninguna por ahora'}
       </div>
 
+      <div className="selection-info">
+        Selecciona las materias que ya has aprobado:
+      </div>
+
       <div className="row">
         {carrera.semestres.map((semestre, idx) => (
           <div key={idx} className="col-md-6 mb-4 semestre-section">
