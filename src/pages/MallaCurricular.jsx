@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import mallasData from "../data/mallas.json";
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
+import html2canvas from 'html2canvas';
+import Home from './Home.jsx';
 import './MallaCurricular.css';
 
 export default function MallaCurricular() {
@@ -110,7 +112,6 @@ export default function MallaCurricular() {
 
     setMateriasEstado(prevEstado => {
       const nuevoEstado = { ...prevEstado };
-      // Cambiar el estado a "green" si está disponible y a "" si ya está aprobada
       nuevoEstado[materiaId] = nuevoEstado[materiaId] === "green" ? "" : "green";
       return nuevoEstado;
     });
@@ -155,15 +156,36 @@ export default function MallaCurricular() {
     doc.save(`${carrera.nombre}-malla.pdf`);
   };
 
+  const downloadMallaImage = () => {
+    const element = document.querySelector(".malla-container");
+    html2canvas(element, {
+      scrollX: 0,
+      scrollY: 0,
+    }).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const link = document.createElement("a");
+      link.href = imgData;
+      link.download = `${carrera.nombre}-malla.png`;
+      link.click();
+    });
+  };
+
   if (!carrera) {
     return <div>Cargando...</div>;
   }
 
   return (
     <div className="container mt-5 malla-container">
-      <button onClick={() => navigate("/")} className="btn btn-secondary mb-4">
+      <button 
+        onClick={() => {
+          navigate("/");
+          window.location.reload();
+        }} 
+        className="btn btn-secondary mb-4"
+      > 
         Regresar
       </button>
+
       <h1 className="text-center mb-4 malla-title">{carrera.nombre}</h1>
 
       <div className="alert alert-info">
@@ -172,7 +194,7 @@ export default function MallaCurricular() {
 
       <div className="row">
         {carrera.semestres.map((semestre, idx) => (
-          <div key={idx} className="col-md-6 mb-4">
+          <div key={idx} className="col-md-6 mb-4 semestre-section">
             <h3 className="semestre-title">Semestre {semestre.numero}</h3>
             <div className="row">
               {semestre.materias.map((materia) => {
@@ -213,8 +235,8 @@ export default function MallaCurricular() {
         <button className="btn btn-primary" onClick={downloadMallaPDF}>
           Descargar Malla como PDF
         </button>
-        <button className="btn btn-success" >
-          Descargar Malla como Imagen (No implementado)
+        <button className="btn btn-success" onClick={downloadMallaImage}>
+          Descargar Malla como Imagen
         </button>
       </div>
     </div>

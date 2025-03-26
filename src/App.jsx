@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import MallaCurricular from "./pages/MallaCurricular";
-import Footer from "./pages/Footer"; // Importamos el Footer
+import Footer from "./pages/Footer";
 
 export default function App() {
   return (
@@ -10,8 +10,9 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/malla/:carreraId" element={<MallaCurricular />} />
       </Routes>
-      
-      <Footer /> {/* Aquí insertamos el Footer para que se muestre en todas las páginas */}
+
+      {/* Footer se muestra en todas las páginas */}
+      <Footer />
     </div>
   );
 }

@@ -14,12 +14,21 @@
     margin-bottom: 1rem;
   }
   
+  /* Separación entre semestres */
+  .semestre-section {
+    border: 1px solid #eee;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+  
   .materia-card {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-    background-color: #fff; /* Blanco por defecto */
+    background-color: #fff;
     color: #495057;
   }
   
@@ -47,10 +56,10 @@
   }
   
   .materia-bloqueada {
-    background-color: #e9ecef !important; /* Color gris claro para bloqueadas */
+    background-color: #e9ecef !important;
     color: #6c757d !important;
     cursor: not-allowed;
-    pointer-events: none; /* Elimina el hover */
+    pointer-events: none;
   }
   
   .materia-bloqueada .card-title {
@@ -61,12 +70,10 @@
     color: #6c757d !important;
   }
   
-  /* Elimina el hover en las materias bloqueadas */
   .materia-bloqueada:hover {
     transform: none;
     box-shadow: none;
   }
-  
   
   .lock-icon {
     position: absolute;
