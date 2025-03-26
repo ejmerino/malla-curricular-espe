@@ -1,0 +1,46 @@
+.materia-verde {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .materia-amarilla {
+    background-color: #ffc107;
+    color: white;
+  }
+  
+  .materia-bloqueada {
+    background-color: #dcdcdc;
+    color: #777;
+    position: relative;
+  }
+  
+  .materia-card {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .materia-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Para las materias bloqueadas (grises) */
+  .materia-card[style="opacity: 0.5"] {
+    background-color: #dcdcdc;
+    cursor: not-allowed;
+  }
+  
+  .lock-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 16px;
+    color: #777;
+  }
+  
+  .materia-card:hover {
+    transform: none;
+  }
+  
+  .materia-aprobada {
+    opacity: 1 !important;
+  }
+  

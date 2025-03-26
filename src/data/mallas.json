@@ -1,0 +1,106 @@
+{
+    "software": {
+      "nombre": "Ingeniería en Software",
+      "logo": "/img/software.png",
+      "semestres": [
+        {
+          "numero": 1,
+          "materias": [
+            { "id": "calculo-diferencial-integral", "nombre": "Cálculo Diferencial e Integral", "prerequisitos": [] },
+            { "id": "quimica1", "nombre": "Química I", "prerequisitos": [] },
+            { "id": "fundamentos-de-programacion", "nombre": "Fundamentos de Programación", "prerequisitos": [] },
+            { "id": "algebra-lineal", "nombre": "Álgebra Lineal", "prerequisitos": [] },
+            { "id": "fundamentos-de-la-ingenieria-de-software", "nombre": "Fundamentos de la Ingeniería de Software", "prerequisitos": [] },
+            { "id": "metodologia-de-la-investigacion", "nombre": "Metodología de la Investigación", "prerequisitos": [] }
+          ]
+        },
+        {
+          "numero": 2,
+          "materias": [
+            { "id": "calculo-vectorial", "nombre": "Cálculo Vectorial", "prerequisitos": ["calculo-diferencial-integral", "algebra-lineal"] },
+            { "id": "fisica1", "nombre": "Física I", "prerequisitos": ["calculo-diferencial-integral"] },
+            { "id": "ecuaciones-diferenciales-ordinarias", "nombre": "Ecuaciones Diferenciales Ordinarias", "prerequisitos": ["calculo-diferencial-integral", "algebra-lineal"] },
+            { "id": "liderazgo", "nombre": "Liderazgo", "prerequisitos": ["metodologia-de-la-investigacion"] },
+            { "id": "programacion-orientada-a-objetos", "nombre": "Programación Orientada a Objetos", "prerequisitos": ["fundamentos-de-programacion"] }
+          ]
+        },
+        {
+          "numero": 3,
+          "materias": [
+            { "id": "estructura-de-datos", "nombre": "Estructura de Datos", "prerequisitos": ["programacion-orientada-a-objetos"] },
+            { "id": "modelos-discretos-para-ingenieria", "nombre": "Modelos Discretos para Ingeniería", "prerequisitos": ["algebra-lineal"] },
+            { "id": "estadistica", "nombre": "Estadística", "prerequisitos": ["calculo-diferencial-integral", "algebra-lineal"] },
+            { "id": "metodos-numericos", "nombre": "Métodos Numéricos", "prerequisitos": ["ecuaciones-diferenciales-ordinarias"] },
+            { "id": "cultura-ambiental", "nombre": "Cultura Ambiental", "prerequisitos": [] },
+            { "id": "realidad-nacional-y-geopolitica", "nombre": "Realidad Nacional y Geopolítica", "prerequisitos": ["liderazgo"] }
+          ]
+        },
+        {
+          "numero": 4,
+          "materias": [
+            { "id": "computacion-digital", "nombre": "Computación Digital", "prerequisitos": ["modelos-discretos-para-ingenieria"] },
+            { "id": "programacion-web", "nombre": "Programación Web", "prerequisitos": ["estructura-de-datos"] },
+            { "id": "sistemas-de-bases-de-datos", "nombre": "Sistemas de Bases de Datos", "prerequisitos": ["estructura-de-datos", "modelos-discretos-para-ingenieria"] },
+            { "id": "modelos-de-procesos-de-desarrollo-de-software", "nombre": "Modelos de Procesos de Desarrollo de Software", "prerequisitos": ["fundamentos-de-la-ingenieria-de-software"] },
+            { "id": "ingenieria-de-usabilidad", "nombre": "Ingeniería de Usabilidad", "prerequisitos": ["fundamentos-de-la-ingenieria-de-software"] },
+            { "id": "computacion-paralela", "nombre": "Computación Paralela", "prerequisitos": ["estructura-de-datos"] }
+          ]
+        },
+        {
+          "numero": 5,
+          "materias": [
+            { "id": "sistemas-avanzados-de-bases-de-datos", "nombre": "Sistemas Avanzados de Bases de Datos", "prerequisitos": ["sistemas-de-bases-de-datos"] },
+            { "id": "desarrollo-web-avanzado", "nombre": "Desarrollo Web Avanzado", "prerequisitos": ["programacion-web"] },
+            { "id": "ingenieria-de-requisitos-de-software", "nombre": "Ingeniería de Requisitos de Software", "prerequisitos": ["modelos-de-procesos-de-desarrollo-de-software"] },
+            { "id": "computacion-grafica", "nombre": "Computación Gráfica", "prerequisitos": ["calculo-vectorial","fisica1"] },
+            { "id": "investigacion-en-la-ingenieria-de-software", "nombre": "Investigación en la Ingeniería de Software", "prerequisitos": ["metodologia-de-la-investigacion"] },
+            { "id": "redes-de-computadores", "nombre": "Redes de Computadores", "prerequisitos": ["computacion-digital"] }
+          ]
+        },
+        {
+          "numero": 6,
+          "materias": [
+            { "id": "aplicaciones-basadas-en-el-conocimiento", "nombre": "Aplicaciones Basadas en el Conocimiento", "prerequisitos": ["estructura-de-datos","modelos-discretos-para-ingenieria"] },
+            { "id": "pruebas-de-software", "nombre": "Pruebas de Software", "prerequisitos": ["ingenieria-de-requisitos-de-software"] },
+            { "id": "analisis-y-diseno-de-software", "nombre": "Análisis y Diseño de Software", "prerequisitos": ["ingenieria-de-requisitos-de-software"] },
+            { "id": "sistemas-operativos", "nombre": "Sistemas Operativos", "prerequisitos": ["redes-de-computadores"] },
+            { "id": "lectura-y-escritura-de-textos-academicos", "nombre": "Lectura y escritura de textos académicos", "prerequisitos": ["investigacion-en-la-ingenieria-de-software"] },
+            { "id": "desarrollo-de-aplicaciones-moviles", "nombre": "Desarrollo de Aplicaciones Móviles", "prerequisitos": ["desarrollo-web-avanzado"] }
+          ]
+        },
+        {
+          "numero": 7,
+          "materias": [
+            { "id": "aseguramiento-de-la-calidad-de-software", "nombre": "Aseguramiento de la Calidad de software", "prerequisitos": ["pruebas-de-software"] },
+            { "id": "aplicaciones-distribuidas", "nombre": "Aplicaciones Distribuidas", "prerequisitos": ["desarrollo-web-avanzado"] },
+            { "id": "ingenieria-de-la-seguridad-del-software", "nombre": "Ingeniería de la seguridad del Software", "prerequisitos": ["sistemas-operativos"] },
+            { "id": "desarrollo-de-video-juegos", "nombre": "Desarrollo de Video Juegos", "prerequisitos": ["computacion-grafica", "aplicaciones-basadas-en-el-conocimiento"] },
+            { "id": "desarrollo-de-software-seguro", "nombre": "Desarrollo de Software Seguro", "prerequisitos": ["analisis-y-diseno-de-software","pruebas-de-software"] }
+          ]
+        },
+        {
+          "numero": 8,
+          "materias": [
+            { "id": "construccion-y-evolucion-del-software", "nombre": "Construcción y Evolución del Software", "prerequisitos": ["aseguramiento-de-la-calidad-de-software"] },
+            { "id": "arquitectura-de-software", "nombre": "Arquitectura de Software", "prerequisitos": ["aplicaciones-distribuidas","desarrollo-de-software-seguro"] },
+            { "id": "desarrollo-de-software-aplicado-al-dominio-de-la-interculturalidad", "nombre": "Desarrollo de Software aplicado al Dominio de la Interculturalidad", "prerequisitos": ["ingenieria-de-la-seguridad-del-software"] },
+            { "id": "gestion-y-emprendimiento", "nombre": "Gestión y Emprendimiento", "prerequisitos": ["aseguramiento-de-la-calidad-de-software"] },
+            { "id": "gestion-de-proyectos-de-software", "nombre": "Gestión de Proyectos de Software", "prerequisitos": ["analisis-y-diseno-de-software"] }
+          ]
+        }
+      ]
+    },
+    "electronica": {
+      "nombre": "Ingeniería en Electrónica",
+      "logo": "/img/electronica.png",
+      "semestres": [
+        {
+          "numero": 1,
+          "materias": [
+            { "id": "circuitos1", "nombre": "Circuitos 1", "prerequisitos": [] },
+            { "id": "algebra", "nombre": "Álgebra", "prerequisitos": [] }
+          ]
+        }
+      ]
+    }
+  }
