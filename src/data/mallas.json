@@ -90,17 +90,106 @@
         }
       ]
     },
-    "electronica": {
-      "nombre": "Ingeniería en Electrónica",
-      "logo": "/img/electronica.png",
-      "semestres": [
-        {
-          "numero": 1,
-          "materias": [
-            { "id": "circuitos1", "nombre": "Circuitos 1", "prerequisitos": [] },
-            { "id": "algebra", "nombre": "Álgebra", "prerequisitos": [] }
-          ]
-        }
-      ]
-    }
+    "electronica-y-automatizacion": {
+    "nombre": "Ingeniería en Electrónica y Automatización",
+    "logo": "/img/electronica-automatizacion.png",
+    "semestres": [
+      {
+        "numero": 1,
+        "materias": [
+          { "id": "calculo-diferencial-integral", "nombre": "Cálculo Diferencial e Integral", "prerequisitos": [] },
+          { "id": "quimica1", "nombre": "Química I", "prerequisitos": [] },
+          { "id": "fundamentos-de-programacion", "nombre": "Fundamentos de Programación", "prerequisitos": [] },
+          { "id": "algebra-lineal", "nombre": "Álgebra Lineal", "prerequisitos": [] },          
+          { "id": "biologia", "nombre": "Biología", "prerequisitos": [] },
+          { "id": "metodologia-de-la-investigacion", "nombre": "Metodología de la Investigación", "prerequisitos": [] }
+        ]
+      },
+      {
+        "numero": 2,
+        "materias": [
+          { "id": "calculo-vectorial", "nombre": "Cálculo Vectorial", "prerequisitos": ["calculo-diferencial-integral", "algebra-lineal"] },
+          { "id": "fisica1", "nombre": "Física I", "prerequisitos": ["calculo-diferencial-integral","quimica1","biologia"] },
+          { "id": "ecuaciones-diferenciales-ordinarias", "nombre": "Ecuaciones Diferenciales Ordinarias", "prerequisitos": ["calculo-diferencial-integral", "algebra-lineal"] },
+          { "id": "programacion-orientada-a-objetos", "nombre": "Programación Orientada a Objetos", "prerequisitos": ["fundamentos-de-programacion"] },
+          { "id": "fundamentos-de-circuitos-electricos", "nombre": "Fundamentos de Circuitos Eléctricos", "prerequisitos": ["calculo-diferencial-integral", "algebra-lineal"] }
+        ]
+      },
+      {
+        "numero": 3,
+        "materias": [
+          { "id": "electronica-fundamental", "nombre": "Electrónica Fundamental", "prerequisitos": ["fundamentos-de-circuitos-electricos", "programacion-orientada-a-objetos"] },
+          { "id": "fundamentos-de-electromagnetismo", "nombre": "Fundamentos de Electromagnetismo", "prerequisitos": ["ecuaciones-diferenciales-ordinarias", "fisica1"] },
+          { "id": "estadistica", "nombre": "Estadística", "prerequisitos": ["ecuaciones-diferenciales-ordinarias", "calculo-vectorial"] },
+          { "id": "metodos-numericos", "nombre": "Métodos Numéricos", "prerequisitos": ["ecuaciones-diferenciales-ordinarias", "calculo-vectorial"] },
+          { "id": "metrologia-electrica-y-electronica", "nombre": "Metrología Eléctrica y Electrónica", "prerequisitos": ["fundamentos-de-circuitos-electricos"] },
+          { "id": "senales-y-sistemas", "nombre": "Señales y Sistemas", "prerequisitos": ["fundamentos-de-circuitos-electricos", "ecuaciones-diferenciales-ordinarias"] }
+        ]
+      },
+      {
+        "numero": 4,
+        "materias": [
+          { "id": "analisis-de-circuitos-electricos", "nombre": "Análisis de Circuitos Eléctricos", "prerequisitos": ["fundamentos-de-circuitos-electricos", "metodos-numericos"] },
+          { "id": "electronica-aplicada", "nombre": "Electrónica Aplicada", "prerequisitos": ["electronica-fundamental"] },
+          { "id": "circuitos-y-sistemas-digitales", "nombre": "Circuitos y Sistemas Digitales", "prerequisitos": ["fundamentos-de-circuitos-electricos", "fundamentos-de-programacion"] },
+          { "id": "instrumentacion-y-sensores", "nombre": "Instrumentación y Sensores", "prerequisitos": ["electronica-fundamental","metrologia-electrica-y-electronica"] },
+          { "id": "procesamiento-digital-de-senales", "nombre": "Procesamiento Digital de Señales", "prerequisitos": ["senales-y-sistemas", "estadistica"] },
+          { "id": "liderazgo", "nombre": "Liderazgo", "prerequisitos": ["metodologia-de-la-investigacion"] }
+        ]
+      },
+      {
+        "numero": 5,
+        "materias": [
+          { "id": "maquinas-electricas", "nombre": "Máquinas Eléctricas", "prerequisitos": ["analisis-de-circuitos-electricos", "fundamentos-de-electromagnetismo"] },
+          { "id": "electronica-de-potencia", "nombre": "Electrónica de Potencia", "prerequisitos": ["electronica-aplicada","analisis-de-circuitos-electricos"] },
+          { "id": "sistemas-basados-en-microcontrolador", "nombre": "Sistemas Basados en Microcontrolador", "prerequisitos": ["circuitos-y-sistemas-digitales", "programacion-orientada-a-objetos"] },
+          { "id": "sistemas-de-control", "nombre": "Sistemas de Control", "prerequisitos": ["instrumentacion-y-sensores", "senales-y-sistemas"] },
+          { "id": "tecnologias-aplicadas", "nombre": "Tecnologías Aplicadas", "prerequisitos": ["instrumentacion-y-sensores","analisis-de-circuitos-electricos"] },
+          { "id": "redes-de-comunicaciones", "nombre": "Redes de Comunicaciones", "prerequisitos": ["circuitos-y-sistemas-digitales"] }
+        ]
+      },
+      {
+        "numero": 6,
+        "materias": [
+          { "id": "sistemas-de-accionamiento-industrial", "nombre": "Sistemas de Accionamiento Industrial", "prerequisitos": ["tecnologias-aplicadas", "electronica-de-potencia"] },
+          { "id": "control-de-maquinas", "nombre": "Control de Máquinas", "prerequisitos": ["sistemas-de-control","electronica-de-potencia" ,"maquinas-electricas"] },
+          { "id": "automatizacion-industrial-1", "nombre": "Automatización Industrial I", "prerequisitos": ["sistemas-de-control", "electronica-de-potencia"] },
+          { "id": "control-digital", "nombre": "Control Digital", "prerequisitos": ["sistemas-de-control"] },
+          { "id": "sistemas-embebidos", "nombre": "Sistemas Embebidos", "prerequisitos": ["sistemas-basados-en-microcontrolador"] },
+          { "id": "instrumentacion-industrial", "nombre": "Instrumentación Industrial", "prerequisitos": ["tecnologias-aplicadas"] }
+        ]
+      },
+      {
+        "numero": 7,
+        "materias": [
+          { "id": "control-de-procesos", "nombre": "Control de Procesos", "prerequisitos": ["automatizacion-industrial-1","control-digital" ,"instrumentacion-industrial"] },
+          { "id": "comunicaciones-industriales", "nombre": "Comunicaciones Industriales", "prerequisitos": ["redes-de-comunicaciones","automatizacion-industrial-1"] },
+          { "id": "investigacion-aplicada-a-la-automatica", "nombre": "Investigación Aplicada a la Automática", "prerequisitos": ["sistemas-embebidos","automatizacion-industrial-1"] },
+          { "id": "automatizacion-industrial-2", "nombre": "Automatización Industrial II", "prerequisitos": ["automatizacion-industrial-1", "redes-de-comunicaciones"] },
+          { "id": "instalaciones-industriales", "nombre": "Instalaciones Industriales", "prerequisitos": ["control-de-maquinas","sistemas-de-accionamiento-industrial"] },
+          { "id": "matematica-financiera-para-ingenieria", "nombre": "Matemática Financiera para Ingeniería", "prerequisitos": ["estadistica"] }
+        ]
+      },
+      {
+        "numero": 8,
+        "materias": [
+          { "id": "control-inteligente", "nombre": "Control Inteligente", "prerequisitos": ["control-de-procesos"] },
+          { "id": "robotica", "nombre": "Robótica", "prerequisitos": ["automatizacion-industrial-2", "comunicaciones-industriales"] },
+          { "id": "electronica-medica", "nombre": "Electrónica Médica", "prerequisitos": ["investigacion-aplicada-a-la-automatica","procesamiento-digital-de-senales"] },
+          { "id": "proyectos-de-automatizacion", "nombre": "Proyectos de Automatización", "prerequisitos": ["automatizacion-industrial-2","instalaciones-industriales"] },
+          { "id": "domotica", "nombre": "Domótica", "prerequisitos": ["comunicaciones-industriales","instalaciones-industriales"] }
+        ]
+      },
+      {
+        "numero": 9,
+        "materias": [
+          { "id": "trabajo-de-integracion-curricular", "nombre": "Trabajo de Integración Curricular", "prerequisitos": ["control-inteligente","robotica","electronica-medica","proyectos-de-automatizacion","domotica"] },
+          { "id": "sistemas-de-ejecucion-de-la-manufactura", "nombre": "Sistemas de Ejecución de la Manufactura", "prerequisitos": ["robotica","proyectos-de-automatizacion"] },
+          { "id": "gestion-de-proyectos-de-automatizacion", "nombre": "Gestión de Proyectos de Automatización", "prerequisitos": ["instalaciones-industriales","proyectos-de-automatizacion"] },
+          { "id": "gestion-y-emprendimiento", "nombre": "Gestión y Emprendimiento", "prerequisitos": ["liderazgo"] },
+          { "id": "realidad-nacional-y-geopolitica", "nombre": "Realidad Nacional y Geopolítica", "prerequisitos": ["liderazgo"] }
+        ]
+      }
+    ]
   }
+}
