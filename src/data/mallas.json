@@ -403,86 +403,97 @@
       {
         "numero": 1,
         "materias": [
-          { "id": "algebra-lineal", "nombre": "Álgebra Lineal", "prerequisitos": [] },
-          { "id": "fundamentos-de-programacion", "nombre": "Fundamentos de Programación", "prerequisitos": [] },
           { "id": "calculo-diferencial-e-integral", "nombre": "Cálculo Diferencial e Integral", "prerequisitos": [] },
-          { "id": "quimica", "nombre": "Química I", "prerequisitos": [] },
+          { "id": "quimica-1", "nombre": "Química I", "prerequisitos": [] },
+          { "id": "fundamentos-de-programacion", "nombre": "Fundamentos de Programación", "prerequisitos": [] },
+          { "id": "algebra-lineal", "nombre": "Álgebra Lineal", "prerequisitos": [] },
           { "id": "biologia", "nombre": "Biología", "prerequisitos": [] },
-          { "id": "metodologia-de-la-investigacion-cientifica", "nombre": "Metodología de la Investigación Científica", "prerequisitos": [] }
+          { "id": "metodologia-de-la-investigacion", "nombre": "Metodología de la Investigación Científica", "prerequisitos": [] }
         ]
       },
       {
         "numero": 2,
         "materias": [
-          { "id": "calculo-vectorial", "nombre": "Cálculo Vectorial", "prerequisitos": ["algebra-lineal", "calculo-diferencial-e-integral"] },
-          { "id": "fisica-i", "nombre": "Física I", "prerequisitos": ["calculo-diferencial-e-integral"] },
-          { "id": "ecuaciones-diferenciales-ordinarias", "nombre": "Ecuaciones Diferenciales Ordinarias", "prerequisitos": ["algebra-lineal", "calculo-diferencial-e-integral"] },
-          { "id": "estructuras-isostaticas", "nombre": "Estructuras Isostáticas", "prerequisitos": ["calculo-diferencial-e-integral", "algebra-lineal"] },
-          { "id": "liderazgo", "nombre": "Liderazgo", "prerequisitos": ["metodologia-de-la-investigacion-cientifica"] }
+          { "id": "calculo-vectorial", "nombre": "Cálculo Vectorial", "prerequisitos": ["calculo-diferencial-e-integral","algebra-lineal"] },
+          { "id": "fisica-1", "nombre": "Física I", "prerequisitos": ["calculo-diferencial-e-integral","quimica-1","biologia"] },
+          { "id": "ecuaciones-diferenciales-ordinarias", "nombre": "Ecuaciones Diferenciales Ordinarias", "prerequisitos": ["calculo-diferencial-e-integral","algebra-lineal"] },
+          { "id": "programacion-orientada-a-objetos", "nombre": "Programación Orientada a Objetos", "prerequisitos": ["fundamentos-de-programacion"] },
+          { "id": "fundamentos-de-circuitos-electricos", "nombre": "Fundamentos de Circuitos Eléctricos", "prerequisitos": ["calculo-diferencial-e-integral", "algebra-lineal"] }
         ]
       },
       {
         "numero": 3,
         "materias": [
+          { "id": "electronica-fundamental", "nombre": "Electrónica Fundamental", "prerequisitos": ["fundamentos-de-circuitos-electricos"] },
+          { "id": "fundamentos-de-electromagnetismo", "nombre": "Fundamentos de Electromagnetismo", "prerequisitos": ["ecuaciones-diferenciales-ordinarias", "fisica-1"] },
+          { "id": "estadistica", "nombre": "Estadística", "prerequisitos": ["ecuaciones-diferenciales-ordinarias","calculo-vectorial"] },
           { "id": "metodos-numericos", "nombre": "Métodos Numéricos", "prerequisitos": ["calculo-vectorial","ecuaciones-diferenciales-ordinarias"] },
-          { "id": "fisica-ii", "nombre": "Física II", "prerequisitos": ["fisica-i"] },
-          { "id": "estadistica", "nombre": "Estadística", "prerequisitos": ["fisica-i","ecuaciones-diferenciales-ordinarias"] },
-          { "id": "dibujo-tecnico-y-planos", "nombre": "Dibujo Técnico y Planos", "prerequisitos": ["estructuras-isostaticas","ecuaciones-diferenciales-ordinarias","fundamentos-de-programacion"] },
-          { "id": "introduccion-al-movimiento-de-estructuras", "nombre": "Introducción al Movimiento de Estructuras", "prerequisitos": ["estructuras-isostaticas","ecuaciones-diferenciales-ordinarias","fisica-i"] },
-          { "id": "realidad-nacional-y-geopolitica", "nombre": "Realidad Nacional y Geopolítica", "prerequisitos": [] }
+          { "id": "metrologia-electrica-y-electronica", "nombre": "Metrología Eléctrica y Electrónica", "prerequisitos": ["fundamentos-de-circuitos-electricos"] },
+          { "id": "senales-y-sistemas", "nombre": "Señales y Sistemas", "prerequisitos": ["fundamentos-de-circuitos-electricos","ecuaciones-diferenciales-ordinarias"] }
         ]
       },
       {
         "numero": 4,
         "materias": [
-          { "id": "hidrologia", "nombre": "Hidrología", "prerequisitos": ["estadistica"] },
-          { "id": "analisis-estructural", "nombre": "Análisis Estructural", "prerequisitos": ["introduccion-al-movimiento-de-estructuras", "fisica-ii","metodos-numericos"] },
-          { "id": "resistencia-de-materiales", "nombre": "Resistencia de Materiales", "prerequisitos": ["estructuras-isostaticas", "dibujo-tecnico-y-planos"] },
-          { "id": "topografia", "nombre": "Topografía", "prerequisitos": ["dibujo-tecnico-y-planos", "estadistica"] },
-          { "id": "mecanica-de-suelos-i", "nombre": "Mecánica de Suelos I", "prerequisitos": ["dibujo-tecnico-y-planos","fisica-ii"] }
+          { "id": "analisis-de-circuitos-electricos", "nombre": "Análisis de Circuitos Eléctricos", "prerequisitos": ["fundamentos-de-circuitos-electricos", "metodos-numericos"] },
+          { "id": "propagacion-de-ondas-electromagneticas", "nombre": "Propagación de Ondas Electromagnéticas", "prerequisitos": ["fundamentos-de-electromagnetismo"] },
+          { "id": "circuitos-y-sistemas-digitales", "nombre": "Circuitos y Sistemas Digitales", "prerequisitos": ["fundamentos-de-circuitos-electricos", "fundamentos-de-programacion"] },
+          { "id": "instrumentacion-y-sensores", "nombre": "Instrumentación y Sensores", "prerequisitos": ["metrologia-electrica-y-electronica", "electronica-fundamental"] },
+          { "id": "procesos-estocasticos", "nombre": "Procesos Estocásticos", "prerequisitos": ["senales-y-sistemas", "estadistica"] },
+          { "id": "procesamiento-digital-de-senales", "nombre": "Procesamiento Digital de Señales", "prerequisitos": ["senales-y-sistemas", "estadistica"] }
         ]
       },
       {
         "numero": 5,
         "materias": [
-          { "id": "mecanica-de-fluidos", "nombre": "Mecánica de Fluidos", "prerequisitos": ["hidrologia", "topografia"] },
-          { "id": "analisis-matricial", "nombre": "Análisis Matricial", "prerequisitos": ["analisis-estructural", "resistencia-de-materiales"] },
-          { "id": "mecanica-de-suelos-ii", "nombre": "Mecánica de Suelos II", "prerequisitos": ["mecanica-de-suelos-i", "biologia"] },
-          { "id": "ingenieria-vial-i", "nombre": "Ingeniería Vial I", "prerequisitos": ["topografia", "mecanica-de-suelos-i"] },
-          { "id": "materiales-de-la-construccion", "nombre": "Materiales de la Construcción", "prerequisitos": ["resistencia-de-materiales", "mecanica-de-suelos-i"] },
-          { "id": "evaluacion-de-impactos-ambientales", "nombre": "Evaluación de Impactos Ambientales", "prerequisitos": ["hidrologia", "quimica","mecanica-de-suelos-i"] }
+          { "id": "teoria-de-antenas", "nombre": "Teoría de Antenas", "prerequisitos": ["propagacion-de-ondas-electromagneticas"] },
+          { "id": "electronica-aplicada", "nombre": "Electrónica Aplicada", "prerequisitos": ["electronica-fundamental"] },
+          { "id": "sistemas-basados-en-microcontrolador", "nombre": "Sistemas Basados en Microcontrolador", "prerequisitos": ["circuitos-y-sistemas-digitales","programacion-orientada-a-objetos"] },
+          { "id": "sistemas-de-comunicaciones", "nombre": "Sistemas de Comunicaciones", "prerequisitos": ["procesos-estocasticos", "procesamiento-digital-de-senales"] },
+          { "id": "redes-de-comunicaciones", "nombre": "Redes de Comunicaciones", "prerequisitos": ["circuitos-y-sistemas-digitales","instrumentacion-y-sensores"] },
+          { "id": "liderazgo", "nombre": "Liderazgo", "prerequisitos": ["metodologia-de-la-investigacion"] }
         ]
       },
       {
         "numero": 6,
         "materias": [
-          { "id": "hidraulica-i", "nombre": "Hidráulica I", "prerequisitos": ["mecanica-de-fluidos"] },
-          { "id": "hormigon-armado", "nombre": "Hormigón Armado", "prerequisitos": ["analisis-matricial", "materiales-de-la-construccion"] },
-          { "id": "analisis-sismico", "nombre": "Análisis Sísmico", "prerequisitos": ["analisis-matricial", "materiales-de-la-construccion"] },
-          { "id": "tecnicas-de-la-construccion", "nombre": "Técnicas de la Construcción", "prerequisitos": ["materiales-de-la-construccion", "mecanica-de-fluidos","evaluacion-de-impactos-ambientales"] },
-          { "id": "ingenieria-vial-ii", "nombre": "Ingeniería Vial II", "prerequisitos": ["mecanica-de-suelos-ii", "ingenieria-vial-i"] },
-          { "id": "gestion-y-emprendimiento", "nombre": "Gestión y Emprendimiento", "prerequisitos": ["realidad-nacional-y-geopolitica"] }
+          { "id": "sistemas-de-radiofrecuencia", "nombre": "Sistemas de Radiofrecuencia", "prerequisitos": ["teoria-de-antenas", "sistemas-de-comunicaciones","analisis-de-circuitos-electricos"] },
+          { "id": "tecnologias-de-conectividad", "nombre": "Tecnologías de Conectividad", "prerequisitos": ["redes-de-comunicaciones","sistemas-de-comunicaciones"] },
+          { "id": "teoria-de-la-informacion-y-codificacion", "nombre": "Teoría de la Información y Codificación", "prerequisitos": ["sistemas-de-comunicaciones"] },
+          { "id": "comunicacion-de-datos", "nombre": "Comunicación de Datos", "prerequisitos": ["redes-de-comunicaciones"] },
+          { "id": "regulacion-de-las-telecomunicaciones", "nombre": "Regulación de las Telecomunicaciones", "prerequisitos": ["sistemas-de-comunicaciones"] },
+          { "id": "realidad-nacional-y-geopolitica", "nombre": "Realidad Nacional y Geopolítica", "prerequisitos": ["liderazgo"] }
         ]
       },
       {
         "numero": 7,
         "materias": [
-          { "id": "abastecimiento-de-agua-y-alcantarillado", "nombre": "Abastecimiento de Agua y Alcantarillado", "prerequisitos": ["hidraulica-i","ingenieria-vial-ii"] },
-          { "id": "hidraulica-ii", "nombre": "Hidráulica II", "prerequisitos": ["hidraulica-i","ingenieria-vial-ii"] },
-          { "id": "organizacion-de-obras", "nombre": "Organización de Obras", "prerequisitos": ["tecnicas-de-la-construccion","hidraulica-i","hormigon-armado"] },
-          { "id": "cimentaciones-y-obras-civiles", "nombre": "Cimentaciones y Obras Civiles", "prerequisitos": ["hormigon-armado","mecanica-de-suelos-ii", "analisis-sismico"] },
-          { "id": "pavimentos", "nombre": "Pavimentos", "prerequisitos": ["ingenieria-vial-ii"] }
+          { "id": "sistemas-de-radiocomunicaciones", "nombre": "Sistemas de Radiocomunicaciones", "prerequisitos": ["tecnologias-de-conectividad", "sistemas-de-radiofrecuencia"] },
+          { "id": "ingenieria-de-microondas", "nombre": "Ingeniería de Microondas", "prerequisitos": ["sistemas-de-radiofrecuencia"] },
+          { "id": "introduccion-al-aprendizaje-automatico", "nombre": "Introducción al Aprendizaje Automático", "prerequisitos": ["teoria-de-la-informacion-y-codificacion"] },
+          { "id": "comunicacion-digital", "nombre": "Comunicación Digital", "prerequisitos": ["teoria-de-la-informacion-y-codificacion", "comunicacion-de-datos"] },
+          { "id": "infraestructura-de-telecomunicaciones", "nombre": "Infraestructura de Telecomunicaciones", "prerequisitos": ["regulacion-de-las-telecomunicaciones","electronica-aplicada"] },
+          { "id": "matematica-financiera", "nombre": "Matemática Financiera para Ingeniería", "prerequisitos": ["estadistica"] }
         ]
       },
       {
         "numero": 8,
         "materias": [
-          { "id": "tratamiento-de-aguas", "nombre": "Tratamiento de Aguas", "prerequisitos": ["abastecimiento-de-agua-y-alcantarillado","hidraulica-ii"] },
-          { "id": "marco-regulatorio-de-la-construccion-y-fiscalizacion-de-obras", "nombre": "Marco Regulatorio de la Construcción y Fiscalización de Obras", "prerequisitos": ["organizacion-de-obras","pavimentos","abastecimiento-de-agua-y-alcantarillado"] },
-          { "id": "estructuras-de-acero-y-madera", "nombre": "Estructuras de Acero y Madera", "prerequisitos": ["cimentaciones-y-obras-civiles"] },
-          { "id": "instalaciones-en-edificios-inteligentes", "nombre": "Instalaciones en Edificios Inteligentes", "prerequisitos": ["abastecimiento-de-agua-y-alcantarillado", "hidraulica-ii"] },
-          { "id": "ingenieria-de-trafico", "nombre": "Ingeniería de Tráfico", "prerequisitos": ["pavimentos"] },
-          { "id": "MIC - PI Profesionalizante", "nombre": "MIC - PI Profesionalizante", "prerequisitos": ["abastecimiento-de-agua-y-alcantarillado","hidraulica-ii","organizacion-de-obras","cimentaciones-y-obras-civiles","pavimentos"] }
+          { "id": "soc-para-telecomunicaciones", "nombre": "SoC para Telecomunicaciones", "prerequisitos": ["sistemas-de-radiocomunicaciones","sistemas-basados-en-microcontrolador"] },
+          { "id": "sistemas-de-comunicaciones-opticas", "nombre": "Sistemas de Comunicaciones Ópticas", "prerequisitos": ["sistemas-de-radiocomunicaciones","ingenieria-de-microondas"] },
+          { "id": "aplicaciones-para-radiodifusion-y-television-digital-terrestre", "nombre": "Aplicaciones para Radiodifusión y Televisión Digital Terrestre", "prerequisitos": ["comunicacion-digital", "infraestructura-de-telecomunicaciones"] },
+          { "id": "comunicaciones-inalambricas", "nombre": "Comunicaciones Inalámbricas", "prerequisitos": ["comunicacion-digital","introduccion-al-aprendizaje-automatico"] },
+          { "id": "gestion-y-emprendimiento", "nombre": "Gestión y Emprendimiento", "prerequisitos": ["realidad-nacional-y-geopolitica"] }
+        ]
+      },
+      {
+        "numero": 9,
+        "materias": [
+          { "id": "sistemas-de-telecomunicaciones-para-la-seguridad-y-defensa", "nombre": "Sistemas de Telecomunicaciones para la Seguridad y Defensa", "prerequisitos": ["soc-para-telecomunicaciones", "comunicaciones-inalambricas"] },
+          { "id": "redes-de-nueva-generacion", "nombre": "Redes de Nueva Generación", "prerequisitos": ["comunicaciones-inalambricas","sistemas-de-comunicaciones-opticas"] },
+          { "id": "gestion-de-redes-de-telecomunicaciones", "nombre": "Gestión de Redes de Telecomunicaciones", "prerequisitos": ["sistemas-de-comunicaciones-opticas", "gestion-y-emprendimiento"] },
+          { "id": "gestion-de-proyectos-de-telecomunicaciones", "nombre": "Gestión de Proyectos de Telecomunicaciones", "prerequisitos": ["aplicaciones-para-radiodifusion-y-television-digital-terrestre","matematica-financiera"] },
+          { "id": "trabajo-de-integracion-curricular", "nombre": "MIC - PI Profesionalizante", "prerequisitos": ["soc-para-telecomunicaciones","sistemas-de-comunicaciones-opticas","comunicaciones-inalambricas","aplicaciones-para-radiodifusion-y-television-digital-terrestre","gestion-y-emprendimiento"] }
         ]
       }
     ]
