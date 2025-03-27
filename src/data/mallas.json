@@ -85,7 +85,8 @@
             { "id": "arquitectura-de-software", "nombre": "Arquitectura de Software", "prerequisitos": ["aplicaciones-distribuidas","desarrollo-de-software-seguro"] },
             { "id": "desarrollo-de-software-aplicado-al-dominio-de-la-interculturalidad", "nombre": "Desarrollo de Software aplicado al Dominio de la Interculturalidad", "prerequisitos": ["ingenieria-de-la-seguridad-del-software"] },
             { "id": "gestion-y-emprendimiento", "nombre": "Gestión y Emprendimiento", "prerequisitos": ["aseguramiento-de-la-calidad-de-software"] },
-            { "id": "gestion-de-proyectos-de-software", "nombre": "Gestión de Proyectos de Software", "prerequisitos": ["analisis-y-diseno-de-software"] }
+            { "id": "gestion-de-proyectos-de-software", "nombre": "Gestión de Proyectos de Software", "prerequisitos": ["analisis-y-diseno-de-software"] },
+            { "id": "MIC - PI Profesionalizante", "nombre": "MIC - PI Profesionalizante", "prerequisitos": ["aseguramiento-de-la-calidad-de-software","ingenieria-de-la-seguridad-del-software","desarrollo-de-video-juegos","desarrollo-de-software-seguro","aplicaciones-distribuidas"] }
           ]
         }
       ]
@@ -282,5 +283,94 @@
         ]
       }
     ]
-  }
+  },
+  "tecnologias-de-la-informacion": {
+    "nombre": "Ingeniería en Tecnologías de la Información",
+    "logo": "itin",
+    "semestres": [
+        {
+          "numero": 1,
+          "materias": [
+            { "id": "algebra-lineal", "nombre": "Álgebra lineal", "prerequisitos": [] },
+            { "id": "fundamentos-programacion", "nombre": "Fundamentos de programación", "prerequisitos": [] },
+            { "id": "calculo-diferencial-integral", "nombre": "Cálculo diferencial e integral", "prerequisitos": [] },
+            { "id": "quimica-1", "nombre": "Química I", "prerequisitos": [] },
+            { "id": "cultura-ambiental", "nombre": "Cultura Ambiental", "prerequisitos": [] },
+            { "id": "metodologia-de-la-investigacion", "nombre": "Metodología de la investigación", "prerequisitos": [] }
+          ]
+        },
+        {
+          "numero": 2,
+          "materias": [
+            { "id": "calculo-vectorial", "nombre": "Cálculo vectorial", "prerequisitos": ["algebra-lineal"] },
+            { "id": "fisica-1", "nombre": "Física I", "prerequisitos": ["calculo-diferencial-integral"] },
+            { "id": "ecuaciones-diferenciales-ordinarias", "nombre": "Ecuaciones Diferenciales Ordinarias", "prerequisitos": ["calculo-diferencial-integral"] },
+            { "id": "programacion-orientada-a-objetos", "nombre": "Programación Orientada a Objetos", "prerequisitos": ["fundamentos-programacion"] },
+            { "id": "computacion-digital", "nombre": "Computación Digital", "prerequisitos": [] }
+          ]
+        },
+        {
+          "numero": 3,
+          "materias": [
+            { "id": "metodos-numericos", "nombre": "Métodos numéricos", "prerequisitos": ["calculo-vectorial"] },
+            { "id": "metodologias-desarrollo-software", "nombre": "Metodologías de Desarrollo Software", "prerequisitos": ["programacion-orientada-a-objetos"] },
+            { "id": "estadistica", "nombre": "Estadística", "prerequisitos": ["calculo-vectorial"] },
+            { "id": "sistemas-operativos", "nombre": "Sistemas Operativos", "prerequisitos": ["computacion-digital"] },
+            { "id": "estructura-de-datos", "nombre": "Estructura de Datos", "prerequisitos": ["programacion-orientada-a-objetos"] },
+            { "id": "modelos-discretos", "nombre": "Modelos Discretos para Ingeniería", "prerequisitos": ["ecuaciones-diferenciales-ordinarias"] }
+          ]
+        },
+        {
+          "numero": 4,
+          "materias": [
+            { "id": "administracion-mantenimiento", "nombre": "Administración y Mantenimiento de Sistemas", "prerequisitos": ["sistemas-operativos"] },
+            { "id": "interfaces-y-multimedia", "nombre": "Interfaces y Multimedia", "prerequisitos": ["metodologias-desarrollo-software"] },
+            { "id": "fundamentos-sistemas-web", "nombre": "Fundamentos de Sistemas WEB", "prerequisitos": ["metodologias-desarrollo-software"] },
+            { "id": "redes-comunicaciones", "nombre": "Redes de Comunicaciones", "prerequisitos": ["sistemas-operativos"] },
+            { "id": "liderazgo", "nombre": "Liderazgo", "prerequisitos": ["metodologia-de-la-investigacion"] },
+            { "id": "sistemas-bases-datos", "nombre": "Sistemas de Bases de Datos", "prerequisitos": ["modelos-discretos","estructura-de-datos"] }
+          ]
+        },
+        {
+          "numero": 5,
+          "materias": [
+            { "id": "gestion-bases-datos", "nombre": "Gestión de Base de Datos", "prerequisitos": ["sistemas-bases-datos"] },
+            { "id": "aplicacion-sistemas-operativos", "nombre": "Aplicación de Sistemas Operativos", "prerequisitos": ["redes-comunicaciones"] },
+            { "id": "internetworking", "nombre": "Internetworking", "prerequisitos": ["redes-comunicaciones"] },
+            { "id": "aplicacion-tecnologias-web", "nombre": "Aplicación de Tecnologías WEB", "prerequisitos": ["fundamentos-sistemas-web","interfaces-y-multimedia"] },
+            { "id": "realidad-nacional-y-geopolitica", "nombre": "Realidad Nacional y Geopolitica", "prerequisitos": ["liderazgo"] }
+          ]
+        },
+        {
+          "numero": 6,
+          "materias": [
+            { "id": "inteligencia-artificial", "nombre": "Inteligencia Artificial", "prerequisitos": ["sistemas-bases-datos","metodos-numericos"] },
+            { "id": "modelado-avanzado-de-bases-de-datos", "nombre": "Modelado Avanzado de Base de Datos", "prerequisitos": ["gestion-bases-datos"] },
+            { "id": "desarrollo-web", "nombre": "Desarrollo Web para Integración de Tecnologías", "prerequisitos": ["aplicacion-tecnologias-web"] },
+            { "id": "lectura-escritura", "nombre": "Lectura y Escritura de Textos Académicos", "prerequisitos": ["metodologia-de-la-investigacion"] },
+            { "id": "programacion-integrativa", "nombre": "Programación Integrativa de componentes WEB", "prerequisitos": ["aplicacion-tecnologias-web"] }
+          ]
+        },
+        {
+          "numero": 7,
+          "materias": [
+            { "id": "programacion-avanzada", "nombre": "Programación Avanzada", "prerequisitos": ["programacion-integrativa"] },
+            { "id": "mineria-datos", "nombre": "Minería de Datos", "prerequisitos": ["estadistica","inteligencia-artificial"] },
+            { "id": "seguridad-informatica", "nombre": "Seguridad Informática", "prerequisitos": ["inteligencia-artificial","internetworking"] },
+            { "id": "diseno-evaluacion-proyectos", "nombre": "Diseño y Evaluación de Proyectos de TI", "prerequisitos": ["lectura-escritura"] },
+             { "id": "aplicaciones-distribuidas", "nombre": "Aplicaciones Distribuidas", "prerequisitos": ["programacion-integrativa","modelado-avanzado-de-bases-de-datos"] }
+          ]
+        },
+        {
+          "numero": 8,
+          "materias": [
+            { "id": "gestion-seguridad-informatica", "nombre": "Gestión de la Seguridad Informática", "prerequisitos": ["seguridad-informatica"] },
+            { "id": "arquitectura-software", "nombre": "Arquitectura de Software", "prerequisitos": ["aplicaciones-distribuidas"] },
+            { "id": "gestion-emprendimiento", "nombre": "Gestión y Emprendimiento", "prerequisitos": ["realidad-nacional-y-geopolitica"] },
+            { "id": "tecnologias-emergentes", "nombre": "Tecnologías Emergentes", "prerequisitos": ["seguridad-informatica"] },
+            { "id": "MIC - PI Profesionalizante", "nombre": "MIC - PI Profesionalizante", "prerequisitos": ["seguridad-informatica","programacion-avanzada","mineria-datos","diseno-evaluacion-proyectos","aplicaciones-distribuidas"] }
+          ]
+        }
+      ]
+    }
 }
