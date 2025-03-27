@@ -18,6 +18,7 @@ import turismoLogo from "../assets/img/turismo.png";
 import educacionInicialLogo from "../assets/img/educacion_inicial.png";
 import mecanicaLogo from "../assets/img/mecanica.png";
 import mecatronicaLogo  from "../assets/img/mecatronica.png";
+import telecomunicacionesLogo from "../assets/img/telecomunicaciones.png";
 
 // Importar el CSS modular
 import styles from './Home.module.css';
@@ -41,6 +42,7 @@ export default function Home() {
     "educacion_inicial": educacionInicialLogo,
     "mecanica": mecanicaLogo,
     "mecatronica": mecatronicaLogo,
+    "telecomunicaciones": telecomunicacionesLogo,
   };
 
   useEffect(() => {

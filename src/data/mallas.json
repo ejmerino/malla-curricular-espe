@@ -295,6 +295,198 @@
       }
     ]
   },
+  "mecatronica": {
+    "nombre": "Mecatrónica",
+    "logo": "mecatronica",
+    "semestres": [
+      {
+        "numero": 1,
+        "materias": [
+          { "id": "calculo-diferencial-e-integral", "nombre": "Cálculo Diferencial e Integral", "prerequisitos": [] },
+          { "id": "algebra-lineal", "nombre": "Álgebra Lineal", "prerequisitos": [] },
+          { "id": "quimica-1", "nombre": "Química I", "prerequisitos": [] },
+          { "id": "fundamentos-de-programacion", "nombre": "Fundamentos de Programación", "prerequisitos": [] },
+          { "id": "metodologia-de-la-investigacion", "nombre": "Metodología de la Investigación Científica", "prerequisitos": [] },
+          { "id": "biologia", "nombre": "Biología", "prerequisitos": [] }
+        ]
+      },
+      {
+        "numero": 2,
+        "materias": [
+          { "id": "calculo-vectorial", "nombre": "Cálculo Vectorial", "prerequisitos": ["calculo-diferencial-e-integral", "algebra-lineal"] },
+          { "id": "fisica-1", "nombre": "Física I", "prerequisitos": ["calculo-diferencial-e-integral","quimica-1"] },
+          { "id": "ecuaciones-diferenciales-ordinarias", "nombre": "Ecuaciones Diferenciales Ordinarias", "prerequisitos": ["calculo-diferencial-e-integral","algebra-lineal"] },
+          { "id": "fundamentos-de-circuitos-electricos", "nombre": "Fundamentos de Circuitos Eléctricos", "prerequisitos": ["calculo-diferencial-e-integral","algebra-lineal"] },
+          { "id": "bases-fundamentales-de-la-ingenieria-mct", "nombre": "Bases Fundamentales de la Ingeniería MCT", "prerequisitos": ["metodologia-de-la-investigacion"] },
+          { "id": "liderazgo", "nombre": "Liderazgo", "prerequisitos": ["metodologia-de-la-investigacion"] }
+        ]
+      },
+      {
+        "numero": 3,
+        "materias": [
+          { "id": "metodos-numericos", "nombre": "Métodos Numéricos", "prerequisitos": ["calculo-vectorial","fisica-1"] },
+          { "id": "matematica-superior", "nombre": "Matemática Superior", "prerequisitos": ["ecuaciones-diferenciales-ordinarias","calculo-vectorial"] },
+          { "id": "estadistica", "nombre": "Estadística", "prerequisitos": ["calculo-vectorial"] },
+          { "id": "tecnologias-de-soft-aplicada-a-sistemas-mct", "nombre": "Tecnologías de Soft Aplicada a Sistemas MCT", "prerequisitos": ["ecuaciones-diferenciales-ordinarias", "fundamentos-de-programacion"] },
+          { "id": "electronica-fundamental", "nombre": "Electrónica Fundamental", "prerequisitos": ["fundamentos-de-circuitos-electricos"] },
+          { "id": "analisis-de-circuitos-electricos", "nombre": "Análisis de Circuitos Eléctricos", "prerequisitos": ["fundamentos-de-circuitos-electricos","ecuaciones-diferenciales-ordinarias","bases-fundamentales-de-la-ingenieria-mct"] }
+        ]
+      },
+      {
+        "numero": 4,
+        "materias": [
+          { "id": "dibujo-mct-asistido-por-computador", "nombre": "Dibujo MCT Asistido por Computador", "prerequisitos": ["fundamentos-de-programacion"] },
+          { "id": "sistemas-digitales", "nombre": "Sistemas Digitales", "prerequisitos": ["fundamentos-de-circuitos-electricos"] },
+          { "id": "mecatronica-basica", "nombre": "Mecatrónica Básica", "prerequisitos": ["analisis-de-circuitos-electricos","electronica-fundamental","tecnologias-de-soft-aplicada-a-sistemas-mct"] },
+          { "id": "ciencias-de-los-materiales", "nombre": "Ciencias de los Materiales", "prerequisitos": ["quimica-1","biologia"] },
+          { "id": "estatica", "nombre": "Estática", "prerequisitos": ["calculo-diferencial-e-integral","fisica-1", "calculo-vectorial"] },
+          { "id": "maquinas-electricas", "nombre": "Máquinas Eléctricas", "prerequisitos": ["analisis-de-circuitos-electricos", "tecnologias-de-soft-aplicada-a-sistemas-mct"] }
+        ]
+      },
+      {
+        "numero": 5,
+        "materias": [
+          { "id": "electronica-de-potencia", "nombre": "Electrónica de Potencia", "prerequisitos": ["analisis-de-circuitos-electricos", "mecatronica-basica"] },
+          { "id": "dinamica", "nombre": "Dinámica", "prerequisitos": ["estatica"] },
+          { "id": "instrumentacion-aplicada-a-mecatronica", "nombre": "Instrumentación Aplicada a Mecatrónica", "prerequisitos": ["mecatronica-basica","sistemas-digitales"] },
+          { "id": "mecanica-de-materiales", "nombre": "Mecánica de Materiales", "prerequisitos": ["estatica"] },
+          { "id": "sistemas-embebidos-mct", "nombre": "Sistemas Embebidos MCT", "prerequisitos": ["mecatronica-basica","sistemas-digitales"] },
+          { "id": "termofluidos", "nombre": "Termofluidos", "prerequisitos": ["ecuaciones-diferenciales-ordinarias","matematica-superior"] }
+        ]
+      },
+      {
+        "numero": 6,
+        "materias": [
+          { "id": "sistemas-de-control-automatico", "nombre": "Sistemas de Control Automático", "prerequisitos": ["matematica-superior"] },
+          { "id": "motores-oleoneumaticos", "nombre": "Motores Oleoneumáticos", "prerequisitos": ["instrumentacion-aplicada-a-mecatronica","termofluidos"] },
+          { "id": "mecanismos", "nombre": "Mecanismos", "prerequisitos": ["dinamica"] },
+          { "id": "introduccion-a-los-sistemas-ciberfisicos", "nombre": "Introducción a los Sistemas Ciberfísicos", "prerequisitos": ["instrumentacion-aplicada-a-mecatronica", "sistemas-embebidos-mct"] },
+          { "id": "tecnologia-mecanica", "nombre": "Tecnología Mecánica", "prerequisitos": ["ciencias-de-los-materiales","dibujo-mct-asistido-por-computador"] },
+          { "id": "termofluidos-aplicados", "nombre": "Termofluidos Aplicados", "prerequisitos": ["termofluidos"] }
+        ]
+      },
+      {
+        "numero": 7,
+        "materias": [
+          { "id": "control-industrial", "nombre": "Control Industrial", "prerequisitos": ["electronica-de-potencia","sistemas-de-control-automatico"] },
+          { "id": "control-discreto", "nombre": "Control Discreto", "prerequisitos": ["sistemas-de-control-automatico"] },
+          { "id": "diseno-de-elementos-de-maquinas", "nombre": "Diseño de Elementos de Máquinas", "prerequisitos": ["mecanismos"] },
+          { "id": "manufactura-asistida-por-computador", "nombre": "Manufactura Asistida por Computador", "prerequisitos": ["tecnologia-mecanica"] },
+          { "id": "realidad-nacional-y-geopolitica", "nombre": "Realidad Nacional y Geopolítica", "prerequisitos": ["liderazgo"] },
+          { "id": "ingenieria-asistida-por-computador", "nombre": "Ingeniería Asistida por Computador", "prerequisitos": ["mecanica-de-materiales","mecanismos","termofluidos-aplicados"] }
+        ]
+      },
+      {
+        "numero": 8,
+        "materias": [
+          { "id": "diseno-mecatronico", "nombre": "Diseño Mecatrónico", "prerequisitos": ["diseno-de-elementos-de-maquinas", "ingenieria-asistida-por-computador","control-industrial"] },
+          { "id": "produccion-industrial-y-control-de-calidad", "nombre": "Producción Industrial y Control de Calidad", "prerequisitos": ["diseno-de-elementos-de-maquinas", "manufactura-asistida-por-computador"] },
+          { "id": "automatización-industrial-mecatrónica", "nombre": "Automatización Industrial Mecatrónica", "prerequisitos": ["control-industrial", "control-discreto", "diseno-de-elementos-de-maquinas"] },
+          { "id": "ingenieria-en-mantenimiento", "nombre": "Ingeniería en Mantenimiento", "prerequisitos": ["manufactura-asistida-por-computador"] },
+          { "id": "plcs-y-redes-industriales", "nombre": "PLCs y Redes Industriales", "prerequisitos": ["control-industrial"] },
+          { "id": "gestion-y-emprendimiento", "nombre": "Gestión y Emprendimiento", "prerequisitos": ["realidad-nacional-y-geopolitica"] }
+        ]
+      },
+      {
+        "numero": 9,
+        "materias": [
+          { "id": "robotica-industrial", "nombre": "Robótica Industrial", "prerequisitos": ["ingenieria-en-mantenimiento", "automatización-industrial-mecatrónica", "plcs-y-redes-industriales"] },
+          { "id": "trabajo-de-integracion-curricular", "nombre": "MIC - PI Profesionalizante", "prerequisitos": ["diseno-mecatronico", "produccion-industrial-y-control-de-calidad", "automatización-industrial-mecatrónica", "plcs-y-redes-industriales","gestion-y-emprendimiento"] }
+        ]
+      }
+    ]
+  },
+  "telecomunicaciones": {
+    "nombre": "Telecomunicaciones",
+    "logo": "telecomunicaciones",
+    "semestres": [
+      {
+        "numero": 1,
+        "materias": [
+          { "id": "algebra-lineal", "nombre": "Álgebra Lineal", "prerequisitos": [] },
+          { "id": "fundamentos-de-programacion", "nombre": "Fundamentos de Programación", "prerequisitos": [] },
+          { "id": "calculo-diferencial-e-integral", "nombre": "Cálculo Diferencial e Integral", "prerequisitos": [] },
+          { "id": "quimica", "nombre": "Química I", "prerequisitos": [] },
+          { "id": "biologia", "nombre": "Biología", "prerequisitos": [] },
+          { "id": "metodologia-de-la-investigacion-cientifica", "nombre": "Metodología de la Investigación Científica", "prerequisitos": [] }
+        ]
+      },
+      {
+        "numero": 2,
+        "materias": [
+          { "id": "calculo-vectorial", "nombre": "Cálculo Vectorial", "prerequisitos": ["algebra-lineal", "calculo-diferencial-e-integral"] },
+          { "id": "fisica-i", "nombre": "Física I", "prerequisitos": ["calculo-diferencial-e-integral"] },
+          { "id": "ecuaciones-diferenciales-ordinarias", "nombre": "Ecuaciones Diferenciales Ordinarias", "prerequisitos": ["algebra-lineal", "calculo-diferencial-e-integral"] },
+          { "id": "estructuras-isostaticas", "nombre": "Estructuras Isostáticas", "prerequisitos": ["calculo-diferencial-e-integral", "algebra-lineal"] },
+          { "id": "liderazgo", "nombre": "Liderazgo", "prerequisitos": ["metodologia-de-la-investigacion-cientifica"] }
+        ]
+      },
+      {
+        "numero": 3,
+        "materias": [
+          { "id": "metodos-numericos", "nombre": "Métodos Numéricos", "prerequisitos": ["calculo-vectorial","ecuaciones-diferenciales-ordinarias"] },
+          { "id": "fisica-ii", "nombre": "Física II", "prerequisitos": ["fisica-i"] },
+          { "id": "estadistica", "nombre": "Estadística", "prerequisitos": ["fisica-i","ecuaciones-diferenciales-ordinarias"] },
+          { "id": "dibujo-tecnico-y-planos", "nombre": "Dibujo Técnico y Planos", "prerequisitos": ["estructuras-isostaticas","ecuaciones-diferenciales-ordinarias","fundamentos-de-programacion"] },
+          { "id": "introduccion-al-movimiento-de-estructuras", "nombre": "Introducción al Movimiento de Estructuras", "prerequisitos": ["estructuras-isostaticas","ecuaciones-diferenciales-ordinarias","fisica-i"] },
+          { "id": "realidad-nacional-y-geopolitica", "nombre": "Realidad Nacional y Geopolítica", "prerequisitos": [] }
+        ]
+      },
+      {
+        "numero": 4,
+        "materias": [
+          { "id": "hidrologia", "nombre": "Hidrología", "prerequisitos": ["estadistica"] },
+          { "id": "analisis-estructural", "nombre": "Análisis Estructural", "prerequisitos": ["introduccion-al-movimiento-de-estructuras", "fisica-ii","metodos-numericos"] },
+          { "id": "resistencia-de-materiales", "nombre": "Resistencia de Materiales", "prerequisitos": ["estructuras-isostaticas", "dibujo-tecnico-y-planos"] },
+          { "id": "topografia", "nombre": "Topografía", "prerequisitos": ["dibujo-tecnico-y-planos", "estadistica"] },
+          { "id": "mecanica-de-suelos-i", "nombre": "Mecánica de Suelos I", "prerequisitos": ["dibujo-tecnico-y-planos","fisica-ii"] }
+        ]
+      },
+      {
+        "numero": 5,
+        "materias": [
+          { "id": "mecanica-de-fluidos", "nombre": "Mecánica de Fluidos", "prerequisitos": ["hidrologia", "topografia"] },
+          { "id": "analisis-matricial", "nombre": "Análisis Matricial", "prerequisitos": ["analisis-estructural", "resistencia-de-materiales"] },
+          { "id": "mecanica-de-suelos-ii", "nombre": "Mecánica de Suelos II", "prerequisitos": ["mecanica-de-suelos-i", "biologia"] },
+          { "id": "ingenieria-vial-i", "nombre": "Ingeniería Vial I", "prerequisitos": ["topografia", "mecanica-de-suelos-i"] },
+          { "id": "materiales-de-la-construccion", "nombre": "Materiales de la Construcción", "prerequisitos": ["resistencia-de-materiales", "mecanica-de-suelos-i"] },
+          { "id": "evaluacion-de-impactos-ambientales", "nombre": "Evaluación de Impactos Ambientales", "prerequisitos": ["hidrologia", "quimica","mecanica-de-suelos-i"] }
+        ]
+      },
+      {
+        "numero": 6,
+        "materias": [
+          { "id": "hidraulica-i", "nombre": "Hidráulica I", "prerequisitos": ["mecanica-de-fluidos"] },
+          { "id": "hormigon-armado", "nombre": "Hormigón Armado", "prerequisitos": ["analisis-matricial", "materiales-de-la-construccion"] },
+          { "id": "analisis-sismico", "nombre": "Análisis Sísmico", "prerequisitos": ["analisis-matricial", "materiales-de-la-construccion"] },
+          { "id": "tecnicas-de-la-construccion", "nombre": "Técnicas de la Construcción", "prerequisitos": ["materiales-de-la-construccion", "mecanica-de-fluidos","evaluacion-de-impactos-ambientales"] },
+          { "id": "ingenieria-vial-ii", "nombre": "Ingeniería Vial II", "prerequisitos": ["mecanica-de-suelos-ii", "ingenieria-vial-i"] },
+          { "id": "gestion-y-emprendimiento", "nombre": "Gestión y Emprendimiento", "prerequisitos": ["realidad-nacional-y-geopolitica"] }
+        ]
+      },
+      {
+        "numero": 7,
+        "materias": [
+          { "id": "abastecimiento-de-agua-y-alcantarillado", "nombre": "Abastecimiento de Agua y Alcantarillado", "prerequisitos": ["hidraulica-i","ingenieria-vial-ii"] },
+          { "id": "hidraulica-ii", "nombre": "Hidráulica II", "prerequisitos": ["hidraulica-i","ingenieria-vial-ii"] },
+          { "id": "organizacion-de-obras", "nombre": "Organización de Obras", "prerequisitos": ["tecnicas-de-la-construccion","hidraulica-i","hormigon-armado"] },
+          { "id": "cimentaciones-y-obras-civiles", "nombre": "Cimentaciones y Obras Civiles", "prerequisitos": ["hormigon-armado","mecanica-de-suelos-ii", "analisis-sismico"] },
+          { "id": "pavimentos", "nombre": "Pavimentos", "prerequisitos": ["ingenieria-vial-ii"] }
+        ]
+      },
+      {
+        "numero": 8,
+        "materias": [
+          { "id": "tratamiento-de-aguas", "nombre": "Tratamiento de Aguas", "prerequisitos": ["abastecimiento-de-agua-y-alcantarillado","hidraulica-ii"] },
+          { "id": "marco-regulatorio-de-la-construccion-y-fiscalizacion-de-obras", "nombre": "Marco Regulatorio de la Construcción y Fiscalización de Obras", "prerequisitos": ["organizacion-de-obras","pavimentos","abastecimiento-de-agua-y-alcantarillado"] },
+          { "id": "estructuras-de-acero-y-madera", "nombre": "Estructuras de Acero y Madera", "prerequisitos": ["cimentaciones-y-obras-civiles"] },
+          { "id": "instalaciones-en-edificios-inteligentes", "nombre": "Instalaciones en Edificios Inteligentes", "prerequisitos": ["abastecimiento-de-agua-y-alcantarillado", "hidraulica-ii"] },
+          { "id": "ingenieria-de-trafico", "nombre": "Ingeniería de Tráfico", "prerequisitos": ["pavimentos"] },
+          { "id": "MIC - PI Profesionalizante", "nombre": "MIC - PI Profesionalizante", "prerequisitos": ["abastecimiento-de-agua-y-alcantarillado","hidraulica-ii","organizacion-de-obras","cimentaciones-y-obras-civiles","pavimentos"] }
+        ]
+      }
+    ]
+  },
   
   "civil": {
     "nombre": "Civil",
@@ -599,7 +791,7 @@
             { "id": "metodos-numericos", "nombre": "Métodos Numéricos", "prerequisitos": ["ecuaciones-diferenciales-ordinarias"] },
             { "id": "fisico-quimica", "nombre": "Físico-Química", "prerequisitos": ["fisica-1", "quimica-2"] },
             { "id": "quimica-analitica", "nombre": "Química Analítica", "prerequisitos": ["quimica-2"] },
-            { "id": "Estadistica", "nombre": "Estadística", "prerequisitos": ["ecuaciones-diferenciales-ordinarias"] },
+            { "id": "estadistica", "nombre": "Estadística", "prerequisitos": ["ecuaciones-diferenciales-ordinarias"] },
             { "id": "biofisica", "nombre": "Biofísica", "prerequisitos": ["fisica-1"] }
           ]
         },
