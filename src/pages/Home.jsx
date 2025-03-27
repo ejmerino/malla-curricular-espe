@@ -10,6 +10,7 @@ import itinLogo from "../assets/img/itin.png";
 import geoespacialLogo from "../assets/img/geoespacial.png";
 import biotecnologiaLogo from "../assets/img/biotecnologia.png";
 import agropecuariaLogo from "../assets/img/agropecuaria.png";
+import administracionDeEmpresasLogo from "../assets/img/administracion-de-empresas.png";
 
 // Importar el CSS modular
 import styles from './Home.module.css';
@@ -25,6 +26,7 @@ export default function Home() {
     "geoespacial": geoespacialLogo,
     "biotecnologia": biotecnologiaLogo,
     "agropecuaria": agropecuariaLogo,
+    "administracion-de-empresas": administracionDeEmpresasLogo,
   };
 
   useEffect(() => {

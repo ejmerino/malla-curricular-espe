@@ -657,5 +657,96 @@
           ]
         }
       ]
+    },
+    "administracion-de-empresas": {
+    "nombre": "Administración de Empresas",
+    "logo": "administracion-de-empresas",
+    "semestres": [
+        {
+          "numero": 1,
+          "materias": [
+            { "id": "calculo-diferencial-e-integral-adm", "nombre": "Cálculo Diferencial e Integral ADM", "prerequisitos": [] },
+            { "id": "matematica-financiera", "nombre": "Matemática Financiera", "prerequisitos": [] },
+            { "id": "contabilidad-1", "nombre": "Contabilidad I", "prerequisitos": [] },
+            { "id": "administracion", "nombre": "Administración", "prerequisitos": [] },
+            { "id": "derecho-laboral-societario-y-mercantil", "nombre": "Derecho Laboral, Societario y Mercantil", "prerequisitos": [] },
+            { "id": "metodologia-de-la-investigacion-cientifica", "nombre": "Metodología de la Investigación Científica", "prerequisitos": [] }
+          ]
+        },
+        {
+          "numero": 2,
+          "materias": [
+            { "id": "estadistica", "nombre": "Estadística", "prerequisitos": ["calculo-diferencial-e-integral-adm"] },
+            { "id": "mercadotecnia", "nombre": "Mercadotecnia", "prerequisitos": ["administracion"] },
+            { "id": "contabilidad-de-costos", "nombre": "Contabilidad de Costos", "prerequisitos": ["contabilidad-1"] },
+            { "id": "procesos", "nombre": "Procesos", "prerequisitos": ["administracion"] },
+            { "id": "programacion-redes-y-bases-de-datos", "nombre": "Programación, redes y bases de datos", "prerequisitos": [] },
+            { "id": "liderazgo", "nombre": "Liderazgo", "prerequisitos": ["administracion"] }
+          ]
+        },
+        {
+          "numero": 3,
+          "materias": [
+            { "id": "herramientas-para-la-toma-de-decisiones-i", "nombre": "Herramientas para la Toma de Decisiones I", "prerequisitos": ["calculo-diferencial-e-integral-adm", "estadistica"] },
+            { "id": "microeconomia", "nombre": "Microeconomía", "prerequisitos": ["calculo-diferencial-e-integral-adm"] },
+            { "id": "finanzas-a-corto-plazo", "nombre": "Finanzas a corto plazo", "prerequisitos": ["contabilidad-de-costos"] },
+            { "id": "teoria-y-estructura-de-la-organizacion", "nombre": "Teoría y Estructura de la Organización", "prerequisitos": ["procesos"] },
+            { "id": "investigacion-de-mercados", "nombre": "Investigación de Mercados", "prerequisitos": ["mercadotecnia", "estadistica"] },
+            { "id": "realidad-nacional-y-geopolitica", "nombre": "Realidad nacional y geopolítica", "prerequisitos": ["liderazgo"] }
+          ]
+        },
+        {
+          "numero": 4,
+          "materias": [
+            { "id": "gestion-del-talento-humano", "nombre": "Gestión del Talento Humano", "prerequisitos": ["teoria-y-estructura-de-la-organizacion"] },
+            { "id": "macroeconomia", "nombre": "Macroeconomía", "prerequisitos": ["microeconomia"] },
+            { "id": "finanzas-a-largo-plazo", "nombre": "Finanzas a Largo Plazo", "prerequisitos": ["finanzas-a-corto-plazo"] },
+            { "id": "gestion-estrategica", "nombre": "Gestión Estratégica", "prerequisitos": ["teoria-y-estructura-de-la-organizacion","investigacion-de-mercados"] },
+            { "id": "sistemas-de-informacion-para-los-negocios", "nombre": "Sistemas de Información para los Negocios", "prerequisitos": ["investigacion-de-mercados","estadistica","teoria-y-estructura-de-la-organizacion"] },
+            { "id": "gestion-tributaria", "nombre": "Gestión Tributaria", "prerequisitos": ["finanzas-a-corto-plazo", "contabilidad-de-costos"] }
+          ]
+        },
+        {
+          "numero": 5,
+          "materias": [
+            { "id": "cultura-y-comportamiento-organizacional", "nombre": "Cultura y Comportamiento Organizacional", "prerequisitos": ["teoria-y-estructura-de-la-organizacion","gestion-del-talento-humano"] },
+            { "id": "metodos-cuantitativos", "nombre": "Métodos Cuantitativos", "prerequisitos": ["estadistica", "calculo-diferencial-e-integral-adm", "sistemas-de-informacion-para-los-negocios"] },
+            { "id": "administracion-presupuestaria", "nombre": "Administración Presupuestaria", "prerequisitos": ["finanzas-a-largo-plazo","gestion-tributaria","macroeconomia"] },
+            { "id": "gestion-de-la-calidad", "nombre": "Gestión de la Calidad", "prerequisitos": ["gestion-estrategica", "procesos", "teoria-y-estructura-de-la-organizacion"] },
+            { "id": "mercadotecnia-estrategica", "nombre": "Mercadotecnia Estratégica", "prerequisitos": ["gestion-estrategica", "investigacion-de-mercados"] },
+            { "id": "negociacion-y-manejo-de-crisis", "nombre": "Negociación y Manejo de Crisis", "prerequisitos": ["gestion-del-talento-humano", "gestion-estrategica"] }
+          ]
+        },
+        {
+          "numero": 6,
+          "materias": [
+            { "id": "gestion-del-conocimiento-aplicado-a-la-administracion-de-empresas", "nombre": "Gestión del Conocimiento Aplicado a la Administración de Empresas", "prerequisitos": ["cultura-y-comportamiento-organizacional","gestion-estrategica"] },
+            { "id": "auditoria-administrativa-y-financiera", "nombre": "Auditoría Administrativa y Financiera", "prerequisitos": ["administracion-presupuestaria"] },
+            { "id": "administracion-de-la-produccion", "nombre": "Administración de la Producción", "prerequisitos": ["procesos", "gestion-de-la-calidad"] },
+            { "id": "gestion-de-servicios", "nombre": "Gestión de Servicios", "prerequisitos": ["mercadotecnia-estrategica","gestion-de-la-calidad"] },
+            { "id": "gestion-y-emprendimiento", "nombre": "Gestión y Emprendimiento", "prerequisitos": ["liderazgo", "realidad-nacional-y-geopolitica"] }
+          ]
+        },
+        {
+          "numero": 7,
+          "materias": [
+            { "id": "gestion-integral-de-riesgos", "nombre": "Gestión Integral de Riesgos", "prerequisitos": ["finanzas-a-largo-plazo"] },
+            { "id": "diseno-y-evaluacion-de-proyectos", "nombre": "Diseño y Evaluación de Proyectos", "prerequisitos": ["finanzas-a-largo-plazo", "investigacion-de-mercados", "gestion-de-la-calidad"] },
+            { "id": "finanzas-corporativas", "nombre": "Finanzas Corporativas", "prerequisitos": ["administracion-presupuestaria"] },
+            { "id": "logistica-empresarial", "nombre": "Logística Empresarial", "prerequisitos": ["gestion-de-la-calidad","administracion-de-la-produccion"] },
+            { "id": "e-business-e-commerce", "nombre": "E-Business/E-Commerce", "prerequisitos": ["mercadotecnia-estrategica"] }
+          ]
+        },
+        {
+          "numero": 8,
+          "materias": [
+            { "id": "gerencia-de-proyectos", "nombre": "Gerencia de Proyectos", "prerequisitos": ["diseno-y-evaluacion-de-proyectos"] },
+            { "id": "aprendizaje-basado-en-problemas-abp", "nombre": "Aprendizaje basado en problemas (ABP)", "prerequisitos": ["gestion-integral-de-riesgos","diseno-y-evaluacion-de-proyectos","finanzas-corporativas","logistica-empresarial","e-business-e-commerce"] },
+            { "id": "planificacion-estrategica-prospectiva", "nombre": "Planificación Estratégica Prospectiva", "prerequisitos": ["gestion-estrategica"] },
+            { "id": "empresa-bioetica-y-responsabilidad-social-empresarial", "nombre": "Empresa, Bioética y Responsabilidad social Empresarial", "prerequisitos": ["finanzas-corporativas","gestion-estrategica"] },
+            { "id": "mic", "nombre": "Trabajo de Integración Curricular o Complexivo", "prerequisitos": ["gestion-integral-de-riesgos","diseno-y-evaluacion-de-proyectos","finanzas-corporativas","logistica-empresarial","e-business-e-commerce"] }
+          ]
+        }
+      ]
     }
 }
