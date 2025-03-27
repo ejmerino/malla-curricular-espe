@@ -14,6 +14,10 @@ import administracionDeEmpresasLogo from "../assets/img/administracion-de-empres
 import comexLogo from "../assets/img/comex.png";
 import contabilidadLogo from "../assets/img/contabilidad-y-auditoria.png";
 import mercadotecniaLogo from "../assets/img/mercadotecnia.png";
+import turismoLogo from "../assets/img/turismo.png";
+import educacionInicialLogo from "../assets/img/educacion_inicial.png";
+import mecanicaLogo from "../assets/img/mecanica.png";
+import mecatronicaLogo  from "../assets/img/mecatronica.png";
 
 // Importar el CSS modular
 import styles from './Home.module.css';
@@ -23,9 +27,9 @@ export default function Home() {
 
   const logoMap = {
     "software": softwareLogo,
+    "itin": itinLogo,
     "electronica-y-automatizacion": electronicaLogo,
     "civil": civilLogo,
-    "itin": itinLogo,
     "geoespacial": geoespacialLogo,
     "biotecnologia": biotecnologiaLogo,
     "agropecuaria": agropecuariaLogo,
@@ -33,6 +37,10 @@ export default function Home() {
     "comex": comexLogo,
     "contabilidad-y-auditoria": contabilidadLogo,
     "mercadotecnia": mercadotecniaLogo,
+    "turismo": turismoLogo,
+    "educacion_inicial": educacionInicialLogo,
+    "mecanica": mecanicaLogo,
+    "mecatronica": mecatronicaLogo,
   };
 
   useEffect(() => {

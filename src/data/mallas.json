@@ -193,6 +193,109 @@
       }
     ]
   },
+  "mecanica": {
+    "nombre": "Mecánica",
+    "logo": "mecanica",
+    "semestres": [
+      {
+        "numero": 1,
+        "materias": [
+          { "id": "algebra-lineal", "nombre": "Álgebra Lineal", "prerequisitos": [] },
+          { "id": "fundamentos-de-programacion", "nombre": "Fundamentos de Programación", "prerequisitos": [] },
+          { "id": "calculo-diferencial-e-integral", "nombre": "Cálculo Diferencial e Integral", "prerequisitos": [] },
+          { "id": "quimica-1", "nombre": "Química I", "prerequisitos": [] },
+          { "id": "biologia", "nombre": "Biología", "prerequisitos": [] },
+          { "id": "metodologia-de-la-investigacion", "nombre": "Metodología de la Investigación", "prerequisitos": [] }
+        ]
+      },
+      {
+        "numero": 2,
+        "materias": [
+          { "id": "calculo-vectorial", "nombre": "Cálculo Vectorial", "prerequisitos": ["algebra-lineal","calculo-diferencial-e-integral"] },
+          { "id": "fisica-1", "nombre": "Física I", "prerequisitos": ["calculo-diferencial-e-integral"] },
+          { "id": "ecuaciones-diferenciales-ordinarias", "nombre": "Ecuaciones Diferenciales Ordinarias", "prerequisitos": ["calculo-diferencial-e-integral","algebra-lineal"] },
+          { "id": "ciencias-de-los-materiales", "nombre": "Ciencias de los Materiales", "prerequisitos": ["quimica-1","biologia"] },
+          { "id": "realidad-nacional-y-geopolitica", "nombre": "Realidad Nacional y Geopolítica", "prerequisitos": ["metodologia-de-la-investigacion"] },
+          { "id": "liderazgo", "nombre": "Liderazgo", "prerequisitos": ["metodologia-de-la-investigacion"] }
+        ]
+      },
+      {
+        "numero": 3,
+        "materias": [
+          { "id": "metodos-numericos", "nombre": "Métodos Numéricos", "prerequisitos": ["calculo-vectorial","fisica-1"] },
+          { "id": "matematica-superior", "nombre": "Matemática Superior", "prerequisitos": ["calculo-vectorial","fisica-1"] },
+          { "id": "estadistica", "nombre": "Estadística", "prerequisitos": ["ecuaciones-diferenciales-ordinarias","calculo-vectorial"] },
+          { "id": "soldadura", "nombre": "Soldadura", "prerequisitos": ["ciencias-de-los-materiales"] },
+          { "id": "dibujo-mecanico-asistido-por-computador", "nombre": "Dibujo Mecánico Asistido por Computador", "prerequisitos": ["calculo-vectorial"] },
+          { "id": "estatica", "nombre": "Estática", "prerequisitos": ["fisica-1","calculo-diferencial-e-integral","calculo-vectorial"] }
+        ]
+      },
+      {
+        "numero": 4,
+        "materias": [
+          { "id": "metrologia", "nombre": "Metrología", "prerequisitos": ["estadistica","dibujo-mecanico-asistido-por-computador"] },
+          { "id": "electrotecnia", "nombre": "Electrotecnia", "prerequisitos": ["metodos-numericos"] },
+          { "id": "termodinamica", "nombre": "Termodinámica", "prerequisitos": ["fisica-1","quimica-1","matematica-superior"] },
+          { "id": "ciencias-de-los-materiales-aplicada", "nombre": "Ciencias de los Materiales Aplicada", "prerequisitos": ["soldadura","ciencias-de-los-materiales"] },
+          { "id": "mecanica-de-materiales", "nombre": "Mecánica de Materiales", "prerequisitos": ["estatica"] },
+          { "id": "dinamica", "nombre": "Dinámica", "prerequisitos": ["estatica"] }
+        ]
+      },
+      {
+        "numero": 5,
+        "materias": [
+          { "id": "procesos-de-maquinado", "nombre": "Procesos de Maquinado", "prerequisitos": ["metrologia","ciencias-de-los-materiales-aplicada"] },
+          { "id": "fundamentos-de-maquinas-electricas", "nombre": "Fundamentos de Máquinas Eléctricas", "prerequisitos": ["electrotecnia"] },
+          { "id": "mecanica-de-fluidos", "nombre": "Mecánica de Fluidos", "prerequisitos": ["termodinamica","metodos-numericos"] },
+          { "id": "termodinamica-aplicada", "nombre": "Termodinámica Aplicada", "prerequisitos": ["termodinamica"] },
+          { "id": "mecanica-de-materiales-aplicada", "nombre": "Mecánica de Materiales Aplicada", "prerequisitos": ["mecanica-de-materiales"] },
+          { "id": "mecanismos-y-vibraciones", "nombre": "Mecanismos y Vibraciones", "prerequisitos": ["dinamica"] }
+        ]
+      },
+      {
+        "numero": 6,
+        "materias": [
+          { "id": "manufactura-asistida-por-computador-para-mecanica", "nombre": "Manufactura Asistida por Computador para Mecánica", "prerequisitos": ["procesos-de-maquinado"] },
+          { "id": "dinamica-de-sistemas", "nombre": "Dinámica de Sistemas", "prerequisitos": ["fundamentos-de-maquinas-electricas"] },
+          { "id": "transferencia-de-calor", "nombre": "Transferencia de Calor", "prerequisitos": ["mecanica-de-fluidos", "termodinamica-aplicada"] },
+          { "id": "procesos-de-conformado-y-fundicion", "nombre": "Procesos de Conformado y Fundición", "prerequisitos": ["mecanica-de-fluidos","termodinamica-aplicada"] },
+          { "id": "diseno-de-elementos-de-maquinas", "nombre": "Diseño de Elementos de Máquinas", "prerequisitos": ["mecanismos-y-vibraciones","mecanica-de-materiales-aplicada"] },
+          { "id": "gestion-y-emprendimiento", "nombre": "Gestión y Emprendimiento", "prerequisitos": ["realidad-nacional-y-geopolitica"] }
+        ]
+      },
+      {
+        "numero": 7,
+        "materias": [
+          { "id": "estructuras-metalicas", "nombre": "Estructuras Metálicas", "prerequisitos": ["soldadura","diseno-de-elementos-de-maquinas"] },
+          { "id": "instrumentacion-industrial-mecanica", "nombre": "Instrumentación Industrial Mecánica", "prerequisitos": ["dinamica-de-sistemas"] },
+          { "id": "sistemas-neumaticos-e-hidraulicos", "nombre": "Sistemas Neumáticos e Hidráulicos", "prerequisitos": ["transferencia-de-calor"] },
+          { "id": "simulacion-numerica", "nombre": "Simulación Numérica", "prerequisitos": ["diseno-de-elementos-de-maquinas","transferencia-de-calor"] },
+          { "id": "diseno-termico", "nombre": "Diseño Térmico", "prerequisitos": ["transferencia-de-calor"] },
+          { "id": "diseno-en-ingenieria-mecanica", "nombre": "Diseño en Ingeniería Mecánica", "prerequisitos": ["diseno-de-elementos-de-maquinas"] }
+        ]
+      },
+      {
+        "numero": 8,
+        "materias": [
+          { "id": "automatizacion-industrial-mecanica", "nombre": "Automatización Industrial Mecánica", "prerequisitos": ["instrumentacion-industrial-mecanica"] },
+          { "id": "maquinas-termicas", "nombre": "Máquinas Térmicas", "prerequisitos": ["diseno-termico","sistemas-neumaticos-e-hidraulicos"] },
+          { "id": "energias-renovables", "nombre": "Energías Renovables", "prerequisitos": ["diseno-termico","sistemas-neumaticos-e-hidraulicos"] },
+          { "id": "seguridad-industrial", "nombre": "Seguridad Industrial", "prerequisitos": ["manufactura-asistida-por-computador-para-mecanica","procesos-de-conformado-y-fundicion"] },
+          { "id": "control-de-calidad-industrial", "nombre": "Control de Calidad Industrial", "prerequisitos": ["manufactura-asistida-por-computador-para-mecanica","diseno-en-ingenieria-mecanica"] },
+          { "id": "ingenieria-de-mantenimiento", "nombre": "Ingeniería de Mantenimiento", "prerequisitos": ["manufactura-asistida-por-computador-para-mecanica","diseno-en-ingenieria-mecanica"] }
+        ]
+      },
+      {
+        "numero": 9,
+        "materias": [
+          { "id": "produccion-industrial", "nombre": "Producción Industrial", "prerequisitos": ["control-de-calidad-industrial","seguridad-industrial","ingenieria-de-mantenimiento"] },
+          { "id": "diseno-y-evaluacion-de-proyectos-industriales", "nombre": "Diseño y Evaluación de Proyectos Industriales", "prerequisitos": ["control-de-calidad-industrial","seguridad-industrial","ingenieria-de-mantenimiento"] },
+          { "id": "mic", "nombre": "MIC - PI Profesionalizante", "prerequisitos": ["automatizacion-industrial-mecanica","maquinas-termicas","energias-renovables","control-de-calidad-industrial","seguridad-industrial","ingenieria-de-mantenimiento"] }
+        ]
+      }
+    ]
+  },
+  
   "civil": {
     "nombre": "Civil",
     "logo": "civil",
@@ -1021,6 +1124,188 @@
           { "id": "responsabilidad-social-empresarial", "nombre": "Responsabilidad Social Empresarial", "prerequisitos": ["mercadotecnia-digital"] },
           { "id": "innovaciones-de-mercadotecnia", "nombre": "Innovaciones de Mercadotecnia", "prerequisitos": ["mercadotecnia-digital","crm"] },
           { "id": "mic", "nombre": "Trabajo de Integración Curricular o Complexivo", "prerequisitos": ["diseno-y-evaluacion-de-proyectos","gestion-de-la-publicidad-relaciones-publicas-y-eventos","gestion-de-ventas","mercadotecnia-digital","crm","gestion-y-emprendimiento"] }
+          ]
+        }
+      ]
+    },
+    "turismo": {
+    "nombre": "Turismo",
+    "logo": "turismo",
+    "semestres": [
+      {
+        "numero": 1,
+        "materias": [
+          { "id": "teoria-del-turismo", "nombre": "Teoría del Turismo", "prerequisitos": [] },
+          { "id": "inventario-turistico", "nombre": "Inventario Turístico - Gira Académica", "prerequisitos": [] },
+          { "id": "tecnicas-de-excursionismo", "nombre": "Técnicas de Excursionismo", "prerequisitos": [] },
+          { "id": "fundamentos-de-programacion", "nombre": "Fundamentos de Programación", "prerequisitos": [] },
+          { "id": "matematica-basica", "nombre": "Matemática Básica", "prerequisitos": [] },
+          { "id": "metodologia-de-la-investigacion", "nombre": "Metodología de la Investigación", "prerequisitos": [] }
+        ]
+      },
+      {
+        "numero": 2,
+        "materias": [
+          { "id": "hospitalidad-y-servicios", "nombre": "Hospitalidad y Servicios", "prerequisitos": ["teoria-del-turismo"] },
+          { "id": "bioentorno-turistico", "nombre": "Bioentorno Turístico - Gira Académica", "prerequisitos": ["tecnicas-de-excursionismo"] },
+          { "id": "turismo-cultural", "nombre": "Turismo Cultural", "prerequisitos": [] },
+          { "id": "estadistica-1", "nombre": "Estadística 1", "prerequisitos": ["matematica-basica"] },
+          { "id": "contabilidad-1", "nombre": "Contabilidad I", "prerequisitos": [] },
+          { "id": "liderazgo", "nombre": "Liderazgo", "prerequisitos": ["metodologia-de-la-investigacion"] }
+        ]
+      },
+      {
+        "numero": 3,
+        "materias": [
+          { "id": "folklore-y-arqueologia", "nombre": "Folklore y Arqueología", "prerequisitos": [] },
+          { "id": "tecnicas-de-guiar-y-animacion-turistica", "nombre": "Técnicas de Guiar y Animación Turística - Gira Académica", "prerequisitos": ["bioentorno-turistico"] },
+          { "id": "patrimonio-turistico-material-e-inmaterial", "nombre": "Patrimonio Turístico Material e Inmaterial", "prerequisitos": ["turismo-cultural"] },
+          { "id": "contabilidad-de-costos", "nombre": "Contabilidad de Costos", "prerequisitos": ["contabilidad-1"] },
+          { "id": "matematica-financiera", "nombre": "Matemática Financiera", "prerequisitos": ["matematica-basica","estadistica-1"] },
+          { "id": "realidad-nacional-y-geopolitica", "nombre": "Realidad Nacional y Geopolítica", "prerequisitos": ["liderazgo"] }
+        ]
+      },
+      {
+        "numero": 4,
+        "materias": [
+          { "id": "mercados-turisticos", "nombre": "Mercados Turísticos", "prerequisitos": ["realidad-nacional-y-geopolitica"] },
+          { "id": "agencia-de-viajes", "nombre": "Agencia de Viajes - Gira Académica", "prerequisitos": [] },
+          { "id": "tecnicas-y-manejo-de-areas-naturales-protegidas", "nombre": "Técnicas y Manejo de Áreas Naturales Protegidas", "prerequisitos": ["tecnicas-de-guiar-y-animacion-turistica"] },
+          { "id": "operacion-aeroportuaria", "nombre": "Operación Aeroportuaria", "prerequisitos": [] },
+          { "id": "turismo-comunitario", "nombre": "Turismo Comunitario", "prerequisitos": ["folklore-y-arqueologia"] },
+          { "id": "administracion-y-talento-humano", "nombre": "Administración y Talento Humano", "prerequisitos": [] }
+        ]
+      },
+      {
+        "numero": 5,
+        "materias": [
+          { "id": "desarrollo-del-turismo-sostenible", "nombre": "Desarrollo del Turismo Sostenible", "prerequisitos": ["tecnicas-y-manejo-de-areas-naturales-protegidas"] },
+          { "id": "operacion-de-tours", "nombre": "Operación de Tours - Gira Académica", "prerequisitos": ["agencia-de-viajes"] },
+          { "id": "planificacion-turistica", "nombre": "Planificación Turística", "prerequisitos": ["turismo-comunitario"] },
+          { "id": "fomento-y-regulacion-a-la-actividad-turistica", "nombre": "Fomento y Regulación a la Actividad Turística", "prerequisitos": ["operacion-aeroportuaria"] },
+          { "id": "recreacion-tiempo-libre-y-ocio", "nombre": "Recreación, Tiempo Libre y Ocio", "prerequisitos": ["tecnicas-de-excursionismo"] },
+          { "id": "economia-para-el-turismo", "nombre": "Economía para el Turismo", "prerequisitos": ["mercados-turisticos"] }
+        ]
+      },
+      {
+        "numero": 6,
+        "materias": [
+          { "id": "turismo-de-negocios-y-eventos", "nombre": "Turismo de Negocios y Eventos", "prerequisitos": ["fomento-y-regulacion-a-la-actividad-turistica"] },
+          { "id": "gestion-territorial-del-turismo", "nombre": "Gestión Territorial del Turismo - Gira Académica", "prerequisitos": ["planificacion-turistica"] },
+          { "id": "seguridad-turistica", "nombre": "Seguridad Turística", "prerequisitos": ["operacion-de-tours"] },
+          { "id": "diseno-de-productos-turisticos", "nombre": "Diseño de Productos Turísticos", "prerequisitos": ["desarrollo-del-turismo-sostenible"] },
+          { "id": "economia-social-y-solidaria", "nombre": "Economía Social y Solidaria", "prerequisitos": ["economia-para-el-turismo"] },
+          { "id": "gestion-y-emprendimiento", "nombre": "Gestión y Emprendimiento", "prerequisitos": ["liderazgo"] }
+        ]
+      },
+      {
+        "numero": 7,
+        "materias": [
+          { "id": "procesos-de-certificacion-turistica", "nombre": "Procesos de Certificación Turística", "prerequisitos": ["gestion-territorial-del-turismo"] },
+          { "id": "logistica-en-operacion-turistica", "nombre": "Logística en Operación Turística - Gira Académica", "prerequisitos": ["seguridad-turistica","fomento-y-regulacion-a-la-actividad-turistica"] },
+          { "id": "gestion-hotelera", "nombre": "Gestión Hotelera", "prerequisitos": ["turismo-de-negocios-y-eventos"] },
+          { "id": "gestion-de-alimentos-y-bebidas", "nombre": "Gestión de Alimentos y Bebidas", "prerequisitos": [] },
+          { "id": "tendencias-e-innovacion-turistica", "nombre": "Tendencias e Innovación Turística", "prerequisitos": ["diseno-de-productos-turisticos"] },
+          { "id": "diseno-y-evaluacion-de-proyectos-turisticos", "nombre": "Diseño y Evaluación de Proyectos Turísticos", "prerequisitos": ["gestion-y-emprendimiento"] }
+        ]
+      },
+      {
+        "numero": 8,
+        "materias": [
+          { "id": "gestion-de-destinos-turisticos", "nombre": "Gestión de Destinos Turísticos - Gira Académica", "prerequisitos": ["procesos-de-certificacion-turistica"] },
+          { "id": "gestion-publica-y-gobernanza-en-turismo", "nombre": "Gestión Pública y Gobernanza en Turismo", "prerequisitos": ["gestion-territorial-del-turismo"] },
+          { "id": "integracion-regional-turistica", "nombre": "Integración Regional Turística", "prerequisitos": ["logistica-en-operacion-turistica","tendencias-e-innovacion-turistica"] },
+          { "id": "marketing-turistico", "nombre": "Marketing Turístico", "prerequisitos": ["diseno-y-evaluacion-de-proyectos-turisticos"] },
+          { "id": "derecho-laboral", "nombre": "Derecho Laboral", "prerequisitos": ["diseno-y-evaluacion-de-proyectos-turisticos"] },
+          { "id": "mic", "nombre": "MIC - PI Profesionalizante", "prerequisitos": ["procesos-de-certificacion-turistica","gestion-de-alimentos-y-bebidas","gestion-hotelera","logistica-en-operacion-turistica","tendencias-e-innovacion-turistica","diseno-y-evaluacion-de-proyectos-turisticos"] }
+          ]
+        }
+      ]
+    },
+    "educacion_inicial": {
+    "nombre": "Educación Inicial",
+    "logo": "educacion_inicial",
+    "semestres": [
+      {
+        "numero": 1,
+        "materias": [
+          { "id": "matematica-basica", "nombre": "Matemática Básica", "prerequisitos": [] },
+          { "id": "pedagogia", "nombre": "Pedagogía", "prerequisitos": [] },
+          { "id": "psicologia-del-desarrollo-0-3-anos", "nombre": "Psicología del desarrollo 0-3 años", "prerequisitos": [] },
+          { "id": "sociologia-de-la-educacion", "nombre": "Sociología de la Educación", "prerequisitos": [] },
+          { "id": "educacion-inicial-y-politica-publica", "nombre": "Educación Inicial y Política Pública", "prerequisitos": [] },
+          { "id": "metodologia-de-la-investigacion", "nombre": "Metodología de la Investigación", "prerequisitos": [] }
+        ]
+      },
+      {
+        "numero": 2,
+        "materias": [
+          { "id": "estadistica-1", "nombre": "Estadística 1", "prerequisitos": ["matematica-basica"] },
+          { "id": "metodos-de-ensenanza-para-educacion-inicial", "nombre": "Métodos de enseñanza para Educación Inicial", "prerequisitos": ["pedagogia"] },
+          { "id": "psicologia-del-desarrollo-3-6-anos", "nombre": "Psicología del desarrollo 3-6 años", "prerequisitos": ["psicologia-del-desarrollo-0-3-anos"] },
+          { "id": "filosofia-de-la-educacion", "nombre": "Filosofía de la Educación", "prerequisitos": ["sociologia-de-la-educacion"] },
+          { "id": "puericultura", "nombre": "Puericultura", "prerequisitos": ["educacion-inicial-y-politica-publica"] },
+          { "id": "metodos-de-la-investigacion-cualitativa-cuantitativa", "nombre": "Métodos de la Investigación Cualitativa, Cuantitativa", "prerequisitos": ["metodologia-de-la-investigacion"] }
+        ]
+      },
+      {
+        "numero": 3,
+        "materias": [
+          { "id": "fundamentos-de-la-programacion", "nombre": "Fundamentos de la Programación", "prerequisitos": ["estadistica-1"] },
+          { "id": "teorias-de-aprendizaje-y-modelos-pedagogicos-de-educacion-inicial", "nombre": "Teorías de aprendizaje y modelos pedagógicos de Educación Inicial", "prerequisitos": ["metodos-de-ensenanza-para-educacion-inicial"] },
+          { "id": "neuroeducacion-1", "nombre": "Neuroeducación 1", "prerequisitos": ["psicologia-del-desarrollo-3-6-anos"] },
+          { "id": "nutricion-infantil", "nombre": "Nutrición Infantil", "prerequisitos": ["puericultura"] },
+          { "id": "juegos-y-recursos-didacticos", "nombre": "Juegos y Recursos Didácticos", "prerequisitos": ["metodos-de-ensenanza-para-educacion-inicial"] },
+          { "id": "lectura-y-escritura-de-textos-academicos", "nombre": "Lectura y escritura de textos académicos", "prerequisitos": ["metodos-de-la-investigacion-cualitativa-cuantitativa"] }
+        ]
+      },
+      {
+        "numero": 4,
+        "materias": [
+          { "id": "iniciacion-a-la-lectura-y-escritura-en-la-primera-infancia", "nombre": "Iniciación a la lectura y escritura en la Primera Infancia", "prerequisitos": ["neuroeducacion-1"] },
+          { "id": "teoria-curricular-para-educacion-inicial", "nombre": "Teoría Curricular para Educación Inicial", "prerequisitos": ["teorias-de-aprendizaje-y-modelos-pedagogicos-de-educacion-inicial"] },
+          { "id": "tics-aplicadas-a-la-educacion-inicial", "nombre": "Tics Aplicadas a la Educación Inicial", "prerequisitos": ["fundamentos-de-la-programacion"] },
+          { "id": "arte-de-la-expresion-plastica-para-educacion-inicial", "nombre": "Arte de la Expresión plástica para Educación Inicial", "prerequisitos": ["juegos-y-recursos-didacticos"] },
+          { "id": "psicomotricidad", "nombre": "Psicomotricidad", "prerequisitos": ["psicologia-del-desarrollo-3-6-anos"] }
+        ]
+      },
+      {
+        "numero": 5,
+        "materias": [
+          { "id": "desarrollo-del-pensamiento-logico-matematico-en-la-primera-infancia", "nombre": "Desarrollo del pensamiento lógico matemático en la Primera Infancia", "prerequisitos": ["iniciacion-a-la-lectura-y-escritura-en-la-primera-infancia"] },
+          { "id": "planificacion-microcurricular-para-educacion-inicial", "nombre": "Planificación microcurricular para Educación Inicial", "prerequisitos": ["teoria-curricular-para-educacion-inicial"] },
+          { "id": "ambientes-de-aprendizajes-innovadores", "nombre": "Ambientes de Aprendizajes Innovadores", "prerequisitos": ["teorias-de-aprendizaje-y-modelos-pedagogicos-de-educacion-inicial"] },
+          { "id": "estimulacion-temprana", "nombre": "Estimulación Temprana", "prerequisitos": ["psicomotricidad"] },
+          { "id": "expresion-corporal-y-artes-escenicas-para-educacion-inicial", "nombre": "Expresión corporal y artes escénicas para Educación Inicial", "prerequisitos": ["psicomotricidad"] }
+        ]
+      },
+      {
+        "numero": 6,
+        "materias": [
+          { "id": "literatura-infantil", "nombre": "Literatura Infantil", "prerequisitos": ["iniciacion-a-la-lectura-y-escritura-en-la-primera-infancia"] },
+          { "id": "evaluacion-de-aprendizaje-en-educacion-inicial", "nombre": "Evaluación de Aprendizaje en Educación Inicial", "prerequisitos": ["planificacion-microcurricular-para-educacion-inicial"] },
+          { "id": "liderazgo", "nombre": "Liderazgo", "prerequisitos": [] },
+          { "id": "interculturalidad-en-educacion-inicial", "nombre": "Interculturalidad en Educación Inicial", "prerequisitos": ["ambientes-de-aprendizajes-innovadores"] },
+          { "id": "neuroeducacion-2", "nombre": "Neuroeducación 2", "prerequisitos": ["neuroeducacion-1"] }
+        ]
+      },
+      {
+        "numero": 7,
+        "materias": [
+          { "id": "expresion-musical", "nombre": "Expresión Musical", "prerequisitos": ["expresion-corporal-y-artes-escenicas-para-educacion-inicial"] },
+          { "id": "necesidades-educativas-especiales-para-la-educacion-inicial", "nombre": "Necesidades Educativas Especiales para la Educación Inicial", "prerequisitos": ["neuroeducacion-2"] },
+          { "id": "realidad-nacional-y-geopolitica", "nombre": "Realidad Nacional y Geopolítica", "prerequisitos": [] },
+          { "id": "legislacion-educativa", "nombre": "Legislación Educativa", "prerequisitos": ["educacion-inicial-y-politica-publica"] },
+          { "id": "diseno-y-planificacion-del-proyecto-de-investigacion", "nombre": "Diseño y planificación del proyecto de investigación", "prerequisitos": ["metodos-de-la-investigacion-cualitativa-cuantitativa"] }
+        ]
+      },
+      {
+        "numero": 8,
+        "materias": [
+          { "id": "gestion-y-emprendimiento", "nombre": "Gestión y Emprendimiento", "prerequisitos": [] },
+          { "id": "formacion-de-la-persona-y-desarrollo-personal-docente", "nombre": "Formación de la persona y desarrollo personal docente", "prerequisitos": [] },
+          { "id": "gestion-de-centros-infantiles", "nombre": "Gestión de Centros Infantiles", "prerequisitos": ["legislacion-educativa"] },
+          { "id": "mic", "nombre": "Unidad de Integración Curricular", "prerequisitos": ["expresion-musical","necesidades-educativas-especiales-para-la-educacion-inicial","realidad-nacional-y-geopolitica","legislacion-educativa","diseno-y-planificacion-del-proyecto-de-investigacion"] }
           ]
         }
       ]
