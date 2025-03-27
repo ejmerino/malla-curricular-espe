@@ -66,3 +66,24 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Estilos globales para el modo oscuro */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body {
+  transition: all 0.3s ease;
+}
+
+.header.dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.card-body {
+  background-color: #f5f5f5;
+}
+
+/* Otros estilos que quieras agregar para el modo oscuro */

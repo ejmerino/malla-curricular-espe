@@ -5,6 +5,7 @@ import mallasData from "../data/mallas.json";
 // Importa las imágenes
 import softwareLogo from "../assets/img/software.png";
 import electronicaLogo from "../assets/img/electronica-y-automatizacion.png";
+import civilLogo from "../assets/img/civil.png";
 
 // Importar el CSS modular
 import styles from './Home.module.css';
@@ -15,6 +16,7 @@ export default function Home() {
   const logoMap = {
     "software": softwareLogo,
     "electronica-y-automatizacion": electronicaLogo,
+    "civil": civilLogo,
   };
 
   useEffect(() => {

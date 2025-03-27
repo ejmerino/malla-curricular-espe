@@ -191,5 +191,95 @@
         ]
       }
     ]
+  },
+  "civil": {
+    "nombre": "Ingeniería Civil",
+    "logo": "civil",
+    "semestres": [
+      {
+        "numero": 1,
+        "materias": [
+          { "id": "algebra-lineal", "nombre": "Álgebra Lineal", "prerequisitos": [] },
+          { "id": "fundamentos-de-programacion", "nombre": "Fundamentos de Programación", "prerequisitos": [] },
+          { "id": "calculo-diferencial-e-integral", "nombre": "Cálculo Diferencial e Integral", "prerequisitos": [] },
+          { "id": "quimica", "nombre": "Química I", "prerequisitos": [] },
+          { "id": "biologia", "nombre": "Biología", "prerequisitos": [] },
+          { "id": "metodologia-de-la-investigacion-cientifica", "nombre": "Metodología de la Investigación Científica", "prerequisitos": [] }
+        ]
+      },
+      {
+        "numero": 2,
+        "materias": [
+          { "id": "calculo-vectorial", "nombre": "Cálculo Vectorial", "prerequisitos": ["algebra-lineal", "calculo-diferencial-e-integral"] },
+          { "id": "fisica-i", "nombre": "Física I", "prerequisitos": ["calculo-diferencial-e-integral"] },
+          { "id": "ecuaciones-diferenciales-ordinarias", "nombre": "Ecuaciones Diferenciales Ordinarias", "prerequisitos": ["algebra-lineal", "calculo-diferencial-e-integral"] },
+          { "id": "estructura-isostatica", "nombre": "Estructura Isostática", "prerequisitos": ["calculo-diferencial-e-integral", "algebra-lineal"] },
+          { "id": "liderazgo", "nombre": "Liderazgo", "prerequisitos": ["metodologia-de-la-investigacion-cientifica"] }
+        ]
+      },
+      {
+        "numero": 3,
+        "materias": [
+          { "id": "metodos-numericos", "nombre": "Métodos Numéricos", "prerequisitos": ["ecuaciones-diferenciales-ordinarias"] },
+          { "id": "fisica-ii", "nombre": "Física II", "prerequisitos": ["fisica-i"] },
+          { "id": "estadistica", "nombre": "Estadística", "prerequisitos": ["calculo-diferencial-e-integral"] },
+          { "id": "dibujo-tecnico-y-planos", "nombre": "Dibujo Técnico y Planos", "prerequisitos": [] },
+          { "id": "introduccion-al-movimiento-de-estructuras", "nombre": "Introducción al Movimiento de Estructuras", "prerequisitos": ["estructura-isostatica"] },
+          { "id": "realidad-nacional-y-geopolitica", "nombre": "Realidad Nacional y Geopolítica", "prerequisitos": [] }
+        ]
+      },
+      {
+        "numero": 4,
+        "materias": [
+          { "id": "hidrologia", "nombre": "Hidrología", "prerequisitos": ["estadistica", "calculo-diferencial-e-integral"] },
+          { "id": "analisis-estructural", "nombre": "Análisis Estructural", "prerequisitos": ["introduccion-al-movimiento-de-estructuras", "fisica-ii"] },
+          { "id": "resistencia-de-materiales", "nombre": "Resistencia de Materiales", "prerequisitos": ["estructura-isostatica", "dibujo-tecnico-y-planos"] },
+          { "id": "topografia", "nombre": "Topografía", "prerequisitos": ["dibujo-tecnico-y-planos", "estadistica"] },
+          { "id": "mecanica-de-suelos-i", "nombre": "Mecánica de Suelos I", "prerequisitos": ["fisica-ii"] }
+        ]
+      },
+      {
+        "numero": 5,
+        "materias": [
+          { "id": "mecanica-de-fluidos", "nombre": "Mecánica de Fluidos", "prerequisitos": ["hidrologia", "calculo-vectorial"] },
+          { "id": "analisis-matricial", "nombre": "Análisis Matricial", "prerequisitos": ["analisis-estructural", "resistencia-de-materiales"] },
+          { "id": "mecanica-de-suelos-ii", "nombre": "Mecánica de Suelos II", "prerequisitos": ["mecanica-de-suelos-i", "biologia"] },
+          { "id": "ingenieria-vial-i", "nombre": "Ingeniería Vial I", "prerequisitos": ["topografia", "mecanica-de-suelos-i"] },
+          { "id": "materiales-de-la-construccion", "nombre": "Materiales de la Construcción", "prerequisitos": ["resistencia-de-materiales", "mecanica-de-suelos-i"] },
+          { "id": "evaluacion-de-impactos-ambientales", "nombre": "Evaluación de Impactos Ambientales", "prerequisitos": ["hidrologia", "quimica"] }
+        ]
+      },
+      {
+        "numero": 6,
+        "materias": [
+          { "id": "hidraulica-i", "nombre": "Hidráulica I", "prerequisitos": ["mecanica-de-fluidos"] },
+          { "id": "hormigon-armado", "nombre": "Hormigón Armado", "prerequisitos": ["analisis-matricial", "resistencia-de-materiales"] },
+          { "id": "analisis-sismico", "nombre": "Análisis Sísmico", "prerequisitos": ["resistencia-de-materiales"] },
+          { "id": "tecnicas-de-la-construccion", "nombre": "Técnicas de la Construcción", "prerequisitos": ["materiales-de-la-construccion", "mecanica-de-fluidos"] },
+          { "id": "ingenieria-vial-ii", "nombre": "Ingeniería Vial II", "prerequisitos": ["mecanica-de-suelos-ii", "ingenieria-vial-i"] },
+          { "id": "gestion-y-emprendimiento", "nombre": "Gestión y Emprendimiento", "prerequisitos": [] }
+        ]
+      },
+      {
+        "numero": 7,
+        "materias": [
+          { "id": "abastecimiento-de-agua-y-alcantarillado", "nombre": "Abastecimiento de Agua y Alcantarillado", "prerequisitos": ["hidraulica-i"] },
+          { "id": "hidraulica-ii", "nombre": "Hidráulica II", "prerequisitos": ["hidraulica-i"] },
+          { "id": "organizacion-de-obras", "nombre": "Organización de Obras", "prerequisitos": ["tecnicas-de-la-construccion"] },
+          { "id": "cimentaciones-y-obras-civiles", "nombre": "Cimentaciones y Obras Civiles", "prerequisitos": ["hormigon-armado", "analisis-sismico"] },
+          { "id": "pavimentos", "nombre": "Pavimentos", "prerequisitos": ["ingenieria-vial-ii"] }
+        ]
+      },
+      {
+        "numero": 8,
+        "materias": [
+          { "id": "tratamiento-de-aguas", "nombre": "Tratamiento de Aguas", "prerequisitos": ["abastecimiento-de-agua-y-alcantarillado"] },
+          { "id": "marco-regulatorio-de-la-construccion-y-fiscalizacion-de-obras", "nombre": "Marco Regulatorio de la Construcción y Fiscalización de Obras", "prerequisitos": ["organización-de-obras"] },
+          { "id": "estructuras-de-acero-y-madera", "nombre": "Estructuras de Acero y Madera", "prerequisitos": ["cimentaciones-y-obras-civiles"] },
+          { "id": "instalaciones-en-edificios-inteligentes", "nombre": "Instalaciones en Edificios Inteligentes", "prerequisitos": ["abastecimiento-de-agua-y-alcantarillado", "hidraulica-ii"] },
+          { "id": "ingenieria-de-trafico", "nombre": "Ingeniería de Tráfico", "prerequisitos": ["pavimentos"] }
+        ]
+      }
+    ]
   }
 }
