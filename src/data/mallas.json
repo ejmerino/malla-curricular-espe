@@ -841,5 +841,96 @@
           ]
         }
       ]
+    },
+    "contabilidad-y-auditoria": {
+    "nombre": "Contabilidad y Auditoría",
+    "logo": "contabilidad-y-auditoria",
+    "semestres": [
+      {
+        "numero": 1,
+        "materias": [
+          { "id": "calculo-diferencial-e-integral", "nombre": "Cálculo Diferencial e Integral", "prerequisitos": [] },
+          { "id": "matematica-financiera", "nombre": "Matemática Financiera", "prerequisitos": [] },
+          { "id": "contabilidad-1", "nombre": "Contabilidad I", "prerequisitos": [] },
+          { "id": "administracion", "nombre": "Administración", "prerequisitos": [] },
+          { "id": "etica-profesional", "nombre": "Ética Profesional", "prerequisitos": [] },
+          { "id": "metodologia-de-la-investigacion", "nombre": "Metodología de la Investigación", "prerequisitos": [] }
+        ]
+      },
+      {
+        "numero": 2,
+        "materias": [
+          { "id": "estadistica", "nombre": "Estadística", "prerequisitos": ["calculo-diferencial-e-integral","matematica-financiera"] },
+          { "id": "mercadotecnia", "nombre": "Mercadotecnia", "prerequisitos": ["administracion"] },
+          { "id": "contabilidad-de-costos", "nombre": "Contabilidad de Costos", "prerequisitos": ["contabilidad-1"] },
+          { "id": "procesos", "nombre": "Procesos", "prerequisitos": ["administracion"] },
+          { "id": "contabilidad-ii", "nombre": "Contabilidad II", "prerequisitos": ["contabilidad-1"] },
+          { "id": "liderazgo", "nombre": "Liderazgo", "prerequisitos": ["metodologia-de-la-investigacion"] }
+        ]
+      },
+      {
+        "numero": 3,
+        "materias": [
+          { "id": "herramientas-para-la-toma-de-decisiones-1", "nombre": "Herramientas para la Toma de Decisiones I", "prerequisitos": ["estadistica"] },
+          { "id": "microeconomia", "nombre": "Microeconomía", "prerequisitos": ["calculo-diferencial-e-integral"] },
+          { "id": "costos-y-presupuestos", "nombre": "Costos y Presupuestos", "prerequisitos": ["contabilidad-de-costos"] },
+          { "id": "derecho-empresarial", "nombre": "Derecho Empresarial", "prerequisitos": ["etica-profesional"] },
+          { "id": "tecnologias-y-sistemas-de-informacion", "nombre": "Tecnologías y Sistemas de Información", "prerequisitos": ["procesos"] },
+          { "id": "realidad-nacional", "nombre": "Realidad Nacional", "prerequisitos": ["liderazgo"] }
+        ]
+      },
+      {
+        "numero": 4,
+        "materias": [
+          { "id": "contabilidad-superior", "nombre": "Contabilidad Superior", "prerequisitos": ["costos-y-presupuestos","contabilidad-ii"] },
+          { "id": "macroeconomia", "nombre": "Macroeconomía", "prerequisitos": ["microeconomia"] },
+          { "id": "tributacion-i", "nombre": "Tributación I", "prerequisitos": ["costos-y-presupuestos","contabilidad-ii"] },
+          { "id": "gestion-estrategica", "nombre": "Gestión Estratégica", "prerequisitos": ["herramientas-para-la-toma-de-decisiones-1"] },
+          { "id": "finanzas-corto-plazo", "nombre": "Finanzas Corto Plazo", "prerequisitos": ["microeconomia","costos-y-presupuestos"] },
+          { "id": "contabilidad-especializada-1", "nombre": "Contabilidad Especializada I", "prerequisitos": ["contabilidad-ii","costos-y-presupuestos"] }
+        ]
+      },
+      {
+        "numero": 5,
+        "materias": [
+          { "id": "sistema-de-gestion-gubernamental", "nombre": "Sistema de Gestión Gubernamental", "prerequisitos": ["contabilidad-especializada-1"] },
+          { "id": "auditoria-y-riesgo-empresarial", "nombre": "Auditoría y Riesgo Empresarial", "prerequisitos": ["contabilidad-superior","contabilidad-especializada-1"] },
+          { "id": "tributacion-ii", "nombre": "Tributación II", "prerequisitos": ["tributacion-i"] },
+          { "id": "gestion-de-la-calidad", "nombre": "Gestión de la Calidad", "prerequisitos": ["gestion-estrategica"] },
+          { "id": "finanzas-largo-plazo", "nombre": "Finanzas Largo Plazo", "prerequisitos": ["finanzas-corto-plazo"] },
+          { "id": "contabilidad-especializada-2", "nombre": "Contabilidad Especializada II", "prerequisitos": ["contabilidad-especializada-1"] }
+        ]
+      },
+      {
+        "numero": 6,
+        "materias": [
+          { "id": "auditoria-financiera-1", "nombre": "Auditoría Financiera I", "prerequisitos": ["contabilidad-especializada-2", "auditoria-y-riesgo-empresarial"] },
+          { "id": "contabilidad-para-la-toma-de-decisiones", "nombre": "Contabilidad para la Toma de Decisiones", "prerequisitos": ["contabilidad-superior"] },
+          { "id": "finanzas-corporativas", "nombre": "Finanzas Corporativas", "prerequisitos": ["finanzas-largo-plazo"] },
+          { "id": "sistemas-de-administracion-de-bases-de-datos", "nombre": "Sistemas de Administración de Bases de Datos", "prerequisitos": ["tecnologias-y-sistemas-de-informacion"] },
+          { "id": "riesgos-laborales-y-societarios", "nombre": "Riesgos Laborales y Societarios", "prerequisitos": ["derecho-empresarial","auditoria-y-riesgo-empresarial"] },
+          { "id": "gestion-y-emprendimiento", "nombre": "Gestión y Emprendimiento", "prerequisitos": ["realidad-nacional"] }
+        ]
+      },
+      {
+        "numero": 7,
+        "materias": [
+          { "id": "auditoria-financiera-2", "nombre": "Auditoría Financiera II", "prerequisitos": ["auditoria-financiera-1","riesgos-laborales-y-societarios"] },
+          { "id": "diseno-y-evaluacion-de-proyectos", "nombre": "Diseño y Evaluación de Proyectos", "prerequisitos": ["finanzas-corporativas"] },
+          { "id": "auditoria-gubernamental", "nombre": "Auditoría Gubernamental", "prerequisitos": ["sistema-de-gestion-gubernamental","auditoria-financiera-1"] },
+          { "id": "auditoria-tributaria", "nombre": "Auditoría Tributaria", "prerequisitos": ["auditoria-financiera-1","tributacion-ii"] }
+        ]
+      },
+      {
+        "numero": 8,
+        "materias": [
+          { "id": "contabilidad-internacional-aca", "nombre": "Contabilidad Internacional ACA", "prerequisitos": ["contabilidad-para-la-toma-de-decisiones","tributacion-ii","contabilidad-especializada-2","sistema-de-gestion-gubernamental"] },
+          { "id": "auditoria-de-tecnologia-de-informacion-y-comunicacion-a-informatica", "nombre": "Auditoría de Tecnología de Información y Comunicación (A. Informática)", "prerequisitos": ["sistemas-de-administracion-de-bases-de-datos","auditoria-financiera-2"] },
+          { "id": "auditoria-forense", "nombre": "Auditoría Forense", "prerequisitos": ["auditoria-financiera-2","auditoria-gubernamental","auditoria-tributaria"] },
+          { "id": "auditoria-interna", "nombre": "Auditoría Interna", "prerequisitos": ["auditoria-gubernamental","auditoria-financiera-2"] },
+          { "id": "mic", "nombre": "Trabajo de Integración Curricular o Complexivo", "prerequisitos": ["auditoria-financiera-2","diseno-y-evaluacion-de-proyectos","auditoria-gubernamental","auditoria-tributaria"] }
+          ]
+        }
+      ]
     }
 }
