@@ -13,6 +13,7 @@ import agropecuariaLogo from "../assets/img/agropecuaria.png";
 import administracionDeEmpresasLogo from "../assets/img/administracion-de-empresas.png";
 import comexLogo from "../assets/img/comex.png";
 import contabilidadLogo from "../assets/img/contabilidad-y-auditoria.png";
+import mercadotecniaLogo from "../assets/img/mercadotecnia.png";
 
 // Importar el CSS modular
 import styles from './Home.module.css';
@@ -31,6 +32,7 @@ export default function Home() {
     "administracion-de-empresas": administracionDeEmpresasLogo,
     "comex": comexLogo,
     "contabilidad-y-auditoria": contabilidadLogo,
+    "mercadotecnia": mercadotecniaLogo,
   };
 
   useEffect(() => {

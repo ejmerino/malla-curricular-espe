@@ -932,5 +932,97 @@
           ]
         }
       ]
+    },
+    "mercadotecnia": {
+    "nombre": "Mercadotecnia",
+    "logo": "mercadotecnia",
+    "semestres": [
+      {
+        "numero": 1,
+        "materias": [
+          { "id": "calculo-diferencial-e-integral", "nombre": "Cálculo Diferencial e Integral", "prerequisitos": [] },
+          { "id": "matematica-financiera", "nombre": "Matemática Financiera", "prerequisitos": [] },
+          { "id": "contabilidad-1", "nombre": "Contabilidad I", "prerequisitos": [] },
+          { "id": "administracion", "nombre": "Administración", "prerequisitos": [] },
+          { "id": "innovacion-y-creatividad", "nombre": "Innovación y Creatividad", "prerequisitos": [] },
+          { "id": "metodologia-de-la-investigacion", "nombre": "Metodología de la Investigación", "prerequisitos": [] }
+        ]
+      },
+      {
+        "numero": 2,
+        "materias": [
+          { "id": "estadistica", "nombre": "Estadística", "prerequisitos": [] },
+          { "id": "mercadotecnia", "nombre": "Mercadotecnia", "prerequisitos": ["administracion"] },
+          { "id": "contabilidad-de-costos", "nombre": "Contabilidad de Costos", "prerequisitos": ["contabilidad-1"] },
+          { "id": "procesos", "nombre": "Procesos", "prerequisitos": ["administracion"] },
+          { "id": "derecho-empresarial", "nombre": "Derecho Empresarial", "prerequisitos": [] },
+          { "id": "liderazgo", "nombre": "Liderazgo", "prerequisitos": [] }
+        ]
+      },
+      {
+        "numero": 3,
+        "materias": [
+          { "id": "herramientas-para-la-toma-de-decisiones-1", "nombre": "Herramientas para la Toma de Decisiones I", "prerequisitos": ["estadistica","calculo-diferencial-e-integral"] },
+          { "id": "microeconomia", "nombre": "Microeconomía", "prerequisitos": ["calculo-diferencial-e-integral"] },
+          { "id": "talento-humano", "nombre": "Talento Humano", "prerequisitos": ["administracion"] },
+          { "id": "comportamiento-del-consumidor", "nombre": "Comportamiento del Consumidor", "prerequisitos": ["mercadotecnia"] },
+          { "id": "investigacion-de-mercados-1", "nombre": "Investigación de Mercados I", "prerequisitos": ["estadistica","mercadotecnia"] },
+          { "id": "realidad-nacional", "nombre": "Realidad Nacional", "prerequisitos": [] }
+        ]
+      },
+      {
+        "numero": 4,
+        "materias": [
+          { "id": "herramientas-para-la-toma-de-decisiones-2", "nombre": "Herramientas para la Toma de Decisiones II", "prerequisitos": ["herramientas-para-la-toma-de-decisiones-1"] },
+          { "id": "macroeconomia", "nombre": "Macroeconomía", "prerequisitos": ["microeconomia"] },
+          { "id": "administracion-financiera", "nombre": "Administración Financiera", "prerequisitos": ["contabilidad-de-costos"] },
+          { "id": "gestion-estrategica", "nombre": "Gestión Estratégica", "prerequisitos": ["administracion","mercadotecnia"] },
+          { "id": "mercadotecnia-de-servicios", "nombre": "Mercadotecnia de Servicios", "prerequisitos": ["mercadotecnia","investigacion-de-mercados-1"] },
+          { "id": "investigacion-de-mercados-2", "nombre": "Investigación de Mercados II", "prerequisitos": ["investigacion-de-mercados-1"] }
+        ]
+      },
+      {
+        "numero": 5,
+        "materias": [
+          { "id": "mercadotecnia-estrategica", "nombre": "Mercadotecnia Estratégica", "prerequisitos": ["gestion-estrategica","administracion-financiera"] },
+          { "id": "administracion-presupuestaria", "nombre": "Administración Presupuestaria", "prerequisitos": ["administracion-financiera"] },
+          { "id": "gestion-de-la-calidad", "nombre": "Gestión de la Calidad", "prerequisitos": ["gestion-estrategica","herramientas-para-la-toma-de-decisiones-2"] },
+          { "id": "mercadotecnia-internacional", "nombre": "Mercadotecnia Internacional", "prerequisitos": ["investigacion-de-mercados-2"] },
+          { "id": "pronosticos-para-los-negocios", "nombre": "Pronósticos para los Negocios", "prerequisitos": ["investigacion-de-mercados-2"] }
+        ]
+      },
+      {
+        "numero": 6,
+        "materias": [
+          { "id": "gestion-y-desarrollo-de-productos-y-marcas", "nombre": "Gestión y desarrollo de productos y marcas", "prerequisitos": ["mercadotecnia-estrategica"] },
+          { "id": "gestion-y-politica-de-precios", "nombre": "Gestión y política de precios", "prerequisitos": ["mercadotecnia-estrategica"] },
+          { "id": "gestion-de-distribucion-trade-merchandising-y-retailing", "nombre": "Gestión de Distribución, Trade, Merchandising y Retailing", "prerequisitos": ["mercadotecnia-estrategica"] },
+          { "id": "logistica-empresarial", "nombre": "Logística Empresarial", "prerequisitos": ["mercadotecnia-estrategica"] },
+          { "id": "gestion-integrada-de-comunicacion-de-mercadotecnia", "nombre": "Gestión Integrada de comunicación de mercadotecnia", "prerequisitos": ["mercadotecnia-estrategica"] },
+          { "id": "gestion-y-emprendimiento", "nombre": "Gestión y Emprendimiento", "prerequisitos": ["gestion-de-la-calidad"] }
+        ]
+      },
+      {
+        "numero": 7,
+        "materias": [
+          { "id": "diseno-y-evaluacion-de-proyectos", "nombre": "Diseño y Evaluación de Proyectos", "prerequisitos": ["mercadotecnia-estrategica"] },
+          { "id": "gestion-de-la-publicidad-relaciones-publicas-y-eventos", "nombre": "Gestión de la publicidad, relaciones públicas y eventos", "prerequisitos": ["mercadotecnia-estrategica"] },
+          { "id": "gestion-de-ventas", "nombre": "Gestión de ventas", "prerequisitos": ["mercadotecnia-estrategica"] },
+          { "id": "mercadotecnia-digital", "nombre": "Mercadotecnia Digital", "prerequisitos": ["mercadotecnia-estrategica"] },
+          { "id": "crm", "nombre": "CRM", "prerequisitos": ["mercadotecnia-estrategica"] }
+        ]
+      },
+      {
+        "numero": 8,
+        "materias": [
+          { "id": "promocion-de-ventas", "nombre": "Promoción de ventas", "prerequisitos": ["gestion-de-la-publicidad-relaciones-publicas-y-eventos"] },
+          { "id": "marketing-directo", "nombre": "Marketing Directo", "prerequisitos": ["gestion-de-la-publicidad-relaciones-publicas-y-eventos"] },
+          { "id": "social-media-y-community-management", "nombre": "Social Media y Community Management", "prerequisitos": ["mercadotecnia-digital"] },
+          { "id": "responsabilidad-social-empresarial", "nombre": "Responsabilidad Social Empresarial", "prerequisitos": ["mercadotecnia-digital"] },
+          { "id": "innovaciones-de-mercadotecnia", "nombre": "Innovaciones de Mercadotecnia", "prerequisitos": ["mercadotecnia-digital","crm"] },
+          { "id": "mic", "nombre": "Trabajo de Integración Curricular o Complexivo", "prerequisitos": ["diseno-y-evaluacion-de-proyectos","gestion-de-la-publicidad-relaciones-publicas-y-eventos","gestion-de-ventas","mercadotecnia-digital","crm","gestion-y-emprendimiento"] }
+          ]
+        }
+      ]
     }
 }
