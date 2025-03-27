@@ -32,7 +32,6 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Mallas Curriculares ESPE</h1>
       <div className="row">
         {carreras.map((carrera) => {
           const logoSrc = logoMap[carrera.logo] || null;
