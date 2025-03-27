@@ -174,6 +174,9 @@ export default function MallaCurricular() {
     return <div>Cargando...</div>;
   }
 
+  const numeroMateriasTomables = materiasTomables.length; // Calcula el número de materias tomables
+
+
   return (
     <div className="container mt-5 malla-container">
       <button 
@@ -189,7 +192,7 @@ export default function MallaCurricular() {
       <h1 className="text-center mb-4 malla-title">{carrera.nombre}</h1>
 
       <div className="alert alert-info">
-        <strong>Materias que puedes tomar:</strong> {materiasTomables.join(', ') || 'Ninguna por ahora'}
+        <strong>Puedes tomar {numeroMateriasTomables} materia(s):</strong> {materiasTomables.join(', ') || 'Ninguna por ahora'}
       </div>
 
       <div className="selection-info">
