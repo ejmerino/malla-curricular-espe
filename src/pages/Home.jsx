@@ -7,6 +7,7 @@ import softwareLogo from "../assets/img/software.png";
 import electronicaLogo from "../assets/img/electronica-y-automatizacion.png";
 import civilLogo from "../assets/img/civil.png";
 import itinLogo from "../assets/img/itin.png";
+import geoespacialLogo from "../assets/img/geoespacial.png";
 
 // Importar el CSS modular
 import styles from './Home.module.css';
@@ -19,6 +20,7 @@ export default function Home() {
     "electronica-y-automatizacion": electronicaLogo,
     "civil": civilLogo,
     "itin": itinLogo,
+    "geoespacial": geoespacialLogo,
   };
 
   useEffect(() => {

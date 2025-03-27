@@ -372,5 +372,95 @@
           ]
         }
       ]
+    },
+    "geoespacial": {
+    "nombre": "Ingeniería Geoespacial",
+    "logo": "geoespacial",
+    "semestres": [
+      {
+        "numero": 1,
+        "materias": [
+          { "id": "algebra-lineal", "nombre": "Álgebra lineal", "prerequisitos": [] },
+          { "id": "fundamentos-de-programacion", "nombre": "Fundamentos de programación", "prerequisitos": [] },
+          { "id": "calculo-diferencial-e-integral", "nombre": "Cálculo diferencial e integral", "prerequisitos": [] },
+          { "id": "quimica-1", "nombre": "Química I", "prerequisitos": [] },
+          { "id": "biologia", "nombre": "Biología", "prerequisitos": [] },
+          { "id": "metodologia-de-la-investigacion-cientifica", "nombre": "Metodología de la investigación Científica", "prerequisitos": [] }
+        ]
+      },
+      {
+        "numero": 2,
+        "materias": [
+          { "id": "calculo-vectorial", "nombre": "Cálculo vectorial", "prerequisitos": ["algebra-lineal", "calculo-diferencial-e-integral"] },
+          { "id": "fisica-1", "nombre": "Física I", "prerequisitos": ["calculo-diferencial-e-integral","quimica-1"] },
+          { "id": "ecuaciones-diferenciales-ordinarias", "nombre": "Ecuaciones Diferenciales Ordinarias", "prerequisitos": ["algebra-lineal", "calculo-diferencial-e-integral"] },
+          { "id": "geologia-y-geomorfologia", "nombre": "Geología y Geomorfología", "prerequisitos": ["metodologia-de-la-investigacion-cientifica"] },
+          { "id": "introduccion-ciencias-de-la-tierra", "nombre": "Introducción Ciencias de la Tierra", "prerequisitos": ["metodologia-de-la-investigacion-cientifica"] },
+          { "id": "liderazgo", "nombre": "Liderazgo", "prerequisitos": ["metodologia-de-la-investigacion-cientifica"] }
+        ]
+      },
+      {
+        "numero": 3,
+        "materias": [
+          { "id": "metodos-numericos", "nombre": "Métodos numéricos", "prerequisitos": ["calculo-vectorial","ecuaciones-diferenciales-ordinarias"] },
+          { "id": "fisica-2", "nombre": "Física II", "prerequisitos": ["fisica-1","ecuaciones-diferenciales-ordinarias"] },
+          { "id": "estadistica", "nombre": "Estadística", "prerequisitos": ["calculo-vectorial","ecuaciones-diferenciales-ordinarias"] },
+          { "id": "matematica-superior", "nombre": "Matemática Superior", "prerequisitos": ["calculo-vectorial"] },
+          { "id": "diseño-cartografico-basico", "nombre": "Diseño Cartográfico Básico", "prerequisitos": ["introduccion-ciencias-de-la-tierra"] },
+          { "id": "realidad-nacional-y-geopolitica", "nombre": "Realidad Nacional y Geopolítica", "prerequisitos": ["liderazgo"] }
+        ]
+      },
+      {
+        "numero": 4,
+        "materias": [
+          { "id": "fundamentos-de-fotogrametria", "nombre": "Fundamentos de Fotogrametría", "prerequisitos": ["diseño-cartografico-basico","estadistica"] },
+          { "id": "fundamentos-de-topografia", "nombre": "Fundamentos de Topografía", "prerequisitos": ["diseño-cartografico-basico","estadistica"] },
+          { "id": "base-de-datos", "nombre": "Base de Datos", "prerequisitos": ["metodos-numericos"] },
+          { "id": "geodesia-general", "nombre": "Geodesia General", "prerequisitos": ["estadistica","diseño-cartografico-basico"] },
+          { "id": "hidrometeorologia", "nombre": "Hidrometeorología", "prerequisitos": ["geologia-y-geomorfologia"] },
+          { "id": "fotointerpretacion", "nombre": "Fotointerpretación", "prerequisitos": ["geologia-y-geomorfologia"] }
+        ]
+      },
+      {
+        "numero": 5,
+        "materias": [
+          { "id": "geografia-fisica-y-humana", "nombre": "Geografía Física y Humana", "prerequisitos": ["fotointerpretacion"] },
+          { "id": "fundamentos-de-sig", "nombre": "Fundamentos de SIG", "prerequisitos": ["base-de-datos","diseño-cartografico-basico"] },
+          { "id": "calculo-de-compensacion", "nombre": "Cálculo de Compensación", "prerequisitos": ["fundamentos-de-fotogrametria","fundamentos-de-topografia"] },
+          { "id": "cartografia-matematica", "nombre": "Cartografía Matemática", "prerequisitos": ["geodesia-general","fundamentos-de-topografia"] },
+          { "id": "geodesia-aplicada", "nombre": "Geodesia Aplicada", "prerequisitos": ["geodesia-general","fundamentos-de-topografia"] }
+        ]
+      },
+      {
+        "numero": 6,
+        "materias": [
+          { "id": "topografia-aplicada", "nombre": "Topografía Aplicada", "prerequisitos": ["geodesia-aplicada","cartografia-matematica"] },
+          { "id": "cartografia-aplicada", "nombre": "Cartografía Aplicada", "prerequisitos": ["fundamentos-de-sig","cartografia-matematica"] },
+          { "id": "fotogrametria-aplicada", "nombre": "Fotogrametría Aplicada", "prerequisitos": ["calculo-de-compensacion","fundamentos-de-fotogrametria"] },
+          { "id": "teledeteccion", "nombre": "Teledetección", "prerequisitos": ["cartografia-matematica","fundamentos-de-sig"] },
+          { "id": "gestion-y-emprendimiento", "nombre": "Gestión y emprendimiento", "prerequisitos": ["realidad-nacional-y-geopolitica"] }
+        ]
+      },
+      {
+        "numero": 7,
+        "materias": [
+          { "id": "geoestadistica", "nombre": "Geoestadística", "prerequisitos": ["cartografia-aplicada","calculo-de-compensacion"] },
+          { "id": "ide", "nombre": "IDE", "prerequisitos": ["cartografia-aplicada"] },
+          { "id": "geografia-urbana-y-rural", "nombre": "Geografía Urbana y Rural", "prerequisitos": ["geografia-fisica-y-humana","cartografia-aplicada"] },
+          { "id": "sig-aplicado", "nombre": "SIG Aplicado", "prerequisitos": ["teledeteccion"] },
+          { "id": "analisis-digital-de-sensores-remotos", "nombre": "Análisis digital de Sensores remotos", "prerequisitos": ["teledeteccion","cartografia-aplicada"] }
+        ]
+      },
+      {
+        "numero": 8,
+        "materias": [
+          { "id": "control-de-calidad-de-datos-geograficos", "nombre": "Control de calidad de Datos Geográficos", "prerequisitos": ["sig-aplicado", "geoestadistica"] },
+          { "id": "modelamiento-geoespacial", "nombre": "Modelamiento geoespacial", "prerequisitos": ["geoestadistica","analisis-digital-de-sensores-remotos"] },
+          { "id": "catastro-multifinalitario", "nombre": "Catastro Multifinalitario", "prerequisitos": ["geografia-urbana-y-rural"] },
+          { "id": "aplicaciones-geoespaciales", "nombre": "Aplicaciones Geoespaciales", "prerequisitos": ["sig-aplicado"] },
+          { "id": "MIC - PI Profesionalizante", "nombre": "MIC - PI Profesionalizante", "prerequisitos": ["geoestadistica","ide","geografia-urbana-y-rural","sig-aplicado","analisis-digital-de-sensores-remotos"] }
+          ]
+        }
+      ]
     }
 }
