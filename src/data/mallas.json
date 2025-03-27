@@ -1,6 +1,6 @@
 {
     "software": {
-      "nombre": "Ingeniería en Software",
+      "nombre": "Software",
       "logo": "software",
       "semestres": [
         {
@@ -92,7 +92,7 @@
       ]
     },
     "electronica-y-automatizacion": {
-    "nombre": "Ingeniería en Electrónica y Automatización",
+    "nombre": "Electrónica y Automatización",
     "logo": "electronica-y-automatizacion",
     "semestres": [
       {
@@ -194,7 +194,7 @@
     ]
   },
   "civil": {
-    "nombre": "Ingeniería Civil",
+    "nombre": "Civil",
     "logo": "civil",
     "semestres": [
       {
@@ -285,7 +285,7 @@
     ]
   },
   "tecnologias-de-la-informacion": {
-    "nombre": "Ingeniería en Tecnologías de la Información",
+    "nombre": "Tecnologías de la Información",
     "logo": "itin",
     "semestres": [
         {
@@ -374,7 +374,7 @@
       ]
     },
     "geoespacial": {
-    "nombre": "Ingeniería Geoespacial",
+    "nombre": "Geoespacial",
     "logo": "geoespacial",
     "semestres": [
       {
@@ -459,6 +459,108 @@
           { "id": "catastro-multifinalitario", "nombre": "Catastro Multifinalitario", "prerequisitos": ["geografia-urbana-y-rural"] },
           { "id": "aplicaciones-geoespaciales", "nombre": "Aplicaciones Geoespaciales", "prerequisitos": ["sig-aplicado"] },
           { "id": "MIC - PI Profesionalizante", "nombre": "MIC - PI Profesionalizante", "prerequisitos": ["geoestadistica","ide","geografia-urbana-y-rural","sig-aplicado","analisis-digital-de-sensores-remotos"] }
+          ]
+        }
+      ]
+    },
+    "biotecnologia": {
+    "nombre": "Biotecnologia",
+    "logo": "biotecnologia",
+    "semestres": [
+        {
+          "numero": 1,
+          "materias": [
+            { "id": "quimica-1", "nombre": "Química I", "prerequisitos": [] },
+            { "id": "calculo-diferencial-e-integral", "nombre": "Cálculo Diferencial e Integral", "prerequisitos": [] },
+            { "id": "algebra-lineal", "nombre": "Álgebra Lineal", "prerequisitos": [] },
+            { "id": "introduccion-a-la-programacion", "nombre": "Introducción a la Programación", "prerequisitos": [] },
+            { "id": "biologia-aplicada", "nombre": "Biología Aplicada", "prerequisitos": [] },
+            { "id": "metodologia-de-la-investigacion-cientifica", "nombre": "Metodología de la Investigación Científica", "prerequisitos": [] }
+          ]
+        },
+        {
+          "numero": 2,
+          "materias": [
+            { "id": "quimica-2", "nombre": "Química II", "prerequisitos": ["quimica-1"] },
+            { "id": "ecuaciones-diferenciales-ordinarias", "nombre": "Ecuaciones Diferenciales Ordinarias", "prerequisitos": ["calculo-diferencial-e-integral","algebra-lineal"] },
+            { "id": "fisica-1", "nombre": "Fisica I", "prerequisitos": ["calculo-diferencial-e-integral","quimica-1"] },
+            { "id": "zoologia", "nombre": "Zoología", "prerequisitos": ["biologia-aplicada"] },
+            { "id": "botanica", "nombre": "Botánica", "prerequisitos": ["biologia-aplicada"] },
+            { "id": "bioseguridad", "nombre": "Bioseguridad", "prerequisitos": ["biologia-aplicada"] }
+          ]
+        },
+        {
+          "numero": 3,
+          "materias": [
+            { "id": "quimica-organica", "nombre": "Química Orgánica", "prerequisitos": ["quimica-2"] },
+            { "id": "metodos-numericos", "nombre": "Métodos Numéricos", "prerequisitos": ["ecuaciones-diferenciales-ordinarias"] },
+            { "id": "fisico-quimica", "nombre": "Físico-Química", "prerequisitos": ["fisica-1", "quimica-2"] },
+            { "id": "quimica-analitica", "nombre": "Química Analítica", "prerequisitos": ["quimica-2"] },
+            { "id": "Estadistica", "nombre": "Estadística", "prerequisitos": ["ecuaciones-diferenciales-ordinarias"] },
+            { "id": "biofisica", "nombre": "Biofísica", "prerequisitos": ["fisica-1"] }
+          ]
+        },
+        {
+          "numero": 4,
+          "materias": [
+            { "id": "microscopia", "nombre": "Microscopía", "prerequisitos": ["bioseguridad","quimica-organica"] },
+            { "id": "bioquimica", "nombre": "Bioquímica", "prerequisitos": ["quimica-organica","fisico-quimica","quimica-analitica"] },
+            { "id": "genetica", "nombre": "Genética", "prerequisitos": ["quimica-organica", "zoologia", "botanica"] },
+            { "id": "fundamentos-de-biologia-molecular", "nombre": "Fundamentos de Biología Molecular", "prerequisitos": ["quimica-organica", "biofisica"] },
+            { "id": "fundamentos-de-microbiologia", "nombre": "Fundamentos de Microbiología", "prerequisitos": ["quimica-analitica", "bioseguridad", "botanica"] },
+            { "id": "analisis-y-diseño-de-experimentos", "nombre": "Análisis y Diseño de Experimentos", "prerequisitos": ["estadistica"] }
+          ]
+        },
+        {
+          "numero": 5,
+          "materias": [
+            { "id": "fenomenos-de-transporte", "nombre": "Fenómenos de Transporte", "prerequisitos": ["metodos-numericos", "bioquimica","fundamentos-de-microbiologia"] },
+            { "id": "fisiologia-animal", "nombre": "Fisiología Animal", "prerequisitos": ["genetica", "bioquimica","fundamentos-de-biologia-molecular"] },
+            { "id": "biologia-molecular-aplicada", "nombre": "Biología Molecular Aplicada", "prerequisitos": ["genetica", "bioquimica", "fundamentos-de-biologia-molecular"] },
+            { "id": "bioinformatica", "nombre": "Bioinformática", "prerequisitos": ["genetica", "bioquimica","fundamentos-de-biologia-molecular"] },
+            { "id": "microbiologia-aplicada", "nombre": "Microbiología Aplicada", "prerequisitos": ["fundamentos-de-microbiologia", "bioquimica"] },
+            { "id": "fisiologia-vegetal", "nombre": "Fisiología Vegetal", "prerequisitos": ["genetica", "bioquimica", "fundamentos-de-biologia-molecular"] }
+          ]
+        },
+        {
+          "numero": 6,
+          "materias": [
+            { "id": "enzimologia", "nombre": "Enzimología", "prerequisitos": ["microbiologia-aplicada", "bioquimica"] },
+            { "id": "quimica-ambiental", "nombre": "Química Ambiental", "prerequisitos": ["bioquimica"] },
+            { "id": "cultivos-de-tejidos-vegetales", "nombre": "Cultivos de Tejidos Vegetales", "prerequisitos": ["fisiologia-vegetal"] },
+            { "id": "inmunologia", "nombre": "Inmunología", "prerequisitos": ["fisiologia-animal", "microbiologia-aplicada", "biologia-molecular-aplicada"] },
+            { "id": "quimica-de-productos-naturales", "nombre": "Química de Productos Naturales", "prerequisitos": ["fisiologia-vegetal"] },
+            { "id": "operaciones-unitarias", "nombre": "Operaciones Unitarias", "prerequisitos": ["fenomenos-de-transporte"] }
+          ]
+        },
+        {
+          "numero": 7,
+          "materias": [
+            { "id": "ecologia-y-evolucion", "nombre": "Ecología y Evolución", "prerequisitos": ["bioinformatica", "biologia-molecular-aplicada"] },
+            { "id": "biotecnologia-humana", "nombre": "Biotecnología Humana", "prerequisitos": ["inmunologia","enzimologia"] },
+            { "id": "liderazgo", "nombre": "Liderazgo", "prerequisitos": ["metodologia-de-la-investigacion-cientifica", "cultivos-de-tejidos-vegetales"] },
+            { "id": "biotecnologia-ambiental", "nombre": "Biotecnología Ambiental", "prerequisitos": ["enzimologia", "operaciones-unitarias"] },
+            { "id": "biotecnologia-animal", "nombre": "Biotecnología Animal", "prerequisitos": ["enzimologia", "inmunologia"] },
+            { "id": "diseno-de-procesos", "nombre": "Diseño de Procesos", "prerequisitos": ["enzimologia", "operaciones-unitarias"] }          
+          ]
+        },
+        {
+          "numero": 8,
+          "materias": [
+            { "id": "biotecnologia-industrial", "nombre": "Biotecnología Industrial", "prerequisitos": ["diseno-de-procesos"] },
+            { "id": "nanociencia", "nombre": "Nanociencia", "prerequisitos": ["biotecnologia-humana", "microscopia", "biotecnologia-animal"]} ,
+            { "id": "realidad-nacional-y-geopolitica", "nombre": "Realidad Nacional y Geopolítica", "prerequisitos": ["liderazgo"] },
+            { "id": "farmacologia", "nombre": "Farmacología", "prerequisitos": ["biotecnologia-humana", "biotecnologia-animal", "quimica-de-productos-naturales"] } ,
+            { "id": "biotecnologia-vegetal", "nombre": "Biotecnología Vegetal", "prerequisitos": ["quimica-de-productos-naturales", "cultivos-de-tejidos-vegetales"] },
+            { "id": "biologia-sintetica-y-edicion-genetica", "nombre": "Biología Sintética y edición genética", "prerequisitos": ["diseno-de-procesos","ecologia-y-evolucion", "microbiologia-aplicada"] }
+          ]
+        },
+        {
+          "numero": 9,
+          "materias": [
+            { "id": "bioetica", "nombre": "Bioética", "prerequisitos": ["biotecnologia-humana", "biotecnologia-animal","farmacologia"] },
+            { "id": "gestion-y-emprendimiento", "nombre": "Gestión y Emprendimiento", "prerequisitos": ["realidad-nacional-y-geopolitica"] },
+            { "id": "MIC - PI Profesionalizante", "nombre": "MIC - PI Profesionalizante", "prerequisitos": ["biotecnologia-industrial","nanociencia","realidad-nacional-y-geopolitica","farmacologia","biotecnologia-vegetal","biologia-sintetica-y-edicion-genetica"] }
           ]
         }
       ]
