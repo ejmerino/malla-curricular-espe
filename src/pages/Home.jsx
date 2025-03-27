@@ -11,6 +11,7 @@ import geoespacialLogo from "../assets/img/geoespacial.png";
 import biotecnologiaLogo from "../assets/img/biotecnologia.png";
 import agropecuariaLogo from "../assets/img/agropecuaria.png";
 import administracionDeEmpresasLogo from "../assets/img/administracion-de-empresas.png";
+import comexLogo from "../assets/img/comex.png";
 
 // Importar el CSS modular
 import styles from './Home.module.css';
@@ -27,6 +28,7 @@ export default function Home() {
     "biotecnologia": biotecnologiaLogo,
     "agropecuaria": agropecuariaLogo,
     "administracion-de-empresas": administracionDeEmpresasLogo,
+    "comex": comexLogo,
   };
 
   useEffect(() => {

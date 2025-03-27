@@ -748,5 +748,98 @@
           ]
         }
       ]
+    },
+    "comex": {
+    "nombre": "Comercio Exterior",
+    "logo": "comex",
+    "semestres": [
+        {
+          "numero": 1,
+          "materias": [
+            { "id": "calculo-diferencial-e-integral", "nombre": "Cálculo Diferencial e Integral", "prerequisitos": [] },
+            { "id": "matematica-financiera", "nombre": "Matemática Financiera", "prerequisitos": [] },
+            { "id": "biocomercio-e-integracion-multicultural", "nombre": "Biocomercio e Integración Multicultural", "prerequisitos": [] },
+            { "id": "contabilidad-1", "nombre": "Contabilidad I", "prerequisitos": [] },
+            { "id": "fundamentos-de-programacion", "nombre": "Fundamentos de Programación", "prerequisitos": [] },
+            { "id": "metodologia-de-la-investigacion", "nombre": "Metodología de la Investigación", "prerequisitos": [] }
+          ]
+        },
+        {
+          "numero": 2,
+          "materias": [
+            { "id": "finanzas-a-corto-plazo", "nombre": "Finanzas a corto plazo", "prerequisitos": ["matematica-financiera"] },
+            { "id": "estadistica", "nombre": "Estadística", "prerequisitos": ["calculo-diferencial-e-integral"] },
+            { "id": "operaciones-comercio-exterior-basico", "nombre": "Operaciones Comercio Exterior Básico", "prerequisitos": ["biocomercio-e-integracion-multicultural"] },
+            { "id": "microeconomia", "nombre": "Microeconomía", "prerequisitos": ["matematica-financiera"] },
+            { "id": "empresa-cultura-y-negocios-en-el-mundo", "nombre": "Empresa, Cultura y Negocios en el Mundo", "prerequisitos": ["biocomercio-e-integracion-multicultural"] },
+            { "id": "liderazgo", "nombre": "Liderazgo", "prerequisitos": ["metodologia-de-la-investigacion"] }
+          ]
+        },
+        {
+          "numero": 3,
+          "materias": [
+            { "id": "gestion-del-talento-humano", "nombre": "Gestión del Talento Humano", "prerequisitos": ["liderazgo"] },
+            { "id": "control-aduanero-y-tributario-de-comercio-exterior", "nombre": "Control Aduanero y Tributario de Comercio Exterior", "prerequisitos": ["operaciones-comercio-exterior-basico"] },
+            { "id": "perspectiva-internacional-de-negociacion", "nombre": "Perspectiva Internacional de Negociación", "prerequisitos": ["empresa-cultura-y-negocios-en-el-mundo"] },
+            { "id": "tecnica-aduanera-1", "nombre": "Técnica Aduanera I", "prerequisitos": ["operaciones-comercio-exterior-basico"] },
+            { "id": "administracion-e-innovacion-en-modelos-de-negocios-internacionales", "nombre": "Administración e Innovación en Modelos de Negocios Internacionales", "prerequisitos": ["empresa-cultura-y-negocios-en-el-mundo"] },
+            { "id": "realidad-nacional", "nombre": "Realidad Nacional", "prerequisitos": ["liderazgo"] }
+          ]
+        },
+        {
+          "numero": 4,
+          "materias": [
+            { "id": "cadena-de-suministro-global", "nombre": "Cadena de Suministro Global", "prerequisitos": ["perspectiva-internacional-de-negociacion"] },
+            { "id": "estadistica-aplicada-al-mercado", "nombre": "Estadística aplicada al mercado", "prerequisitos": ["estadistica"] },
+            { "id": "macroeconomia", "nombre": "Macroeconomía", "prerequisitos": ["microeconomia","estadistica"] },
+            { "id": "analisis-de-datos-del-comercio-exterior", "nombre": "Análisis de datos del comercio exterior", "prerequisitos": ["control-aduanero-y-tributario-de-comercio-exterior", "perspectiva-internacional-de-negociacion"] },
+            { "id": "operaciones-de-comercio-exterior-avanzado", "nombre": "Operaciones de Comercio Exterior Avanzado", "prerequisitos": ["operaciones-comercio-exterior-basico","tecnica-aduanera-1"] },
+            { "id": "tecnica-aduanera-2", "nombre": "Técnica Aduanera II", "prerequisitos": ["tecnica-aduanera-1"] }
+          ]
+        },
+        {
+          "numero": 5,
+          "materias": [
+            { "id": "obstaculos-tecnicos-al-comercio-exterior", "nombre": "Obstáculos técnicos al Comercio Exterior", "prerequisitos": ["operaciones-comercio-exterior-basico"] },
+            { "id": "finanzas-a-largo-plazo", "nombre": "Finanzas a largo plazo", "prerequisitos": ["finanzas-a-corto-plazo"] },
+            { "id": "geoeconomia-y-negociacion-internacional", "nombre": "Geoeconomía y Negociación Internacional", "prerequisitos": ["perspectiva-internacional-de-negociacion","estadistica-aplicada-al-mercado"] },
+            { "id": "contratacion-internacional", "nombre": "Contratación Internacional", "prerequisitos": ["cadena-de-suministro-global", "analisis-de-datos-del-comercio-exterior"] },
+            { "id": "tecnicas-de-negociacion-y-comercializacion-internacional-1", "nombre": "Técnicas de Negociación y Comercialización Internacional I", "prerequisitos": ["tecnica-aduanera-2","cadena-de-suministro-global"] },
+            { "id": "regimenes-aduaneros-y-sus-procedimientos", "nombre": "Regímenes Aduaneros y sus Procedimientos", "prerequisitos": ["tecnica-aduanera-2", "operaciones-de-comercio-exterior-avanzado"] }
+          ]
+        },
+        {
+          "numero": 6,
+          "materias": [
+            { "id": "mercadotecnia", "nombre": "Mercadotecnia", "prerequisitos": ["contratacion-internacional"] },
+            { "id": "finanzas-internacionales", "nombre": "Finanzas Internacionales", "prerequisitos": ["finanzas-a-largo-plazo"] },
+            { "id": "negociaciones-y-comunicacion-intercultural", "nombre": "Negociaciones y comunicación intercultural", "prerequisitos": ["geoeconomia-y-negociacion-internacional"] },
+            { "id": "tecnicas-de-negociacion-y-comercializacion-internacional-2", "nombre": "Técnicas de Negociación y Comercialización Internacional II", "prerequisitos": ["tecnicas-de-negociacion-y-comercializacion-internacional-1"] },
+            { "id": "diseño-y-evaluacion-de-proyectos", "nombre": "Diseño y evaluación de proyectos", "prerequisitos": ["finanzas-a-largo-plazo","obstaculos-tecnicos-al-comercio-exterior"] },
+            { "id": "gestion-y-emprendimiento", "nombre": "Gestión y emprendimiento", "prerequisitos": ["realidad-nacional", "geoeconomia-y-negociacion-internacional"] }
+          ]
+        },
+        {
+          "numero": 7,
+          "materias": [
+            { "id": "tratados-comerciales-internacionales", "nombre": "Tratados Comerciales Internacionales", "prerequisitos": ["tecnicas-de-negociacion-y-comercializacion-internacional-2"] },
+            { "id": "herramienta-para-la-toma-de-decisiones", "nombre": "Herramienta para la Toma de Decisiones", "prerequisitos": ["mercadotecnia"] },
+            { "id": "operacion-aduanera", "nombre": "Operación Aduanera", "prerequisitos": ["tecnica-aduanera-2", "tecnicas-de-negociacion-y-comercializacion-internacional-2"] },
+            { "id": "logistica-internacional", "nombre": "Logística Internacional", "prerequisitos": ["cadena-de-suministro-global"] },
+            { "id": "estrategias-de-internacionalizacion", "nombre": "Estrategias de Internacionalización", "prerequisitos": ["negociaciones-y-comunicacion-intercultural"] }
+          ]
+        },
+        {
+          "numero": 8,
+          "materias": [
+            { "id": "innovacion-mercados-y-desarrollo", "nombre": "Innovación, mercados y desarrollo", "prerequisitos": ["administracion-e-innovacion-en-modelos-de-negocios-internacionales","estrategias-de-internacionalizacion"] },
+            { "id": "gestion-estrategica-comercio-exterior", "nombre": "Gestión Estratégica Comercio Exterior", "prerequisitos": ["operacion-aduanera"] },
+            { "id": "inteligencia-de-negocios-internacionales", "nombre": "Inteligencia de Negocios Internacionales", "prerequisitos": ["negociaciones-y-comunicacion-intercultural"] },
+            { "id": "comercio-para-el-desarrollo-sostenible", "nombre": "Comercio para el Desarrollo Sostenible", "prerequisitos": ["tratados-comerciales-internacionales"] },
+            { "id": "normas-de-origen", "nombre": "Normas de Origen", "prerequisitos": ["operacion-aduanera","tratados-comerciales-internacionales"] },
+            { "id": "mic", "nombre": "MIC - PI Profesionalizante", "prerequisitos": ["tratados-comerciales-internacionales","herramienta-para-la-toma-de-decisiones","operacion-aduanera","logistica-internacional","estrategias-de-internacionalizacion"] }
+          ]
+        }
+      ]
     }
 }
