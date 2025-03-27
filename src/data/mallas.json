@@ -464,7 +464,7 @@
       ]
     },
     "biotecnologia": {
-    "nombre": "Biotecnologia",
+    "nombre": "Biotecnología",
     "logo": "biotecnologia",
     "semestres": [
         {
@@ -561,6 +561,99 @@
             { "id": "bioetica", "nombre": "Bioética", "prerequisitos": ["biotecnologia-humana", "biotecnologia-animal","farmacologia"] },
             { "id": "gestion-y-emprendimiento", "nombre": "Gestión y Emprendimiento", "prerequisitos": ["realidad-nacional-y-geopolitica"] },
             { "id": "MIC - PI Profesionalizante", "nombre": "MIC - PI Profesionalizante", "prerequisitos": ["biotecnologia-industrial","nanociencia","realidad-nacional-y-geopolitica","farmacologia","biotecnologia-vegetal","biologia-sintetica-y-edicion-genetica"] }
+          ]
+        }
+      ]
+    },
+    "agropecuaria": {
+    "nombre": "Agropecuaria",
+    "logo": "agropecuaria",
+    "semestres": [
+        {
+          "numero": 1,
+          "materias": [
+            { "id": "calculo-diferencial-e-integral", "nombre": "Cálculo Diferencial e Integral", "prerequisitos": [] },
+            { "id": "algebra-lineal", "nombre": "Álgebra Lineal", "prerequisitos": [] },
+            { "id": "quimica", "nombre": "Química", "prerequisitos": [] },
+            { "id": "introduccion-de-programacion", "nombre": "Introducción de Programación", "prerequisitos": [] },
+            { "id": "biologia", "nombre": "Biología aplicada", "prerequisitos": [] },
+            { "id": "metodologia-de-la-investigacion", "nombre": "Metodología de la investigación", "prerequisitos": [] }
+          ]
+        },
+        {
+          "numero": 2,
+          "materias": [
+            { "id": "estadistica", "nombre": "Estadística", "prerequisitos": ["calculo-diferencial-e-integral"] },
+            { "id": "quimica-organica", "nombre": "Química Orgánica", "prerequisitos": ["quimica"] },
+            { "id": "zoologia", "nombre": "Zoología", "prerequisitos": ["biologia"] },
+            { "id": "botanica", "nombre": "Botánica", "prerequisitos": ["biologia"] },
+            { "id": "fisica-i", "nombre": "Física I", "prerequisitos": ["algebra-lineal"] },
+            { "id": "agroecologia", "nombre": "Agroecología", "prerequisitos": ["biologia", "quimica"] }
+          ]
+        },
+        {
+          "numero": 3,
+          "materias": [
+            { "id": "ecuaciones-diferenciales-ordinarias", "nombre": "Ecuaciones Diferenciales Ordinarias", "prerequisitos": ["estadistica"] },
+            { "id": "bioquimica", "nombre": "Bioquímica", "prerequisitos": ["quimica-organica"] },
+            { "id": "manejo-integrado-de-malezas", "nombre": "Manejo Integrado de Malezas", "prerequisitos": ["botanica"] },
+            { "id": "edafologia", "nombre": "Edafología", "prerequisitos": ["quimica-organica", "agroecologia"] },
+            { "id": "microbiologia", "nombre": "Microbiología", "prerequisitos": ["quimica-organica"] },
+            { "id": "liderazgo", "nombre": "Liderazgo", "prerequisitos": ["metodologia-de-la-investigacion"] }
+          ]
+        },
+        {
+          "numero": 4,
+          "materias": [
+            { "id": "fisiologia-animal", "nombre": "Fisiología Animal", "prerequisitos": ["bioquimica", "zoologia"] },
+            { "id": "fisiologia-vegetal", "nombre": "Fisiología Vegetal", "prerequisitos": ["bioquimica"] },
+            { "id": "riego", "nombre": "Riego", "prerequisitos": ["edafologia"] },
+            { "id": "entomologia", "nombre": "Entomología", "prerequisitos": ["zoologia"] },
+            { "id": "agricultura-de-precision", "nombre": "Agricultura de Precisión", "prerequisitos": ["edafologia"] },
+            { "id": "realidad-nacional-y-geopolitica", "nombre": "Realidad Nacional y Geopolítica", "prerequisitos": ["liderazgo"] }
+          ]
+        },
+        {
+          "numero": 5,
+          "materias": [
+            { "id": "nutricion-animal", "nombre": "Nutrición Animal", "prerequisitos": ["fisiologia-animal"] },
+            { "id": "nutricion-vegetal", "nombre": "Nutrición Vegetal", "prerequisitos": ["fisiologia-vegetal"] },
+            { "id": "pastos", "nombre": "Pastos", "prerequisitos": ["manejo-integrado-de-malezas", "fisiologia-vegetal"] },
+            { "id": "fitopatologia", "nombre": "Fitopatología", "prerequisitos": ["microbiologia"] },
+            { "id": "genetica", "nombre": "Genética", "prerequisitos": ["fisiologia-animal", "fisiologia-vegetal"] },
+            { "id": "gestion-de-emprendimiento", "nombre": "Gestión de Emprendimiento", "prerequisitos": ["realidad-nacional-y-geopolitica"] }
+          ]
+        },
+        {
+          "numero": 6,
+          "materias": [
+            { "id": "economia-agropecuaria", "nombre": "Economía Agropecuaria", "prerequisitos": ["gestion-de-emprendimiento"] },
+            { "id": "administracion-agropecuaria", "nombre": "Administración Agropecuaria", "prerequisitos": ["gestion-de-emprendimiento"] },
+            { "id": "produccion-de-cultivos", "nombre": "Producción de Cultivos", "prerequisitos": ["nutricion-vegetal"] },
+            { "id": "sistemas-de-produccion-ganadera", "nombre": "Sistemas de Producción Ganadera", "prerequisitos": ["pastos"] },
+            { "id": "produccion-de-no-rumiantes", "nombre": "Producción de no rumiantes", "prerequisitos": ["nutricion-animal"] },
+            { "id": "horticultura", "nombre": "Horticultura", "prerequisitos": ["nutricion-vegetal"] }
+          ]
+        },
+        {
+          "numero": 7,
+          "materias": [
+            { "id": "diseño-experimental", "nombre": "Diseño experimental", "prerequisitos": ["estadistica","produccion-de-cultivos"] },
+            { "id": "conservacion-posrecoleccion", "nombre": "Conservación Posrecolección", "prerequisitos": ["horticultura", "produccion-de-cultivos"] },
+            { "id": "silvicultura", "nombre": "Silvicultura", "prerequisitos": ["produccion-de-cultivos"] },
+            { "id": "avicultura", "nombre": "Avicultura", "prerequisitos": ["produccion-de-no-rumiantes"] },
+            { "id": "sanidad-animal", "nombre": "Sanidad Animal", "prerequisitos": ["sistemas-de-produccion-ganadera"] },
+            { "id": "fitomejoramiento", "nombre": "Fitomejoramiento", "prerequisitos": ["genetica"] }
+          ]
+        },
+        {
+          "numero": 8,
+          "materias": [
+            { "id": "tecnologia-industrial", "nombre": "Tecnología Industrial", "prerequisitos": ["conservacion-posrecoleccion"] },
+            { "id": "acuicultura", "nombre": "Acuicultura", "prerequisitos": ["produccion-de-no-rumiantes"] },
+            { "id": "reproduccion", "nombre": "Reproducción", "prerequisitos": ["sanidad-animal"] },
+            { "id": "transferencia-de-tecnologia-y-extension-agropecuaria", "nombre": "Transferencia de Tecnología y Extensión Agropecuaria", "prerequisitos": ["economia-agropecuaria","administracion-agropecuaria"] },
+            { "id": "biotecnologia-agropecuaria", "nombre": "Biotecnología Agropecuaria", "prerequisitos": ["fitomejoramiento"] }
           ]
         }
       ]
