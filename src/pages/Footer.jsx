@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaBriefcase } from 'react-icons/fa';
 import styles from './Footer.module.css'; // Importa los estilos modulares
 import { useTheme } from './themeContext'; // Importa el hook del tema
 
@@ -21,6 +21,9 @@ const Footer = () => {
           </a>
           <a href="mailto:ejmerino@espe.edu.ec" target="_blank" rel="noopener noreferrer" aria-label="Email">
             <FaEnvelope className={styles.footerIcon} size={30} />
+          </a>
+          <a href="https://ejmerino.github.io/portfolio/" target="_blank" rel="noopener noreferrer" aria-label="Portafolio">
+            <FaBriefcase className={styles.footerIcon} size={30} />
           </a>
         </div>
       </div>
