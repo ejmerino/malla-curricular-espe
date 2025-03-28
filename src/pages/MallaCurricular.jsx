@@ -6,6 +6,7 @@ import 'jspdf-autotable';
 import html2canvas from 'html2canvas';
 import Home from './Home.jsx';
 import './MallaCurricular.css';
+import { useTheme } from '../pages/themeContext';
 
 export default function MallaCurricular() {
   const { carreraId } = useParams();
@@ -14,7 +15,7 @@ export default function MallaCurricular() {
   const [materiasDisponibles, setMateriasDisponibles] = useState(new Set());
   const [materiasAprobadas, setMateriasAprobadas] = useState(new Set());
   const [materiasTomables, setMateriasTomables] = useState([]);
-
+  const { isDarkMode } = useTheme();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -51,7 +52,6 @@ export default function MallaCurricular() {
       });
     });
 
-    // Desbloquear materias de primer semestre
     carrera.semestres[0].materias.forEach(materia => {
       initialState[materia.id] = "";
     });
@@ -64,7 +64,7 @@ export default function MallaCurricular() {
 
     const nuevasDisponibles = new Set();
     const nuevasAprobadas = new Set();
-    const nuevasMateriasEstado = { ...materiasEstado }; // Copia del estado actual
+    const nuevasMateriasEstado = { ...materiasEstado };
 
     carrera.semestres.forEach(semestre => {
       semestre.materias.forEach(materia => {
@@ -77,16 +77,16 @@ export default function MallaCurricular() {
 
         if (disponible && !aprobada) {
           nuevasDisponibles.add(materia.id);
-          nuevasMateriasEstado[materia.id] = ""; // "" significa disponible
+          nuevasMateriasEstado[materia.id] = "";
         } else if (!disponible && !aprobada) {
-          nuevasMateriasEstado[materia.id] = "bloqueada"; // Bloquear si no está disponible
+          nuevasMateriasEstado[materia.id] = "bloqueada";
         }
       });
     });
 
     setMateriasDisponibles(nuevasDisponibles);
     setMateriasAprobadas(nuevasAprobadas);
-    setMateriasEstado(nuevasMateriasEstado); // Actualiza el estado con los cambios
+    setMateriasEstado(nuevasMateriasEstado);
   };
 
   const verificarPrerequisitos = (materiaId) => {
@@ -174,42 +174,46 @@ export default function MallaCurricular() {
     return <div>Cargando...</div>;
   }
 
-  const numeroMateriasTomables = materiasTomables.length; // Calcula el número de materias tomables
+  const numeroMateriasTomables = materiasTomables.length;
 
+  const containerClass = `container mt-5 malla-container ${isDarkMode ? 'dark-mode' : ''}`;
+  const alertClass = `alert alert-info ${isDarkMode ? 'dark-mode-alert' : ''}`;
+  const titleClass = `text-center mb-4 malla-title ${isDarkMode ? 'dark-mode-text' : ''}`;
+  const selectionInfoClass = `selection-info ${isDarkMode ? 'dark-mode-selection-info' : ''}`;
 
   return (
-    <div className="container mt-5 malla-container">
-      <button 
+    <div className={containerClass}>
+      <button
         onClick={() => {
           navigate("/");
           window.location.reload();
-        }} 
+        }}
         className="btn btn-secondary mb-4"
-      > 
+      >
         Regresar
       </button>
 
-      <h1 className="text-center mb-4 malla-title">{carrera.nombre}</h1>
+      <h1 className={titleClass}>{carrera.nombre}</h1>
 
-      <div className="alert alert-info">
+      <div className={alertClass}>
         <strong>Puedes tomar {numeroMateriasTomables} materia(s):</strong> {materiasTomables.join(', ') || 'Ninguna por ahora'}
       </div>
 
-      <div className="selection-info">
+      <div className={selectionInfoClass}>
         Selecciona las materias que ya has aprobado:
       </div>
 
       <div className="row">
         {carrera.semestres.map((semestre, idx) => (
           <div key={idx} className="col-md-6 mb-4 semestre-section">
-            <h3 className="semestre-title">Semestre {semestre.numero}</h3>
+            <h3 className={`semestre-title ${isDarkMode ? 'dark-mode-text' : ''}`}>Semestre {semestre.numero}</h3>
             <div className="row">
               {semestre.materias.map((materia) => {
                 const estaDisponible = materiasDisponibles.has(materia.id) || materiasAprobadas.has(materia.id);
                 const estaAprobada = materiasEstado[materia.id] === "green";
                 const estaBloqueada = materiasEstado[materia.id] === "bloqueada";
 
-                let cardClassName = 'card materia-card';
+                let cardClassName = `card materia-card ${isDarkMode ? 'dark-mode-card' : ''}`;
                 if (estaAprobada) {
                   cardClassName += ' materia-verde';
                 } else if (estaBloqueada) {
@@ -224,7 +228,7 @@ export default function MallaCurricular() {
                       onClick={() => estaDisponible ? handleMateriaClick(materia.id) : null}
                     >
                       <div className="card-body">
-                        <h5 className="card-title">{materia.nombre}</h5>
+                        <h5 className={`card-title ${isDarkMode ? 'dark-mode-text' : ''}`}>{materia.nombre}</h5>
                         {!estaDisponible && (
                           <i className="fas fa-lock lock-icon"></i>
                         )}
