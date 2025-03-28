@@ -71,10 +71,10 @@
         {
           "numero": 7,
           "materias": [
-            { "id": "aseguramiento-de-la-calidad-de-software", "nombre": "Aseguramiento de la Calidad de software", "prerequisitos": ["pruebas-de-software"] },
+            { "id": "aseguramiento-de-la-calidad-de-software", "nombre": "Aseguramiento de la Calidad de Software", "prerequisitos": ["pruebas-de-software"] },
             { "id": "aplicaciones-distribuidas", "nombre": "Aplicaciones Distribuidas", "prerequisitos": ["desarrollo-web-avanzado"] },
-            { "id": "ingenieria-de-la-seguridad-del-software", "nombre": "Ingeniería de la seguridad del Software", "prerequisitos": ["sistemas-operativos"] },
-            { "id": "desarrollo-de-video-juegos", "nombre": "Desarrollo de Video Juegos", "prerequisitos": ["computacion-grafica", "aplicaciones-basadas-en-el-conocimiento"] },
+            { "id": "ingenieria-de-la-seguridad-del-software", "nombre": "Ingeniería de la Seguridad del Software", "prerequisitos": ["sistemas-operativos"] },
+            { "id": "desarrollo-de-video-juegos", "nombre": "Desarrollo de Videojuegos", "prerequisitos": ["computacion-grafica", "aplicaciones-basadas-en-el-conocimiento"] },
             { "id": "desarrollo-de-software-seguro", "nombre": "Desarrollo de Software Seguro", "prerequisitos": ["analisis-y-diseno-de-software","pruebas-de-software"] }
           ]
         },
