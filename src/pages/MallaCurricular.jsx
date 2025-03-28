@@ -17,6 +17,7 @@ export default function MallaCurricular() {
   const [materiasTomables, setMateriasTomables] = useState([]);
   const { isDarkMode } = useTheme();
   const navigate = useNavigate();
+  const [porcentajeCompletado, setPorcentajeCompletado] = useState(0);
 
   useEffect(() => {
     const selectedCarrera = mallasData[carreraId];
@@ -41,6 +42,10 @@ export default function MallaCurricular() {
       setMateriasTomables(tomables);
     }
   }, [materiasDisponibles, carrera]);
+
+  useEffect(() => {
+    setPorcentajeCompletado(calcularPorcentajeCompletado());
+  }, [materiasEstado, carrera]);
 
   const inicializarMaterias = () => {
     const initialState = {};
@@ -170,6 +175,21 @@ export default function MallaCurricular() {
     });
   };
 
+  const calcularPorcentajeCompletado = () => {
+    if (!carrera) return 0;
+
+    let totalMaterias = 0;
+    let materiasAprobadasCount = 0;
+
+    carrera.semestres.forEach(semestre => {
+      totalMaterias += semestre.materias.length;
+    });
+
+    materiasAprobadasCount = Object.values(materiasEstado).filter(estado => estado === "green").length;
+
+    return (materiasAprobadasCount / totalMaterias) * 100;
+  };
+
   if (!carrera) {
     return <div>Cargando...</div>;
   }
@@ -194,6 +214,22 @@ export default function MallaCurricular() {
       </button>
 
       <h1 className={titleClass}>{carrera.nombre}</h1>
+
+      <div className="progress-info">
+        {porcentajeCompletado === 100 ? (
+          <span className="felicitaciones">¡Felicidades! Has completado la carrera.</span>
+        ) : (
+          <span>Vas {porcentajeCompletado.toFixed(1)}% de la carrera</span>
+        )}
+      </div>
+
+      <div className="progress-bar-container">
+        <div
+          className="progress-bar"
+          style={{ width: `${porcentajeCompletado}%` }}
+        >
+        </div>
+      </div>
 
       <div className={alertClass}>
         <strong>Puedes tomar {numeroMateriasTomables} materia(s):</strong> {materiasTomables.join(', ') || 'Ninguna por ahora'}
