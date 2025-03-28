@@ -1,0 +1,58 @@
+/* Estilos Generales del Footer */
+.footer {
+  background-color: #006747; /* Verde ESPE */
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Modo oscuro para el footer */
+.darkModeFooter {
+  background-color: #333; /* Color de fondo oscuro */
+  color: #ddd; /* Color de texto claro */
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerText {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Estilos de los enlaces sociales */
+.socialLinks {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.socialLinks a {
+  color: white;
+  margin: 0 15px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  font-size: 25px;
+}
+
+.socialLinks a:hover {
+  transform: scale(1.3);
+  color: white;
+}
+
+.socialLinks a:active {
+  color: #ff6600;
+}
+
+/* Estilos para los iconos */
+.footerIcon {
+  /* Puedes agregar estilos específicos para los iconos aquí si es necesario */
+}

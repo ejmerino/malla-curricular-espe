@@ -1,158 +1,134 @@
-/* Estilos Generales */
+/* Estilos generales del body */
 body {
-    font-family: sans-serif; /* Fuente genérica */
-    background-color: #f9f9f9; /* Gris muy claro para el fondo general */
-    color: #333;
-    line-height: 1.6;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la pantalla */
-}
-
-.container {
-    padding: 40px;
+    min-width: 320px;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+    background-color: #ffffff; /* Fondo claro por defecto */
+    color: #333; /* Texto oscuro por defecto */
+    font-family: Arial, sans-serif; /* Puedes cambiar la fuente si lo prefieres */
+  }
+  
+  /* Si dark-mode está aplicado */
+  body.dark-mode {
+    background-color: #121212; /* Fondo oscuro para el modo oscuro */
+    color: #ffffff; /* Texto blanco para el modo oscuro */
+  }
+  
+  /* Estilos Generales del contenedor */
+  .container {
     max-width: 1200px;
-    margin: 20px auto; /* Centra el container y añade un margen superior */
-    background-color: #fff;
-    border-radius: 20px; /* Bordes más redondeados */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Sombra más pronunciada */
-}
-
-.header {
-    background-color: #fff; /* Fondo blanco */
-    padding: 30px 0;
+    margin: 20px auto; /* Centra el contenedor y añade margen */
+    padding: 30px; /* Aumenta el padding */
+    background-color: #fff; /* Fondo blanco para tarjetas */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+    color: #333; /* Color de texto por defecto */
+  }
+  
+  /* Modo oscuro - contenedor principal */
+  .darkModeContainer {
+    background-color: #282828; /* Fondo gris oscuro para el contenedor en modo oscuro */
+    color: #eee; /* Color de texto claro para el contenedor en modo oscuro */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05); /* Sombra sutil en modo oscuro */
+  }
+  
+  /* Estilos de las Cards */
+  .card {
+    border-radius: 16px; /* Bordes redondeados para tarjetas */
+    background-color: #f8f8f8; /* Fondo gris muy claro para tarjetas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    color: #333; /* Color de texto por defecto */
+    padding: 20px; /* Aumenta el padding */
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); /* Elevar al hacer hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al hacer hover */
+  }
+  
+  /* Modo oscuro - card */
+  .darkModeCard {
+    background-color: #333; /* Fondo gris oscuro para tarjetas en modo oscuro */
+    color: #eee; /* Color de texto claro para tarjetas en modo oscuro */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Sombra sutil en modo oscuro */
+  }
+  
+  .cardBody {
     text-align: center;
-    border-bottom: 1px solid #eee; /* Línea más sutil */
-    margin-bottom: 30px; /* Espacio debajo del header */
-}
-
-.title {
-    font-size: 3.2rem; /* Título ligeramente más grande */
-    color: #2c3e50; /* Un azul oscuro agradable */
-    font-weight: 600; /* Más peso para el título */
-    margin: 0;
-    text-transform: none; /* Elimina la mayúscula automática */
-    letter-spacing: -1px; /* Reduce el espacio entre letras para un look más moderno */
-    /* font-family: 'Arial', sans-serif;  Eliminamos la fuente específica */
-}
-
-/* Estilos de las Cards */
-.card {
-    border-radius: 20px; /* Aumenta el radio del borde */
-    background-color: #fff;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); /* Sombra mejorada */
-    padding: 25px; /* Aumenta el padding dentro de la card */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out; /* Transición más suave */
-    margin: 15px;
-    border: none; /* Elimina el borde */
-    overflow: hidden; /* Asegura que nada se salga de los bordes redondeados */
-}
-
-.card:hover {
-    transform: translateY(-8px); /* Más pronunciado al hacer hover */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12); /* Sombra más intensa al hover */
-}
-
-.cardBody {
-    text-align: center;
-    padding-top: 20px; /* Más espacio arriba del texto */
-}
-
-.cardTitle {
-    font-size: 1.5rem; /* Título más grande */
-    color: #34495e; /* Un color más oscuro para el título de la card */
-    font-weight: 600; /* Hace el título más prominente */
-    margin-top: 20px; /* Más espacio sobre el título */
+    padding-top: 15px;
+  }
+  
+  .cardTitle {
+    font-size: 1.5rem; /* Tamaño de fuente más grande */
+    color: #34495e;
+    font-weight: 600;
+    margin-top: 10px;
     text-transform: capitalize;
-    /* font-family: 'Arial', sans-serif;  Eliminamos la fuente específica */
-}
-
-.cardImgTop {
+  }
+  
+  .cardImgTop {
     width: 100%;
-    max-height: 200px; /* Aumenta la altura máxima de la imagen */
+    max-height: 200px;
     object-fit: contain;
-    border-radius: 15px; /* Redondea más las esquinas */
-    margin-bottom: 20px; /* Más espacio debajo de la imagen */
-    transition: transform 0.3s ease-in-out; /* Transición más suave */
-}
-
-.cardImgTop:hover {
-    transform: scale(1.05); /* Zoom más pronunciado */
-}
-
-/* Estilos de la fila y columnas */
-.row {
+    border-radius: 12px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+  }
+  
+  .cardImgTop:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Estilos de la fila y columnas */
+  .row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0 -10px; /* Ajusta los márgenes para las columnas */
-}
-
-.col-md-4 {
-    max-width: 33.333%; /* Mantiene tres columnas */
+    margin: 0 -10px;
+  }
+  
+  .col-md-4 {
+    max-width: 33.333%;
     padding: 10px;
-    transition: transform 0.3s ease-in-out; /* Transición suave al hacer hover */
-}
-
-.col-md-4:hover {
-    transform: scale(1.03); /* Aumenta ligeramente la escala al hacer hover */
-}
-
-/* Estilos de los enlaces */
-a {
+    transition: transform 0.3s ease;
+  }
+  
+  .col-md-4:hover {
+    transform: scale(1.03);
+  }
+  
+  /* Estilos de los enlaces */
+  a {
     text-decoration: none;
     color: inherit;
     display: block;
-    transition: color 0.2s ease; /* Suaviza el cambio de color al hover */
-}
-
-a:hover {
-    color: #4e69ff; /* Color más vibrante al pasar el ratón por encima del enlace */
-}
-
-/* Estilos del texto de la card */
-.card-body p {
-    font-size: 1.1rem; /* Aumenta el tamaño del texto */
-    color: #666; /* Gris más oscuro para el texto */
+    transition: color 0.2s ease;
+  }
+  
+  a:hover {
+    color: #4e69ff;
+  }
+  
+  /* Estilos del texto de la card */
+  .card-body p {
+    font-size: 1.1rem;
+    color: #666;
     text-align: center;
-    margin-top: 15px; /* Más espacio arriba del texto */
-    /* font-family: 'Arial', sans-serif;  Eliminamos la fuente específica */
-    line-height: 1.7; /* Aumenta el espacio entre líneas */
+    margin-top: 15px;
+    line-height: 1.7;
     font-weight: 400;
-}
-
-/* Pie de página (footer) - Opcional */
-footer {
-    background-color: #f8f9fa;
-    border-top: 1px solid #dee2e6;
-    padding: 20px 0;
-    text-align: center;
-    margin-top: auto; /* Empuja el pie de página hacia abajo */
-}
-
-/* Responsividad mejorada */
-@media (max-width: 992px) {
-    .col-md-4 {
-        max-width: 50%; /* Dos columnas en pantallas medianas */
-    }
-}
-
-@media (max-width: 768px) {
-    .col-md-4 {
-        max-width: 100%; /* Una columna en pantallas pequeñas */
-    }
-
-    .container {
-        padding: 30px; /* Reduce el padding en pantallas pequeñas */
-    }
-}
-
-@media (max-width: 576px) {
-    .title {
-        font-size: 2.8rem; /* Reduce el tamaño del título en pantallas extra pequeñas */
-    }
-}
+  }
+  
+  /* Modo oscuro - card title */
+  .darkModeCardTitle {
+    color: #ddd; /* Color claro para el título en modo oscuro */
+  }
+  
+  /* Modo oscuro - card body */
+  .darkModeCardBody {
+    /* Puedes agregar estilos específicos si es necesario */
+  }
+  

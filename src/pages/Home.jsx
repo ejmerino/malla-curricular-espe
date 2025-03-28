@@ -19,12 +19,14 @@ import educacionInicialLogo from "../assets/img/educacion_inicial.png";
 import mecanicaLogo from "../assets/img/mecanica.png";
 import mecatronicaLogo  from "../assets/img/mecatronica.png";
 import telecomunicacionesLogo from "../assets/img/telecomunicaciones.png";
+import { useTheme } from '../pages/themeContext';
 
 // Importar el CSS modular
 import styles from './Home.module.css';
 
 export default function Home() {
   const [carreras, setCarreras] = useState([]);
+  const { isDarkMode } = useTheme();
 
   const logoMap = {
     "software": softwareLogo,
@@ -56,8 +58,9 @@ export default function Home() {
     console.log("mallasData:", mallasData);
   }, []);
 
+  
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${isDarkMode ? styles.darkModeContainer : ''}`}>
       <div className="row">
         {carreras.map((carrera) => {
           const logoSrc = logoMap[carrera.logo] || null;
@@ -65,7 +68,7 @@ export default function Home() {
           return (
             <div className="col-md-4 mb-4" key={carrera.id}>
               <Link to={`/malla/${carrera.id}`}>
-                <div className={styles.card}>
+                <div className={`${styles.card} ${isDarkMode ? styles.darkModeCard : ''}`}>
                   {logoSrc && (
                     <img
                       src={logoSrc}
@@ -74,8 +77,8 @@ export default function Home() {
                     />
                   )}
                   {!logoSrc && <p>No Logo</p>}
-                  <div className={styles.cardBody}>
-                    <h5 className={styles.cardTitle}>{carrera.nombre}</h5>
+                  <div className={`${styles.cardBody} ${isDarkMode ? styles.darkModeCardBody : ''}`}>
+                    <h5 className={`${styles.cardTitle} ${isDarkMode ? styles.darkModeCardTitle : ''}`}>{carrera.nombre}</h5>
                   </div>
                 </div>
               </Link>

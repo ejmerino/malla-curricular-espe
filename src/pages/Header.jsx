@@ -3,31 +3,31 @@ import { useTheme } from './themeContext';
 import { FaSun, FaMoon } from 'react-icons/fa';
 import './Header.css';
 import espeLogo from '../assets/img/espe.png';
-import { useNavigate } from 'react-router-dom'; // Importa useNavigate
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const { isDarkMode, toggleTheme } = useTheme();
-  const navigate = useNavigate(); // Inicializa useNavigate
+  const navigate = useNavigate();
 
   const handleClickLogo = () => {
-    navigate("/"); // Navega a la página principal
-    window.location.reload(); // Recarga la página
+    navigate("/");
+    window.location.reload();
   };
 
   return (
-    <header className="header">
+    <header className={`header ${isDarkMode ? 'dark' : ''}`}>
       <div className="header-content">
         <img
           src={espeLogo}
           alt="Logo ESPE"
           className="logo-image"
-          onClick={handleClickLogo} // Agrega el evento onClick al logo
-          style={{ cursor: 'pointer' }} // Cambia el cursor al pasar por encima
+          onClick={handleClickLogo}
+          style={{ cursor: 'pointer' }}
         />
         <span
           className="logo-text"
-          onClick={handleClickLogo} // Agrega el evento onClick al texto
-          style={{ cursor: 'pointer' }} // Cambia el cursor al pasar por encima
+          onClick={handleClickLogo}
+          style={{ cursor: 'pointer' }}
         >
           Mallas Curriculares - ESPE
         </span>
