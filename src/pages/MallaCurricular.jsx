@@ -188,7 +188,7 @@ export default function MallaCurricular() {
           navigate("/");
           window.location.reload();
         }}
-        className="btn btn-secondary mb-4"
+        className="btn btn-outline-primary mb-4 return-button"
       >
         Regresar
       </button>
@@ -215,9 +215,11 @@ export default function MallaCurricular() {
 
                 let cardClassName = `card materia-card ${isDarkMode ? 'dark-mode-card' : ''}`;
                 if (estaAprobada) {
-                  cardClassName += ' materia-verde';
+                  cardClassName += ' materia-verde aprobada';
                 } else if (estaBloqueada) {
-                  cardClassName += ' materia-bloqueada';
+                  cardClassName += ' materia-bloqueada bloqueada';
+                } else if (estaDisponible) {
+                  cardClassName += ' disponible';
                 }
 
                 return (
@@ -242,11 +244,8 @@ export default function MallaCurricular() {
         ))}
       </div>
 
-      <div className="d-flex justify-content-between">
-        <button className="btn btn-primary" onClick={downloadMallaPDF}>
-          Descargar Malla como PDF
-        </button>
-        <button className="btn btn-success" onClick={downloadMallaImage}>
+      <div className="download-buttons">
+        <button className="btn btn-outline-success download-button" onClick={downloadMallaImage}>
           Descargar Malla como Imagen
         </button>
       </div>

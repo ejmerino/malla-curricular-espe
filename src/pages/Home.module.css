@@ -1,4 +1,3 @@
-/* Estilos generales del body */
 body {
     margin: 0;
     min-width: 320px;
@@ -33,6 +32,18 @@ body {
     color: #eee; /* Color de texto claro para el contenedor en modo oscuro */
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05); /* Sombra sutil en modo oscuro */
   }
+
+    /* Título principal de la página */
+  .pageTitle {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
   
   /* Estilos de las Cards */
   .card {
@@ -47,6 +58,14 @@ body {
   .card:hover {
     transform: translateY(-5px); /* Elevar al hacer hover */
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al hacer hover */
+  }
+
+  /* Estilos del enlace de la card para ocupar todo el espacio */
+  .cardLink {
+    display: block;
+    height: 100%; /* Asegura que el enlace ocupa toda la altura de la card */
+    text-decoration: none; /* Opcional: elimina el subrayado predeterminado de los enlaces */
+    color: inherit; /* Opcional: hereda el color del texto del padre */
   }
   
   /* Modo oscuro - card */
@@ -67,6 +86,13 @@ body {
     font-weight: 600;
     margin-top: 10px;
     text-transform: capitalize;
+  }
+
+  .cardDescription {
+    font-size: 1rem;
+    color: #777;
+    margin-top: 10px;
+    line-height: 1.4;
   }
   
   .cardImgTop {
@@ -126,9 +152,13 @@ body {
   .darkModeCardTitle {
     color: #ddd; /* Color claro para el título en modo oscuro */
   }
+
+  /* Modo oscuro - card description */
+  .darkModeCardDescription {
+    color: #aaa; /* Color claro para la descripción en modo oscuro */
+  }
   
   /* Modo oscuro - card body */
   .darkModeCardBody {
     /* Puedes agregar estilos específicos si es necesario */
   }
-  

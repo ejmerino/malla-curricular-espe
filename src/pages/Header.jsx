@@ -32,12 +32,18 @@ const Header = () => {
           Mallas Curriculares - ESPE
         </span>
         <button
-          className="theme-toggle"
+          className={`theme-toggle ${isDarkMode ? 'dark-mode' : ''}`}
           onClick={toggleTheme}
           aria-label={isDarkMode ? 'Activar modo claro' : 'Activar modo oscuro'}
           title={isDarkMode ? 'Activar modo claro' : 'Activar modo oscuro'}
         >
-          {isDarkMode ? <FaSun size={24} color="yellow" /> : <FaMoon size={24} color="gray" />}
+          <span className="icon-container">
+            {isDarkMode ? (
+              <FaSun size={24} color="yellow" className="sun-icon" />
+            ) : (
+              <FaMoon size={24} color="gray" className="moon-icon" />
+            )}
+          </span>
         </button>
       </div>
     </header>

@@ -1,38 +1,60 @@
 /* MallaCurricular.css */
 
-.malla-container {
-  font-family: 'Arial', sans-serif;
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  background-color: #f8f9fa;
+  color: #343a40;
 }
 
+.container {
+  max-width: 1200px;
+  padding: 1.5rem;
+}
+
+/* Typography */
 .malla-title {
+  font-size: 2.5rem;
+  font-weight: 500;
   color: #343a40;
   margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .semestre-title {
+  font-size: 1.75rem;
+  font-weight: 400;
   color: #495057;
   margin-bottom: 1rem;
 }
 
+/* Sections and Cards */
 .semestre-section {
-  border: 1px solid #eee;
-  padding: 15px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: none;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+  background-color: #fff;
 }
 
 .materia-card {
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  border: 1px solid #ced4da;
-  border-radius: 0.25rem;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
   background-color: #fff;
   color: #495057;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .materia-card:hover {
-  transform: scale(1.03);
+  transform: translateY(-3px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
@@ -41,10 +63,12 @@
 }
 
 .materia-card .card-title {
-  font-size: 1rem;
-  margin-bottom: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 
+/* Status Indicators */
 .materia-verde {
   background-color: #28a745 !important;
   color: white !important;
@@ -65,52 +89,162 @@
   color: #6c757d !important;
 }
 
-.materia-bloqueada .lock-icon {
-  color: #6c757d !important;
+.disponible {
+  border: 2px solid #dddddd; /* Subtle border for available courses */
 }
 
-.materia-bloqueada:hover {
-  transform: none;
-  box-shadow: none;
-}
-
+/* Icons */
 .lock-icon {
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+  top: 0.75rem;
+  right: 0.75rem;
   font-size: 1rem;
   color: #495057;
+  opacity: 0.6;
 }
 
+/* Alerts and Messages */
 .alert-info {
   background-color: #d1ecf1;
   border-color: #bee5eb;
-  color: #1f618d;
+  color: #0c5460;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  margin-bottom: 1.2rem;
 }
 
 .selection-info {
   background-color: #eaf4ff;
   color: #34495e;
-  padding: 18px 25px;
+  padding: 1rem 1.5rem;
   border-radius: 12px;
-  margin-bottom: 25px;
+  margin-bottom: 1.5rem;
   text-align: center;
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 500;
   border: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-  letter-spacing: 0.5px;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  letter-spacing: 0.02em;
 }
 
 .selection-info:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
 }
+
+/* Buttons */
+.return-button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  font-weight: 600;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  display: inline-flex; /* Use flex to center content */
+  align-items: center;
+  justify-content: center;
+}
+
+.return-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-100%) skewX(-45deg);
+  transition: transform 0.4s ease-in-out;
+}
+
+.return-button:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 6px 12px rgba(0, 0, 0, 0.2),
+    0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.return-button:hover::before {
+  transform: translateX(100%) skewX(-45deg);
+}
+
+.return-button span {
+  /* Ensure text is visible on hover */
+  color: inherit;
+  mix-blend-mode: normal; /* Reset blend mode */
+}
+
+/* Center the Download Button */
+.download-buttons {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  margin-top: 2rem; /* Added margin for spacing */
+}
+
+.download-button {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border: none;
+  background-color: #28a745; /* Green background */
+  color: #fff;
+  font-weight: 600;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.download-button:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 6px 12px rgba(0, 0, 0, 0.2),
+    0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.download-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: height 0.3s ease;
+  z-index: -1;
+}
+
+.download-button:hover::before {
+  height: 110%;
+}
+
 
 /* Dark Mode Styles */
 .dark-mode {
-  background-color: #333;
+  background-color: #212529;
   color: #fff;
 }
 
@@ -120,72 +254,108 @@
 }
 
 .dark-mode .semestre-section {
-  border-color: #555;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  background-color: #343a40;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .dark-mode .materia-card {
-  background-color: #444;
-  color: #eee;
-  border-color: #666;
+  background-color: #343a40;
+  color: #fff;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
 }
 
 .dark-mode .materia-card .card-title {
-  color: #eee;
+  color: #fff;
 }
 
 .dark-mode .alert-info {
-  background-color: #3a3a3a;
-  border-color: #4d4d4d;
-  color: #ddd;
+  background-color: #343a40;
+  border-color: #495057;
+  color: #fff;
 }
 
 .dark-mode .selection-info {
-  background-color: #4a4a4a;
-  color: #eee;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background-color: #343a40;
+  color: #fff;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
 }
 
 .dark-mode .materia-bloqueada {
-  background-color: #555 !important;
-  color: #999 !important;
+  background-color: #495057 !important;
+  color: #6c757d !important;
 }
 
 .dark-mode .materia-bloqueada .card-title,
 .dark-mode .materia-bloqueada .lock-icon {
-  color: #999 !important;
+  color: #6c757d !important;
 }
 
-/* Para que los botones se vean bien en dark mode, puedes agregar clases específicas o usar los estilos globales */
-.dark-mode .btn-primary {
-  background-color: #007bff; /* O ajusta a un color que se vea bien en dark mode */
-  border-color: #007bff;
-  color: #fff;
-}
-
-.dark-mode .btn-success {
-  background-color: #28a745;
-  border-color: #28a745;
-  color: #fff;
-}
-
+/* New Dark Mode Styles */
 .dark-mode-text {
   color: #fff;
 }
 
 .dark-mode-card {
-  background-color: #2c3e50; /* Un tono más oscuro para las tarjetas */
-  border-color: #34495e; /* Un tono más oscuro para el borde */
-  color: #fff; /* Texto blanco para mejor contraste */
+  background-color: #343a40;
+  border-color: #495057;
+  color: #fff;
 }
 
 .dark-mode-alert {
-  background-color: #34495e; /* Un tono más oscuro para el fondo de la alerta */
-  border-color: #2c3e50; /* Un tono más oscuro para el borde de la alerta */
-  color: #fff; /* Texto blanco para mejor contraste */
+  background-color: #343a40;
+  border-color: #495057;
+  color: #fff;
 }
 
 .dark-mode-selection-info {
-  background-color: #34495e; /* Un tono más oscuro para la sección de información */
-  color: #fff; /* Texto blanco para mejor contraste */
+  background-color: #343a40;
+  color: #fff;
+}
+
+.dark-mode .btn-outline-primary,
+.dark-mode .btn-outline-success {
+  border-color: #fff;
+  color: #fff;
+}
+
+.dark-mode .btn-outline-primary:hover,
+.dark-mode .btn-outline-success:hover {
+  background-color: #fff;
+  color: #212529;
+}
+
+/* Dark Mode Return Button */
+.dark-mode .return-button {
+  background-color: #3498db;
+  color: #fff;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode .return-button:hover {
+  background-color: #2980b9;
+  box-shadow:
+    0 6px 12px rgba(0, 0, 0, 0.4),
+    0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode Download Button */
+.dark-mode .download-button {
+  background-color: #2ecc71; /* A different green */
+  color: #fff;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode .download-button:hover {
+  background-color: #27ae60; /* A darker shade of green */
+  box-shadow:
+    0 6px 12px rgba(0, 0, 0, 0.4),
+    0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .download-button::before {
+  background: rgba(255, 255, 255, 0.5);
 }
