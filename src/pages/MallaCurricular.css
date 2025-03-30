@@ -18,7 +18,8 @@ body {
   font-size: 2.5rem;
   font-weight: 500;
   color: #343a40;
-  margin-bottom: 0.5rem; /* Reduce el margen inferior del título */
+  margin-bottom: 0.5rem;
+  /* Reduce el margen inferior del título */
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -34,20 +35,24 @@ body {
 .progress-info {
   font-size: 1rem;
   color: #495057;
-  margin-bottom: 0.5rem; /* Espacio entre el texto y la barra */
-  text-align: center; /* Centrar el texto */
+  margin-bottom: 0.5rem;
+  /* Espacio entre el texto y la barra */
+  text-align: center;
 }
 
 /* Estilo para el mensaje de felicitaciones */
 .felicitaciones {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #2ecc71; /* Verde brillante */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2ecc71;
+  /* Verde brillante */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  /* Sombra suave */
 }
 
 .dark-mode .felicitaciones {
-    color: #2ecc71; /* Verde brillante en modo oscuro */
+  color: #2ecc71;
+  /* Verde brillante en modo oscuro */
 }
 
 /* Sections and Cards */
@@ -110,7 +115,8 @@ body {
 }
 
 .disponible {
-  border: 2px solid #dddddd; /* Subtle border for available courses */
+  border: 2px solid #dddddd;
+  /* Subtle border for available courses */
 }
 
 /* Icons */
@@ -158,21 +164,16 @@ body {
   padding: 0.8rem 1.5rem;
   font-size: 1.1rem;
   border-radius: 50px;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   border: none;
   background-color: #007bff;
   color: #fff;
   font-weight: 600;
-  box-shadow:
-    0 4px 8px rgba(0, 0, 0, 0.15),
-    0 2px 4px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.08);
   position: relative;
   overflow: hidden;
-  display: inline-flex; /* Use flex to center content */
+  display: inline-flex;
+  /* Use flex to center content */
   align-items: center;
   justify-content: center;
 }
@@ -184,20 +185,14 @@ body {
   left: 0;
   width: 200%;
   height: 100%;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.3) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
   transform: translateX(-100%) skewX(-45deg);
   transition: transform 0.4s ease-in-out;
 }
 
 .return-button:hover {
   transform: translateY(-3px);
-  box-shadow:
-    0 6px 12px rgba(0, 0, 0, 0.2),
-    0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .return-button:hover::before {
@@ -207,32 +202,30 @@ body {
 .return-button span {
   /* Ensure text is visible on hover */
   color: inherit;
-  mix-blend-mode: normal; /* Reset blend mode */
+  mix-blend-mode: normal;
+  /* Reset blend mode */
 }
 
 /* Center the Download Button */
 .download-buttons {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  margin-top: 2rem; /* Added margin for spacing */
+  justify-content: center;
+  /* Center horizontally */
+  margin-top: 2rem;
+  /* Added margin for spacing */
 }
 
 .download-button {
   padding: 1rem 2rem;
   font-size: 1.1rem;
   border-radius: 50px;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   border: none;
-  background-color: #28a745; /* Green background */
+  background-color: #28a745;
+  /* Green background */
   color: #fff;
   font-weight: 600;
-  box-shadow:
-    0 4px 8px rgba(0, 0, 0, 0.15),
-    0 2px 4px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.08);
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -240,9 +233,7 @@ body {
 
 .download-button:hover {
   transform: translateY(-3px);
-  box-shadow:
-    0 6px 12px rgba(0, 0, 0, 0.2),
-    0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .download-button::before {
@@ -351,32 +342,26 @@ body {
 .dark-mode .return-button {
   background-color: #3498db;
   color: #fff;
-  box-shadow:
-    0 4px 8px rgba(0, 0, 0, 0.3),
-    0 2px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 .dark-mode .return-button:hover {
   background-color: #2980b9;
-  box-shadow:
-    0 6px 12px rgba(0, 0, 0, 0.4),
-    0 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4), 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* Dark Mode Download Button */
 .dark-mode .download-button {
-  background-color: #2ecc71; /* A different green */
+  background-color: #2ecc71;
+  /* A different green */
   color: #fff;
-  box-shadow:
-    0 4px 8px rgba(0, 0, 0, 0.3),
-    0 2px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 .dark-mode .download-button:hover {
-  background-color: #27ae60; /* A darker shade of green */
-  box-shadow:
-    0 6px 12px rgba(0, 0, 0, 0.4),
-    0 4px 6px rgba(0, 0, 0, 0.2);
+  background-color: #27ae60;
+  /* A darker shade of green */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4), 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .dark-mode .download-button::before {
@@ -387,8 +372,10 @@ body {
 .progress-bar-container {
   width: 100%;
   background-color: #e9ecef;
-  border-radius: 1rem; /* Bordes más redondeados */
-  height: 0.75rem; /* Altura más delgada */
+  border-radius: 1rem;
+  /* Bordes más redondeados */
+  height: 0.75rem;
+  /* Altura más delgada */
   margin-bottom: 1rem;
   overflow: hidden;
 }
@@ -396,42 +383,87 @@ body {
 .progress-bar {
   background-color: #28a745;
   height: 100%;
-  border-radius: 1rem; /* Bordes más redondeados */
+  border-radius: 1rem;
+  /* Bordes más redondeados */
   /* Animación de rayas */
-  background-image: linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 0.15) 25%,
-    transparent 25%,
-    transparent 50%,
-    rgba(255, 255, 255, 0.15) 50%,
-    rgba(255, 255, 255, 0.15) 75%,
-    transparent 75%,
-    transparent
-  );
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-size: 2rem 2rem;
   animation: moveStripes 1s linear infinite;
-  transition: width 0.5s ease-in-out; /* Transición suave */
+  transition: width 0.5s ease-in-out;
+  /* Transición suave */
 }
 
 @keyframes moveStripes {
   0% {
-    background-position: 2rem 0;
+      background-position: 2rem 0;
   }
+
   100% {
-    background-position: 0 0;
+      background-position: 0 0;
   }
 }
 
 /* Estilos Dark Mode para la barra de progreso */
 .dark-mode .progress-bar-container {
-    background-color: #495057;
+  background-color: #495057;
 }
 
 .dark-mode .progress-bar {
-    background-color: #3498db; /* Un azul más claro para Dark Mode */
+  background-color: #3498db;
+  /* Un azul más claro para Dark Mode */
 }
 
 /* Dark Mode Styles */
 .dark-mode .progress-info {
   color: #fff;
+}
+
+/* Styles for the select all button */
+.select-all-button {
+  margin-left: 10px;
+  /* Adjust spacing as needed */
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.select-all-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.select-all-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+}
+
+.btn-secondary {
+  background-color: #7f8c8d;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #607173;
+}
+
+.semestre-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
 }
