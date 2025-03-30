@@ -27,6 +27,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
+      <p className={styles.version}>Versión 1.1</p>
     </footer>
   );
 };

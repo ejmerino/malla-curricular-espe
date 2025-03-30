@@ -56,3 +56,15 @@
 .footerIcon {
   /* Puedes agregar estilos específicos para los iconos aquí si es necesario */
 }
+
+/* Estilos para la versión */
+.version {
+  font-size: 0.75rem; /* Letra más pequeña */
+  color: rgba(255, 255, 255, 0.7); /* Color más suave */
+  margin-top: 10px; /* Espacio superior */
+  margin-bottom: 0; /* Elimina el margen inferior */
+}
+
+.darkModeFooter .version {
+  color: rgba(221, 221, 221, 0.7); /* Color más suave en modo oscuro */
+}
