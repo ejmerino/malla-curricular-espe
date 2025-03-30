@@ -222,8 +222,8 @@
       {
         "numero": 3,
         "materias": [
-          { "id": "metodos-numericos", "nombre": "Métodos Numéricos", "prerequisitos": ["calculo-vectorial","fisica-1"] },
-          { "id": "matematica-superior", "nombre": "Matemática Superior", "prerequisitos": ["calculo-vectorial","fisica-1"] },
+          { "id": "metodos-numericos", "nombre": "Métodos Numéricos", "prerequisitos": ["calculo-vectorial","ecuaciones-diferenciales-ordinarias"] },
+          { "id": "matematica-superior", "nombre": "Matemática Superior", "prerequisitos": ["calculo-vectorial","ecuaciones-diferenciales-ordinarias"] },
           { "id": "estadistica", "nombre": "Estadística", "prerequisitos": ["ecuaciones-diferenciales-ordinarias","calculo-vectorial"] },
           { "id": "soldadura", "nombre": "Soldadura", "prerequisitos": ["ciencias-de-los-materiales"] },
           { "id": "dibujo-mecanico-asistido-por-computador", "nombre": "Dibujo Mecánico Asistido por Computador", "prerequisitos": ["calculo-vectorial"] },
@@ -258,7 +258,7 @@
           { "id": "manufactura-asistida-por-computador-para-mecanica", "nombre": "Manufactura Asistida por Computador para Mecánica", "prerequisitos": ["procesos-de-maquinado"] },
           { "id": "dinamica-de-sistemas", "nombre": "Dinámica de Sistemas", "prerequisitos": ["fundamentos-de-maquinas-electricas"] },
           { "id": "transferencia-de-calor", "nombre": "Transferencia de Calor", "prerequisitos": ["mecanica-de-fluidos", "termodinamica-aplicada"] },
-          { "id": "procesos-de-conformado-y-fundicion", "nombre": "Procesos de Conformado y Fundición", "prerequisitos": ["mecanica-de-fluidos","termodinamica-aplicada"] },
+          { "id": "procesos-de-conformado-y-fundicion", "nombre": "Procesos de Conformado y Fundición", "prerequisitos": ["procesos-de-maquinado"] },
           { "id": "diseno-de-elementos-de-maquinas", "nombre": "Diseño de Elementos de Máquinas", "prerequisitos": ["mecanismos-y-vibraciones","mecanica-de-materiales-aplicada"] },
           { "id": "gestion-y-emprendimiento", "nombre": "Gestión y Emprendimiento", "prerequisitos": ["realidad-nacional-y-geopolitica"] }
         ]
