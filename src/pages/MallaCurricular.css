@@ -477,3 +477,116 @@ body {
   opacity: 0.5; /* Ajusta la opacidad para que el botón se vea deshabilitado */
   cursor: not-allowed; /* Cambia el cursor para indicar que no se puede hacer clic */
 }
+
+/* Estilo para la lista de materias del siguiente semestre */
+.materia-siguiente-semestre {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  background-color: #ffc107; /* Amarillo claro */
+  color: #212529;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.materia-amarilla {
+background-color: #ffc107 !important; /* Amarillo */
+color: #212529 !important; /* Color de texto oscuro para contraste */
+}
+
+.materia-amarilla .card-title {
+color: #212529 !important; /* Asegura que el título también sea oscuro */
+}
+
+
+/* Estilos para los botones dentro de la tarjeta */
+.materia-card .card-body .btn-sm {
+  margin-right: 0.5rem; /* Espacio entre botones */
+  margin-bottom: 0.5rem; /* Espacio debajo de los botones */
+}
+
+.materia-button {
+  margin-left: 5px;
+}
+
+/* Estilo para la lista de materias del siguiente semestre */
+.materia-siguiente-semestre {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  background-color: #ffc107; /* Amarillo claro */
+  color: #212529;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.materia-amarilla {
+background-color: #ffc107 !important; /* Amarillo */
+color: #212529 !important; /* Color de texto oscuro para contraste */
+}
+
+.materia-amarilla .card-title {
+color: #212529 !important; /* Asegura que el título también sea oscuro */
+}
+
+.instruction-box {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.instruction-box p {
+  margin-bottom: 0.5rem;
+}
+
+/* Estilo para la lista de materias del siguiente semestre */
+.materia-siguiente-semestre {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  background-color: #ffc107; /* Amarillo claro */
+  color: #212529;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.materia-amarilla {
+background-color: #ffc107 !important; /* Amarillo */
+color: #212529 !important; /* Color de texto oscuro para contraste */
+}
+
+.materia-amarilla .card-title {
+color: #212529 !important; /* Asegura que el título también sea oscuro */
+}
+
+.instruction-box {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.instruction-box p {
+  margin-bottom: 0.5rem;
+}
+
+/* Dark Mode Styles */
+.dark-mode .instruction-box {
+  background-color: #343a40;
+  border-color: #495057;
+  color: #fff;
+}
+
+.dark-mode .materia-siguiente-semestre {
+  background-color: #f0ad4e; /* Un amarillo más oscuro para el modo oscuro */
+  color: #fff;
+}
+
+.dark-mode .alert-warning {
+  background-color: #343a40;
+  border-color: #495057;
+  color: #f0ad4e;  /*Color amarillo para letras*/
+}

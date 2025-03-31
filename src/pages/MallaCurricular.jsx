@@ -14,6 +14,7 @@ export default function MallaCurricular() {
     const [materiasEstado, setMateriasEstado] = useState({});
     const [materiasDisponibles, setMateriasDisponibles] = useState(new Set());
     const [materiasAprobadas, setMateriasAprobadas] = useState(new Set());
+    const [materiasSiguienteSemestre, setMateriasSiguienteSemestre] = useState(new Set());
     const [materiasTomables, setMateriasTomables] = useState([]);
     const { isDarkMode } = useTheme();
     const navigate = useNavigate();
@@ -140,15 +141,17 @@ export default function MallaCurricular() {
     const deseleccionarDependientes = (materiaId, currentState) => {
         let newState = { ...currentState };
         const dependientes = getMateriasQueDependenDe(materiaId);
-
+    
         dependientes.forEach(dependienteId => {
-            if (currentState[dependienteId] === "green") {
-                newState[dependienteId] = ""; // Deselecciona la materia
-                newState = deseleccionarDependientes(dependienteId, newState); // Recursivamente deselecciona las dependencias
+            if (currentState[dependienteId] === "green" || currentState[dependienteId] === "amarillo") {
+                newState[dependienteId] = "bloqueada"; // Bloquea la materia
+                newState = deseleccionarDependientes(dependienteId, newState); // Llamada recursiva
             }
         });
+    
         return newState;
     };
+    
 
     const handleMateriaClick = (materiaId) => {
         if (!materiasDisponibles.has(materiaId) && !materiasAprobadas.has(materiaId)) {
@@ -157,34 +160,37 @@ export default function MallaCurricular() {
 
         setMateriasEstado(prevEstado => {
             let nuevoEstado = { ...prevEstado };
+            let nuevoEstadoSiguienteSemestre = new Set(materiasSiguienteSemestre);
             const estaAprobada = nuevoEstado[materiaId] === "green";
-            nuevoEstado[materiaId] = estaAprobada ? "" : "green"; // Cambia el estado de la materia clickeada
+            const estaEnSiguienteSemestre = nuevoEstadoSiguienteSemestre.has(materiaId);
 
-            if (estaAprobada) {
-                // Si se está deseleccionando, deselecciona también las dependencias
+            if (!estaAprobada && !estaEnSiguienteSemestre) {
+                // Primer clic: Agregar a siguiente semestre (amarillo)
+                nuevoEstadoSiguienteSemestre.add(materiaId);
+                nuevoEstado[materiaId] = "amarillo";
+            } else if (estaEnSiguienteSemestre) {
+                // Segundo clic: Marcar como aprobada (verde)
+                nuevoEstadoSiguienteSemestre.delete(materiaId);
+                nuevoEstado[materiaId] = "green";
+
+                // Deseleccionar las materias dependientes si se aprueba
                 nuevoEstado = deseleccionarDependientes(materiaId, nuevoEstado);
+            } else {
+                // Tercer clic: Deseleccionar (volver al estado original)
+                 nuevoEstado[materiaId] = "";
+                nuevoEstado = deseleccionarDependientes(materiaId, nuevoEstado);
+                  const materia = getMateriaById(materiaId);
+                 if (materia.semestre === 1){
+                   nuevoEstado = deseleccionarDependientes(materiaId, nuevoEstado);
+                 }
+
+
             }
 
+            setMateriasSiguienteSemestre(nuevoEstadoSiguienteSemestre);
             return nuevoEstado;
         });
-
-        // Recalcular el estado de los botones "Seleccionar Todo" después de cada clic
-        setSemestreSeleccionado(prevSemestreSeleccionado => {
-            const nuevoEstadoSemestre = { ...prevSemestreSeleccionado };
-            if (carrera) {
-                carrera.semestres.forEach(semestre => {
-                    nuevoEstadoSemestre[semestre.numero] = semestre.materias.every(materia => {
-                        if (materiasDisponibles.has(materia.id) || materiasAprobadas.has(materia.id)) {
-                            return materiasEstado[materia.id] === "green";
-                        }
-                        return true; // Si no está disponible, no afecta el estado del botón
-                    });
-                });
-            }
-            return nuevoEstadoSemestre;
-        });
     };
-
 
     const downloadMallaPDF = () => {
         const doc = new jsPDF();
@@ -243,7 +249,7 @@ export default function MallaCurricular() {
         return (materiasAprobadasCount / totalMaterias) * 100;
     };
 
-    const handleSelectAllSemestre = (semestre) => {
+    const handleAprobarSemestre = (semestre) => {
         setMateriasEstado(prevState => {
             let newState = { ...prevState };
             let allSelected = true;
@@ -275,6 +281,7 @@ export default function MallaCurricular() {
             [semestre.numero]: !prevState[semestre.numero]
         }));
     };
+
 
     useEffect(() => {
         if (carrera) {
@@ -310,6 +317,8 @@ export default function MallaCurricular() {
     const alertClass = `alert alert-info ${isDarkMode ? 'dark-mode-alert' : ''}`;
     const titleClass = `text-center mb-4 malla-title ${isDarkMode ? 'dark-mode-text' : ''}`;
     const selectionInfoClass = `selection-info ${isDarkMode ? 'dark-mode-selection-info' : ''}`;
+    const siguienteSemestreInfoClass = `selection-info ${isDarkMode ? 'dark-mode-selection-info' : ''}`;
+    const materiasQueTomareClass = `alert alert-warning ${isDarkMode ? 'dark-mode-alert' : ''}`;
 
     return (
         <div className={containerClass}>
@@ -342,11 +351,27 @@ export default function MallaCurricular() {
             </div>
 
             <div className={alertClass}>
-                <strong>Puedes tomar {numeroMateriasTomables} materia(s):</strong> {materiasTomables.join(', ') || 'Ninguna por ahora'}
+                <strong>Materias que puedes tomar:</strong> {materiasTomables.join(', ') || 'Ninguna por ahora'}
             </div>
 
-            <div className={selectionInfoClass}>
-                Selecciona las materias que ya has aprobado:
+            <div className={materiasQueTomareClass}>
+                <strong>Materias que tomarás:</strong> {Array.from(materiasSiguienteSemestre).map(materiaId => {
+                    const materia = getMateriaById(materiaId);
+                    return materia ? materia.nombre : null;
+                }).join(', ') || 'Ninguna por ahora'}
+            </div>
+
+            <div className="instruction-box">
+                <p><strong>Instrucciones:</strong></p>
+                <p>
+                    - <strong>Un clic:</strong>  Seleccionar materia para el siguiente semestre (amarillo).
+                </p>
+                <p>
+                    - <strong>Segundo clic:</strong> Marcar materia como aprobada (verde).
+                </p>
+                <p>
+                    - <strong>Tercer clic:</strong> Deseleccionar materia.
+                </p>
             </div>
 
             <div className="row">
@@ -355,11 +380,11 @@ export default function MallaCurricular() {
                         <div className="semestre-header">
                             <h3 className={`semestre-title ${isDarkMode ? 'dark-mode-text' : ''}`}>Semestre {semestre.numero}</h3>
                             <button
-                                className={`btn btn-sm ${semestreSeleccionado[semestre.numero] ? 'btn-secondary' : 'btn-primary'} select-all-button`}
-                                onClick={() => handleSelectAllSemestre(semestre)}
+                                className={`btn btn-sm ${semestreSeleccionado[semestre.numero] ? 'btn-secondary' : 'btn-success'} select-all-button`}
+                                onClick={() => handleAprobarSemestre(semestre)}
                                 disabled={selectAllDisabled[semestre.numero]}
                             >
-                                {semestreSeleccionado[semestre.numero] ? 'Deseleccionar Todo' : 'Seleccionar Todo'}
+                                {semestreSeleccionado[semestre.numero] ? 'Desaprobar' : 'Aprobar'}
                                 {selectAllDisabled[semestre.numero] && <i className="fas fa-lock lock-icon select-all-lock-icon"></i>}
                             </button>
                         </div>
@@ -367,11 +392,15 @@ export default function MallaCurricular() {
                             {semestre.materias.map((materia) => {
                                 const estaDisponible = materiasDisponibles.has(materia.id) || materiasAprobadas.has(materia.id);
                                 const estaAprobada = materiasEstado[materia.id] === "green";
+                                 const estaAmarilla = materiasEstado[materia.id] === "amarillo";
+                                const estaEnSiguienteSemestre = materiasSiguienteSemestre.has(materia.id);
                                 const estaBloqueada = materiasEstado[materia.id] === "bloqueada";
 
                                 let cardClassName = `card materia-card ${isDarkMode ? 'dark-mode-card' : ''}`;
                                 if (estaAprobada) {
                                     cardClassName += ' materia-verde aprobada';
+                                } else if (estaEnSiguienteSemestre || estaAmarilla) {
+                                    cardClassName += ' materia-amarilla siguiente-semestre';
                                 } else if (estaBloqueada) {
                                     cardClassName += ' materia-bloqueada bloqueada';
                                 } else if (estaDisponible) {
@@ -398,6 +427,18 @@ export default function MallaCurricular() {
                         </div>
                     </div>
                 ))}
+            </div>
+
+            <div className={siguienteSemestreInfoClass}>
+                Materias que elegiste tomar el siguiente semestre:
+                {Array.from(materiasSiguienteSemestre).map(materiaId => {
+                    const materia = getMateriaById(materiaId);
+                    return materia ? (
+                        <span key={materiaId} className="materia-siguiente-semestre">
+                            {materia.nombre}
+                        </span>
+                    ) : null;
+                })}
             </div>
 
             <div className="download-buttons">
