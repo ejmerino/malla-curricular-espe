@@ -19,6 +19,7 @@ export default function MallaCurricular() {
     const navigate = useNavigate();
     const [porcentajeCompletado, setPorcentajeCompletado] = useState(0);
     const [semestreSeleccionado, setSemestreSeleccionado] = useState({});
+    const [selectAllDisabled, setSelectAllDisabled] = useState({});
 
     useEffect(() => {
         const selectedCarrera = mallasData[carreraId];
@@ -111,18 +112,6 @@ export default function MallaCurricular() {
         return true;
     };
 
-    const handleMateriaClick = (materiaId) => {
-        if (!materiasDisponibles.has(materiaId) && !materiasAprobadas.has(materiaId)) {
-            return;
-        }
-
-        setMateriasEstado(prevEstado => {
-            const nuevoEstado = { ...prevEstado };
-            nuevoEstado[materiaId] = nuevoEstado[materiaId] === "green" ? "" : "green";
-            return nuevoEstado;
-        });
-    };
-
     const getMateriaById = (id) => {
         if (!carrera) return null;
         for (let semestre of carrera.semestres) {
@@ -133,6 +122,69 @@ export default function MallaCurricular() {
         }
         return null;
     };
+
+    const getMateriasQueDependenDe = (materiaId) => {
+        const dependientes = [];
+        if (!carrera) return dependientes;
+
+        carrera.semestres.forEach(semestre => {
+            semestre.materias.forEach(materia => {
+                if (materia.prerequisitos && materia.prerequisitos.includes(materiaId)) {
+                    dependientes.push(materia.id);
+                }
+            });
+        });
+        return dependientes;
+    };
+
+    const deseleccionarDependientes = (materiaId, currentState) => {
+        let newState = { ...currentState };
+        const dependientes = getMateriasQueDependenDe(materiaId);
+
+        dependientes.forEach(dependienteId => {
+            if (currentState[dependienteId] === "green") {
+                newState[dependienteId] = ""; // Deselecciona la materia
+                newState = deseleccionarDependientes(dependienteId, newState); // Recursivamente deselecciona las dependencias
+            }
+        });
+        return newState;
+    };
+
+    const handleMateriaClick = (materiaId) => {
+        if (!materiasDisponibles.has(materiaId) && !materiasAprobadas.has(materiaId)) {
+            return;
+        }
+
+        setMateriasEstado(prevEstado => {
+            let nuevoEstado = { ...prevEstado };
+            const estaAprobada = nuevoEstado[materiaId] === "green";
+            nuevoEstado[materiaId] = estaAprobada ? "" : "green"; // Cambia el estado de la materia clickeada
+
+            if (estaAprobada) {
+                // Si se está deseleccionando, deselecciona también las dependencias
+                nuevoEstado = deseleccionarDependientes(materiaId, nuevoEstado);
+            }
+
+            return nuevoEstado;
+        });
+
+        // Recalcular el estado de los botones "Seleccionar Todo" después de cada clic
+        setSemestreSeleccionado(prevSemestreSeleccionado => {
+            const nuevoEstadoSemestre = { ...prevSemestreSeleccionado };
+            if (carrera) {
+                carrera.semestres.forEach(semestre => {
+                    nuevoEstadoSemestre[semestre.numero] = semestre.materias.every(materia => {
+                        if (materiasDisponibles.has(materia.id) || materiasAprobadas.has(materia.id)) {
+                            return materiasEstado[materia.id] === "green";
+                        }
+                        return true; // Si no está disponible, no afecta el estado del botón
+                    });
+                });
+            }
+            return nuevoEstadoSemestre;
+        });
+    };
+
 
     const downloadMallaPDF = () => {
         const doc = new jsPDF();
@@ -193,14 +245,12 @@ export default function MallaCurricular() {
 
     const handleSelectAllSemestre = (semestre) => {
         setMateriasEstado(prevState => {
-            const newState = { ...prevState };
+            let newState = { ...prevState };
             let allSelected = true;
 
             semestre.materias.forEach(materia => {
-                if (materiasDisponibles.has(materia.id) || materiasAprobadas.has(materia.id)) {
-                    if (prevState[materia.id] !== "green") {
-                        allSelected = false;
-                    }
+                if ((materiasDisponibles.has(materia.id) || materiasAprobadas.has(materia.id)) && newState[materia.id] !== "green") {
+                    allSelected = false;
                 }
             });
 
@@ -210,6 +260,13 @@ export default function MallaCurricular() {
                 }
             });
 
+            // Si se están deseleccionando materias, deseleccionar también las dependencias
+            if (allSelected) {
+                semestre.materias.forEach(materia => {
+                    newState = deseleccionarDependientes(materia.id, newState);
+                });
+            }
+
             return newState;
         });
 
@@ -218,6 +275,29 @@ export default function MallaCurricular() {
             [semestre.numero]: !prevState[semestre.numero]
         }));
     };
+
+    useEffect(() => {
+        if (carrera) {
+            const initialSelectAllDisabled = {};
+            const initialSemestreSeleccionado = {};
+            carrera.semestres.forEach(semestre => {
+                const allAvailableOrApproved = semestre.materias.every(materia =>
+                    materiasDisponibles.has(materia.id) || materiasAprobadas.has(materia.id)
+                );
+                initialSelectAllDisabled[semestre.numero] = !allAvailableOrApproved;
+
+                // Inicializar semestreSeleccionado basado en si todas las materias están seleccionadas
+                initialSemestreSeleccionado[semestre.numero] = semestre.materias.every(materia => {
+                    if (materiasDisponibles.has(materia.id) || materiasAprobadas.has(materia.id)) {
+                        return materiasEstado[materia.id] === "green";
+                    }
+                    return true; // Si no está disponible, se considera seleccionada
+                });
+            });
+            setSelectAllDisabled(initialSelectAllDisabled);
+            setSemestreSeleccionado(initialSemestreSeleccionado);
+        }
+    }, [materiasDisponibles, materiasAprobadas, carrera, materiasEstado]);
 
 
     if (!carrera) {
@@ -277,8 +357,10 @@ export default function MallaCurricular() {
                             <button
                                 className={`btn btn-sm ${semestreSeleccionado[semestre.numero] ? 'btn-secondary' : 'btn-primary'} select-all-button`}
                                 onClick={() => handleSelectAllSemestre(semestre)}
+                                disabled={selectAllDisabled[semestre.numero]}
                             >
                                 {semestreSeleccionado[semestre.numero] ? 'Deseleccionar Todo' : 'Seleccionar Todo'}
+                                {selectAllDisabled[semestre.numero] && <i className="fas fa-lock lock-icon select-all-lock-icon"></i>}
                             </button>
                         </div>
                         <div className="row">

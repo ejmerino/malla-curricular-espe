@@ -467,3 +467,13 @@ body {
   align-items: center;
   margin-bottom: 0.5rem;
 }
+
+.select-all-lock-icon {
+  margin-left: 5px; /* Ajusta el espaciado */
+  opacity: 0.6; /* Ajusta la opacidad para que coincida con el otro icono */
+}
+
+.select-all-button:disabled {
+  opacity: 0.5; /* Ajusta la opacidad para que el botón se vea deshabilitado */
+  cursor: not-allowed; /* Cambia el cursor para indicar que no se puede hacer clic */
+}
